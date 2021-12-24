@@ -279,7 +279,7 @@ declare namespace Hexo {
       pages: Hexo.Locals.Page;
       categories: Hexo.Locals.Category;
       tags: Hexo.Locals.Tag;
-      data: object;
+      data: Record<string, unknown>;
     };
 
     /**
@@ -822,7 +822,7 @@ interface IndexPage {
   total?: number | undefined;
   current?: number | undefined;
   current_url?: string | undefined;
-  posts?: object | undefined;
+  posts?: Record<string, unknown> | undefined;
   prev?: number | undefined;
   prev_link?: string | undefined;
   next?: number | undefined;
