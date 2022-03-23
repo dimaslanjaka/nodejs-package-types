@@ -1,13 +1,5 @@
 import Hexo from "./index";
 
-export type Author =
-  | string
-  | {
-      name: string;
-      link: string;
-      image: Image;
-    };
-
 interface HexoConfig {
   [key: string]: any;
   /**
@@ -28,7 +20,7 @@ interface HexoConfig {
   /*
    * Your name
    */
-  readonly author: Author;
+  readonly author: string;
 
   /**
    * The language of your website. Use a 2-lettter ISO-639-1 code. Default is en.
