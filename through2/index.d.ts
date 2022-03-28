@@ -16,6 +16,7 @@ interface DynamicObject {
   [keys: string]: any;
   path?: any;
   base?: any;
+  contents?: any;
 }
 
 declare function through2(transform?: through2.TransformFunction, flush?: through2.FlushCallback): stream.Transform;
