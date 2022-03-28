@@ -1,7 +1,7 @@
 # nodejs-package-types
 Customized Package Types
 
-
+replace `packages` with this repository folder name
 ```shell
 git submodule add https://github.com/dimaslanjaka/nodejs-package-types.git packages/@types
 npm i -D ./packages/@types/hexo
