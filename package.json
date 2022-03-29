@@ -4,7 +4,7 @@
   "description": "Customized Package Types",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm i -D ./node_modules/nodejs-package-types/through2",
+    "postinstall": "npm i -D https://github.com/dimaslanjaka/nodejs-package-types/raw/main/through2/types-through2-2.0.36.tgz",
     "uninstall": "npm un @types/through2"
   },
   "repository": {
