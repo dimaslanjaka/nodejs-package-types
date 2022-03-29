@@ -4,8 +4,10 @@
   "description": "Customized Package Types",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm i -D https://github.com/dimaslanjaka/nodejs-package-types/raw/main/through2/types-through2-2.0.36.tgz",
-    "uninstall": "npm un @types/through2"
+    "postinstall": "npm i -D https://github.com/dimaslanjaka/nodejs-package-types#through2",
+    "uninstall": "npm un @types/through2",
+    "push:through2": "git subtree push --prefix through2 origin through2",
+    "push:hexo": "git subtree push --prefix hexo origin hexo"
   },
   "repository": {
     "type": "git",
