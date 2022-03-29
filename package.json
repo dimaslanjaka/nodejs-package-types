@@ -1,6 +1,6 @@
 {
   "name": "nodejs-package-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Customized Package Types",
   "main": "index.js",
   "scripts": {
