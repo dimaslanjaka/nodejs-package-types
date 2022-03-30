@@ -1,0 +1,4 @@
+[submodule "through2"]
+	path = through2
+	url = https://github.com/dimaslanjaka/nodejs-package-types.git
+	branch = through2
