@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "npm i -D https://github.com/dimaslanjaka/nodejs-package-types#through2",
     "uninstall": "npm un @types/through2",
-    "push:through2": "git subtree push --prefix through2 origin through2",
+    "push:through2": "git subtree push --rejoin --prefix through2 origin through2",
+    "push:through": "git push origin `git subtree split --prefix through2 through2`:gh-pages --force",
     "push:hexo": "git subtree push --prefix hexo origin hexo"
   },
   "repository": {
