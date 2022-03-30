@@ -12,7 +12,8 @@
 
 import stream = require('stream');
 import Vinyl = require('Vinyl');
-type FileObject = typeof Vinyl | {
+
+export type FileObject = Vinyl & {
   [keys: string]: any;
   path?: any;
   base?: any;
