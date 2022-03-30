@@ -11,8 +11,8 @@
 /// <reference types="node" />
 
 import stream = require('stream');
-
-interface DynamicObject {
+import Vinyl = require('Vinyl');
+type FileObject = typeof Vinyl | {
   [keys: string]: any;
   path?: any;
   base?: any;
@@ -29,7 +29,7 @@ declare namespace through2 {
   }
 
   type TransformCallback = (err?: any, data?: any) => void;
-  type TransformFunction = (this: stream.Transform, chunk: DynamicObject, enc: BufferEncoding, callback: TransformCallback) => void;
+  type TransformFunction = (this: stream.Transform, chunk: FileObject, enc: BufferEncoding, callback: TransformCallback) => void;
   type FlushCallback = (this: stream.Transform, flushCallback: () => void) => void;
 
   /**

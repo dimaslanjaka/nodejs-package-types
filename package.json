@@ -1,6 +1,6 @@
 {
     "name": "@types/through2",
-    "version": "2.0.36",
+    "version": "2.0.37",
     "description": "TypeScript definitions for through2 v",
     "license": "MIT",
     "contributors": [
@@ -43,7 +43,8 @@
     },
     "scripts": {},
     "dependencies": {
-        "@types/node": "*"
+        "@types/node": "*",
+        "@types/vinyl": "^2.0.6"
     },
     "typesPublisherContentHash": "2a4c35d2e75dcb619fd676b6dde1bd1455dc3654b0da10183b445c19a2cede2b",
     "typeScriptVersion": "3.0"
