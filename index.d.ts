@@ -38,7 +38,7 @@ declare namespace through2 {
    * * `callback(null,null)` emit nulled data
    */
   export type TransformCallback = (err?: any, data?: any) => void;
-  export type TransformFunction = (this: stream.Transform, chunk: FileObject, enc: BufferEncoding, callback: TransformCallback) => void;
+  export type TransformFunction = (this: stream.Transform, chunk: Vinyl, enc: BufferEncoding, callback: TransformCallback) => void;
   type FlushCallback = (this: stream.Transform, flushCallback: () => void) => void;
 
   /**
