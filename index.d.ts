@@ -29,12 +29,28 @@ declare namespace through2 {
     (opts?: stream.DuplexOptions): stream.Transform;
   }
 
-  type TransformCallback = (err?: any, data?: any) => void;
-  type TransformFunction = (this: stream.Transform, chunk: FileObject, enc: BufferEncoding, callback: TransformCallback) => void;
+  /**
+   * * `callback()` drop this data.\
+    this makes the map work like `filter`,\
+    note: `callback(null,null)` is not the same, and will emit `null`
+   * * `callback(null, newData)` turn data into newData
+   * * `callback(error)` emit an error for this item.
+   * * `callback(null,null)` emit nulled data
+   */
+  export type TransformCallback = (err?: any, data?: any) => void;
+  export type TransformFunction = (this: stream.Transform, chunk: FileObject, enc: BufferEncoding, callback: TransformCallback) => void;
   type FlushCallback = (this: stream.Transform, flushCallback: () => void) => void;
 
   /**
    * Convenvience method for creating object streams
+   * @param transform
+   * @example
+   * gulp.src('*.*').pipe(through2.obj((vinyl, encoding, callback) => {
+   *  if (vinyl.isNull() || vinyl.isStream()) return callback(); // skip null and stream object
+   *  file.contents = Buffer.from(file.contents).toString().replace('old', 'new');
+   *  this.push(file); // emit this file
+   *  callback(null, file); // emit new data
+   * }));
    */
   function obj(transform?: TransformFunction, flush?: FlushCallback): stream.Transform;
 
