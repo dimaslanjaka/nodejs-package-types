@@ -19,9 +19,6 @@
   },
   "homepage": "https://github.com/dimaslanjaka/nodejs-package-types#readme",
   "devDependencies": {
-    "@types/hexo": "file:hexo",
-    "@types/hexo-bunyan": "file:hexo-bunyan",
-    "@types/hexo-log": "file:hexo-log",
-    "@types/through2": "file:through2"
+    "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2"
   }
 }
