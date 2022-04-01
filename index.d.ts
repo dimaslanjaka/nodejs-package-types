@@ -11,14 +11,7 @@
 /// <reference types="node" />
 
 import stream = require('stream');
-import Vinyl = require('Vinyl');
-
-export type FileObject = Vinyl & {
-  [keys: string]: any;
-  path?: any;
-  base?: any;
-  contents?: any;
-}
+import Vinyl = require('vinyl');
 
 declare function through2(transform?: through2.TransformFunction, flush?: through2.FlushCallback): stream.Transform;
 declare function through2(opts?: stream.DuplexOptions, transform?: through2.TransformFunction, flush?: through2.FlushCallback): stream.Transform;
