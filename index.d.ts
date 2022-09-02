@@ -45,7 +45,9 @@ declare namespace through2 {
    *  callback(null, file); // emit new data
    * }));
    */
-  export function obj(transform?: TransformFunction, flush?: FlushCallback): stream.Transform;
+   function obj(transform?: TransformFunction, flush?: FlushCallback): stream.Transform;
+
+   export type objFunc = typeof obj;
 
   /**
    * Creates a constructor for a custom Transform. This is useful when you
