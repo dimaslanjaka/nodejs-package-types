@@ -45,7 +45,7 @@ declare namespace through2 {
    *  callback(null, file); // emit new data
    * }));
    */
-  function obj(transform?: TransformFunction, flush?: FlushCallback): stream.Transform;
+  export function obj(transform?: TransformFunction, flush?: FlushCallback): stream.Transform;
 
   /**
    * Creates a constructor for a custom Transform. This is useful when you
@@ -56,3 +56,4 @@ declare namespace through2 {
 }
 
 export = through2;
+//export default through2;
