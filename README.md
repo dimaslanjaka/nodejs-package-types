@@ -16,6 +16,8 @@ yarn add https://github.com/dimaslanjaka/nodejs-package-types.git --dev
 npm i https://github.com/dimaslanjaka/nodejs-package-types.git -D
 ```
 
+or you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or subfolder you want to install
+
 Development
 ```shell
 git submodule add https://github.com/dimaslanjaka/nodejs-package-types.git packages/@types
