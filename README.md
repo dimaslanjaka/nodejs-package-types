@@ -22,11 +22,14 @@ or you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or
 add below codes to tsconfig.json
 ```jsonc
 {
-  "typeRoots": [
-    "./node_modules/@types",
-    "./node_modules/nodejs-package-types/typings" // our types
-  ],
-  "types": ["node", "nodejs-package-types"] // our types
+  "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types",
+      "./node_modules/nodejs-package-types/typings"
+    ],
+    "types": ["node", "nodejs-package-types"]
+  }
 }
 ```
 
