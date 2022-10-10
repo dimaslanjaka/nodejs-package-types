@@ -1,5 +1,6 @@
 # nodejs-package-types
 Customized Package Types
+- @types/skelljs
 - @types/through2
 - @types/kill-port
 - @types/markdown-it-abbr
