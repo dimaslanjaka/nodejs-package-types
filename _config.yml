@@ -1,0 +1,5 @@
+plugins:
+  - jekyll-extlinks
+extlinks:
+  attributes: {rel: nofollow, target: _blank}
+  rel_exclude: ['host1.com', 'host2.net']
