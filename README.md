@@ -31,6 +31,10 @@ add below codes to `tsconfig.json` for included in vscode types
   }
 }
 ```
+or add to single file
+```ts
+import 'nodejs-package-types/typings/index';
+```
 
 Development
 ```shell
