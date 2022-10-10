@@ -21,5 +21,5 @@ gem "minima"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-github-metadata", "~> 1.0"
-   gem "jekyll-extlinks"
+   gem "jekyll-extlinks", "~> 0.0.5"
 end
