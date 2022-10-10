@@ -1,5 +1,6 @@
+email: dimaslanjaka@gmail.com
 plugins:
   - jekyll-extlinks
 extlinks:
-  attributes: {rel: nofollow, target: _blank}
-  rel_exclude: ['host1.com', 'host2.net']
+  attributes: {rel: 'nofollow noreferer noopener', target: _blank}
+  rel_exclude: ['webmanajemen.com', 'webmanajemen.online']
