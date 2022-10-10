@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>nodejs-package-types | Customized Package Types. Declare non-typed modules to be TypedStrong</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="nodejs-package-types" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Customized Package Types. Declare non-typed modules to be TypedStrong" />
+<meta property="og:description" content="Customized Package Types. Declare non-typed modules to be TypedStrong" />
+<link rel="canonical" href="http://www.webmanajemen.com/nodejs-package-types/" />
+<meta property="og:url" content="http://www.webmanajemen.com/nodejs-package-types/" />
+<meta property="og:site_name" content="nodejs-package-types" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="nodejs-package-types" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Customized Package Types. Declare non-typed modules to be TypedStrong","headline":"nodejs-package-types","name":"nodejs-package-types","url":"http://www.webmanajemen.com/nodejs-package-types/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/nodejs-package-types/assets/css/style.css?v=23a1c43dd43753223b4fcbd168a2c7ae6658ac18">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/nodejs-package-types/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="nodejs-package-types">nodejs-package-types</h1>
+<p>Customized Package Types</p>
+<ul>
+  <li>@types/skelljs</li>
+  <li>@types/through2</li>
+  <li>@types/kill-port</li>
+  <li>@types/markdown-it-abbr</li>
+  <li>@types/markdown-it-footnote</li>
+  <li>@types/markdown-it-image-figures</li>
+  <li>@types/markdown-it-mark</li>
+  <li>@types/markdown-it-sub</li>
+  <li>@types/markdown-it-sup</li>
+</ul>
+
+<p>Installation</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add https://github.com/dimaslanjaka/nodejs-package-types.git <span class="nt">--dev</span>
+<span class="c"># or</span>
+npm i https://github.com/dimaslanjaka/nodejs-package-types.git <span class="nt">-D</span>
+</code></pre></div></div>
+
+<p>or you can visit <a href="https://gitpkg.vercel.app/">GitPkg</a> and insert which branch or subfolder you want to install</p>
+
+<p>add below codes to <code class="language-plaintext highlighter-rouge">tsconfig.json</code> for included in vscode types</p>
+<div class="language-jsonc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"typeRoots"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"./node_modules/@types"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"./node_modules/nodejs-package-types/typings"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node"</span><span class="p">,</span><span class="w"> </span><span class="s2">"nodejs-package-types"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>or add to single file</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">nodejs-package-types/typings/index</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Development</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git submodule add https://github.com/dimaslanjaka/nodejs-package-types.git packages/@types
+npm i <span class="nt">-D</span> ./packages/@types/hexo
+npm i <span class="nt">-D</span> ./packages/@types/hexo-bunyan
+npm i <span class="nt">-D</span> ./packages/@types/hexo-log
+</code></pre></div></div>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/dimaslanjaka/nodejs-package-types/edit/gh-pages/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
