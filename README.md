@@ -19,13 +19,12 @@ npm i https://github.com/dimaslanjaka/nodejs-package-types.git -D
 
 or you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or subfolder you want to install
 
-add below codes to tsconfig.json
+add below codes to `tsconfig.json` for included in vscode types
 ```jsonc
 {
   "compilerOptions": {
     "typeRoots": [
       "./node_modules/@types",
-      "./src/types",
       "./node_modules/nodejs-package-types/typings"
     ],
     "types": ["node", "nodejs-package-types"]
