@@ -12,6 +12,7 @@ updates:
   ignore:
       - dependency-name: "chalk"
         versions: ["5.x"]
+      - dependency-name: "@types/node"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
