@@ -10,5 +10,14 @@
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
     "noImplicitThis": false
-  }
+  },
+  "include": [
+    "typings",
+    "hexo",
+    "skeljs",
+    "through2",
+    "hexo-log",
+    "hexo-bunyan",
+    "hexo-util"
+  ]
 }
