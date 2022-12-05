@@ -12,6 +12,9 @@ declare module 'rimraf' {
   declare const defaults: (options: any) => void;
   declare const rimraf: {
     (directory: string, fslib: typeof fs | Record<string, any>, callback: (...args: any) => any): any;
+    /**
+     * Synchronous rimraf
+     */
     sync: (directory: string, fslib: typeof fs | Record<string, any>) => void;
   };
   declare const rimraf_: (
