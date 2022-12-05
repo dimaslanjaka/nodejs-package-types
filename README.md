@@ -40,8 +40,9 @@ add below codes to `tsconfig.json` for included in vscode types
 **OR** add to single file
 ```ts
 import 'nodejs-package-types/typings/index';
-
-// or using triple slash reference
+```
+**OR** using triple slash reference at top JS or TS files
+```ts
 /// <reference types="nodejs-package-types" />
 ```
 
