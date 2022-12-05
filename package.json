@@ -46,5 +46,9 @@
     "@types/node": "^18.11.8",
     "@types/through2": "file:through2",
     "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "upath": "^2.0.1"
   }
 }
