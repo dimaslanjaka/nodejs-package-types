@@ -1,5 +1,5 @@
 # nodejs-package-types
-Customized Package Types
+Customized Package Types including:
 - @types/skelljs
 - @types/through2
 - @types/kill-port
@@ -10,7 +10,7 @@ Customized Package Types
 - @types/markdown-it-sub
 - @types/markdown-it-sup
 
-Installation
+## Installation
 yarn
 ```bash
 yarn add https://github.com/dimaslanjaka/nodejs-package-types.git --dev
