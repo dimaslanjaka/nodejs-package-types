@@ -11,13 +11,16 @@ Customized Package Types
 - @types/markdown-it-sup
 
 Installation
+yarn
 ```bash
 yarn add https://github.com/dimaslanjaka/nodejs-package-types.git --dev
-# or
+```
+npm
+```bash
 npm i https://github.com/dimaslanjaka/nodejs-package-types.git -D
 ```
 
-or you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or subfolder you want to install
+**OR** you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or subfolder you want to install
 
 ## Usages
 
@@ -33,7 +36,8 @@ add below codes to `tsconfig.json` for included in vscode types
   }
 }
 ```
-or add to single file
+
+**OR** add to single file
 ```ts
 import 'nodejs-package-types/typings/index';
 
