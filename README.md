@@ -18,11 +18,11 @@ full link: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release
 
 yarn
 ```bash
-yarn add https://bit.ly/nodejs-package-types --dev
+yarn add https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz --dev
 ```
 npm
 ```bash
-npm i https://bit.ly/nodejs-package-types -D
+npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz -D
 ```
 
 **OR** you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or subfolder you want to install
