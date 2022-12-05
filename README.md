@@ -12,13 +12,16 @@ Customized Package Types including:
 - @types/markdown-it-sup
 
 ## Installation
+short link: https://bit.ly/nodejs-package-types
+full link: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
+
 yarn
 ```bash
-yarn add https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz --dev
+yarn add https://bit.ly/nodejs-package-types --dev
 ```
 npm
 ```bash
-npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz -D
+npm i https://bit.ly/nodejs-package-types -D
 ```
 
 **OR** you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or subfolder you want to install
