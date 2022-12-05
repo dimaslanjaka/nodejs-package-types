@@ -45,7 +45,7 @@ import 'nodejs-package-types/typings/index';
 /// <reference types="nodejs-package-types" />
 ```
 
-Development
+Using at local package (development)
 ```shell
 git submodule add https://github.com/dimaslanjaka/nodejs-package-types.git packages/@types
 npm i -D ./packages/@types/hexo
