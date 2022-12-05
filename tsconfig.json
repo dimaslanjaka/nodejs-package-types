@@ -11,6 +11,8 @@
     "allowUnusedLabels": true,
     "noImplicitThis": false,
     "declaration": true,
+    "esModuleInterop": true,
+    "allowJs": true,
     "outDir": "dist"
   },
   "include": [
