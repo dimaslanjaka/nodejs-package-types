@@ -9,7 +9,9 @@
     "allowUmdGlobalAccess": true,
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
-    "noImplicitThis": false
+    "noImplicitThis": false,
+    "declaration": true,
+    "outDir": "dist"
   },
   "include": [
     "typings",

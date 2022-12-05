@@ -16,7 +16,8 @@
     "hexo-util"
   ],
   "scripts": {
-    "update": "npx npm-check-updates -u"
+    "update": "npx npm-check-updates -u",
+    "build": "node packer.js"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,9 @@
   },
   "homepage": "https://github.com/dimaslanjaka/nodejs-package-types#readme",
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.8",
-    "@types/through2": "file:through2"
+    "@types/through2": "file:through2",
+    "gulp": "^4.0.2"
   }
 }
