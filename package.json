@@ -16,8 +16,19 @@
     "type": "git",
     "url": "git+https://github.com/dimaslanjaka/nodejs-package-types.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "types",
+    "typescript",
+    "markdown-it-abbr",
+    "markdown-it-sup",
+    "markdown-it-sub",
+    "through2"
+  ],
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "name": "L3n40x",
+    "url": "https://www.webmanajemen.com/about"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dimaslanjaka/nodejs-package-types/issues"
