@@ -27,6 +27,28 @@ npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/node
 
 **OR** you can visit [GitPkg](https://gitpkg.vercel.app/) and insert which branch or subfolder you want to install
 
+## Troubleshooting
+
+error case
+```log
+npm ERR! command git --no-replace-objects ls-remote ssh://git@github.com...
+npm ERR! git@github.com: Permission denied (publickey).
+npm ERR! fatal: Could not read from remote repository.
+```
+
+dump your ssh
+```bash
+ssh -vT git@github.com
+```
+
+fix by (source: https://stackoverflow.com/a/72906559)
+```bash
+git config --global url."https://github.com/".insteadOf ssh://git@github.com/
+git config --global url."https://github.com/".insteadOf git@github.com:
+git config --global url."https://".insteadOf ssh://
+npm install --legacy-peer-deps
+```
+
 ## Usages
 
 add below codes to `tsconfig.json` for included in vscode types
