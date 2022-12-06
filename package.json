@@ -5,6 +5,7 @@
   "main": "index.js",
   "types": "typings/index.d.ts",
   "files": [
+    ".gitmodules",
     "index.js",
     "typings",
     "hexo",

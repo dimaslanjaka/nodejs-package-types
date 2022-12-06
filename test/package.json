@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node postinstall.js"
+    "xpostinstall": "node postinstall.js"
   },
   "keywords": [],
   "author": "Dimas lanjaka <dimaslanjaka@gmail.com> (http://webmanajemen.com)",
