@@ -48,7 +48,12 @@ fix by (source: https://stackoverflow.com/a/72906559)
 git config --global url."https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://github.com/".insteadOf git@github.com:
 git config --global url."https://".insteadOf ssh://
-npm install https://github.com/dimaslanjaka/nodejs-package-types/tarball/main --legacy-peer-deps
+npm install https://github.com/dimaslanjaka/nodejs-package-types.git#main --legacy-peer-deps
+```
+
+if `git` not installed properly, try installing from repository tarball (source: https://stackoverflow.com/a/32436218)
+```bash
+npm i https://github.com/dimaslanjaka/nodejs-package-types/tarball/main
 ```
 
 ## Usages
