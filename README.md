@@ -16,6 +16,8 @@ short link: https://bit.ly/nodejs-package-types
 
 full link: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
 
+repository tarball: https://github.com/dimaslanjaka/nodejs-package-types/tarball/main
+
 yarn
 ```bash
 yarn add https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz --dev
@@ -46,7 +48,7 @@ fix by (source: https://stackoverflow.com/a/72906559)
 git config --global url."https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://github.com/".insteadOf git@github.com:
 git config --global url."https://".insteadOf ssh://
-npm install --legacy-peer-deps
+npm install https://github.com/dimaslanjaka/nodejs-package-types/tarball/main --legacy-peer-deps
 ```
 
 ## Usages
