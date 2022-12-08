@@ -12,11 +12,12 @@ Customized Package Types including:
 - @types/markdown-it-sup
 
 ## Installation
-short link: https://bit.ly/nodejs-package-types
 
-full link tarball: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
-
-repository tarball: https://github.com/dimaslanjaka/nodejs-package-types/tarball/main
+| description | link |
+| :--- | :--- |
+| short link | https://bit.ly/nodejs-package-types |
+| full link tarball (recommended) | https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz |
+| repository tarball | https://github.com/dimaslanjaka/nodejs-package-types/tarball/main |
 
 yarn
 ```bash
