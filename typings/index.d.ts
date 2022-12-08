@@ -6,5 +6,7 @@ import './markdown-it-mark';
 import './markdown-it-sub';
 import './markdown-it-sup';
 import './rimraf';
+import '../hexo';
+import '../hexo-util';
 
 //
