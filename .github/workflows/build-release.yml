@@ -31,10 +31,12 @@ jobs:
       run: |
         echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
         echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        echo "GITHUB_COMMIT_URL=https://github.com/dimaslanjaka/nodejs-package-types/commit/$(echo $GITHUB_SHA)"
     - name: Get env
       run: |
-        echo "branch $GITHUB_BRANCH"
-        echo "commit hash: $GITHUB_SHA_SHORT"
+        echo "branch      : $GITHUB_BRANCH"
+        echo "commit hash : $GITHUB_SHA_SHORT"
+        echo "commit url  : $GITHUB_COMMIT_URL"
 
     - name: Push
       #if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
