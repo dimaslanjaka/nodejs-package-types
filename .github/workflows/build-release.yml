@@ -26,6 +26,10 @@ jobs:
       run: |
         npm ci
         npm run build
+    - name: Push
+      #if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      if: matrix.node-version == '18.x'
+      run: |
         git config --global user.name 'Your Name'
         git config --global user.email 'your-username@users.noreply.github.com'
         git add .
