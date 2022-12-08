@@ -26,6 +26,12 @@ jobs:
       run: |
         npm ci
         npm run build
+        
+    - name: Set env
+      run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+    - name: Get env
+      run: echo $GITHUB_SHA_SHORT
+
     - name: Push
       #if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
       if: matrix.node-version == '18.x'
