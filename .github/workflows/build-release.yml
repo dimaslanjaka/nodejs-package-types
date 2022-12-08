@@ -28,13 +28,18 @@ jobs:
         npm run build
         
     - name: Set env
-      run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+      run: |
+        echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+        echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
     - name: Get env
-      run: echo $GITHUB_SHA_SHORT
+      run: |
+        echo "branch $GITHUB_BRANCH"
+        echo "commit hash: $GITHUB_SHA_SHORT"
 
     - name: Push
       #if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
       if: matrix.node-version == '18.x'
+      continue-on-error: true
       run: |
         git config --global user.name 'Your Name'
         git config --global user.email 'your-username@users.noreply.github.com'
