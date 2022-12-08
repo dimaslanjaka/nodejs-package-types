@@ -23,7 +23,7 @@
     "@types/bluebird": "*",
     "@types/bunyan": "*",
     "@types/connect": "*",
-    "@types/hexo-util": "*",
+    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
     "@types/minimist": "*",
     "@types/underscore": "*",
     "minimist": "^1.2.5",
