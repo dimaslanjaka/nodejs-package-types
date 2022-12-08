@@ -31,7 +31,7 @@ jobs:
       run: |
         echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
         echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-        echo "GITHUB_COMMIT_URL=https://github.com/dimaslanjaka/nodejs-package-types/commit/$(echo $GITHUB_SHA)"
+        echo "GITHUB_COMMIT_URL=https://github.com/dimaslanjaka/nodejs-package-types/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
     - name: Get env
       run: |
         echo "branch      : $GITHUB_BRANCH"
