@@ -16,7 +16,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with: 
+        repository: dimaslanjaka/nodejs-package-types
+        token: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Pull & update submodules recursively
+      run: |
+        git submodule update --init --recursive
+        git submodule update --recursive --remote
+        
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
