@@ -3,3 +3,5 @@
 /// <reference path="./typings/index.d.ts" />
 /// <reference path="./hexo/index.d.ts" />
 /// <reference path="./hexo-util/dist/index.d.ts" />
+/// <reference path="./hexo-log/dist/index.d.ts" />
+/// <reference path="./hexo-bunyan/dist/index.d.ts" />
