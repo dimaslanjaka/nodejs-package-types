@@ -14,7 +14,7 @@ Customized Package Types including:
 ## Installation
 short link: https://bit.ly/nodejs-package-types
 
-full link: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
+full link tarball: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
 
 repository tarball: https://github.com/dimaslanjaka/nodejs-package-types/tarball/main
 
