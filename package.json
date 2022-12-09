@@ -7,7 +7,8 @@
   "types": "typings/index.d.ts",
   "files": [
     ".gitmodules",
-    "index.js",
+    "*.js",
+    "*.json",
     "typings",
     "hexo",
     "skeljs",
@@ -44,6 +45,7 @@
   "homepage": "https://github.com/dimaslanjaka/nodejs-package-types#readme",
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
+    "@types/gulp": "^4.0.10",
     "@types/node": "^18.11.12",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
