@@ -8,9 +8,9 @@ const packagejson = require('./package.json');
 const crypto = require('crypto');
 
 // auto create tarball (tgz) on release folder
-// raw            : https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
-// github         : https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/packer.js
-// update         : curl -L https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js > packer.js
+// raw            : https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js
+// github         : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/packer.js
+// update         : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js
 // usage          : node packer.js
 // github actions : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
 
@@ -150,7 +150,7 @@ npm i https://....url-tgz
 \`\`\`
 for example
 \`\`\`bash
-npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-sbg/release/static-blog-generator.tgz
+npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
 \`\`\`
 
 ## URL Parts Explanations
