@@ -5,11 +5,11 @@ const { spawn } = require('cross-spawn');
 
 // postinstall scripts
 // run this script after `npm install`
-// requirements	: npm i -D cross-spawn upath
-// update				: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-// repo					: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
-// raw					: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
-// usages				: node postinstall.js
+// required	: npm i -D cross-spawn && npm i upath
+// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
+// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
+// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
+// usages		: node postinstall.js
 
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');

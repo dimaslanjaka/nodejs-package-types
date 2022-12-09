@@ -5,11 +5,11 @@ const path = require('upath');
 
 // preinstall scripts
 // run this script before `npm install`
-// requirements : npm i -D cross-spawn && npm i upath
-// update       : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/preinstall.js > preinstall.js
-// repo         : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/preinstall.js
-// raw          : https://github.com/dimaslanjaka/nodejs-package-types/raw/main/preinstall.js
-// usages       : node preinstall.js
+// required	: npm i -D cross-spawn && npm i upath
+// update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/preinstall.js > preinstall.js
+// repo     : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/preinstall.js
+// raw      : https://github.com/dimaslanjaka/nodejs-package-types/raw/main/preinstall.js
+// usages   : node preinstall.js
 
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
