@@ -40,6 +40,7 @@ child.on('exit', function () {
     return new Promise(function (resolve) {
       let hashes = {};
       const metafile = join(releaseDir, 'metadata.json');
+      // read old meta
       if (existsSync(metafile)) {
         hashes = JSON.parse(readFileSync(metafile, 'utf-8'));
       }
