@@ -55,7 +55,7 @@ jobs:
 
       - name: Push
         #if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        if: matrix.node-version == '18.x'
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
         continue-on-error: true
         run: |
           git config --global user.name 'github-actions[bot]'
