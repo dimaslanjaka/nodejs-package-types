@@ -4,11 +4,11 @@ const fs = require('fs');
 const path = require('upath');
 
 // preinstall scripts
-// run this script after `npm install`
-// requirements : npm i -D cross-spawn upath
-// update       : curl -L https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/preinstall.js > preinstall.js
-// repo         : https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/preinstall.js
-// raw          : https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/preinstall.js
+// run this script before `npm install`
+// requirements : npm i -D cross-spawn && npm i upath
+// update       : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/preinstall.js > preinstall.js
+// repo         : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/preinstall.js
+// raw          : https://github.com/dimaslanjaka/nodejs-package-types/raw/main/preinstall.js
 // usages       : node preinstall.js
 
 // cache file
