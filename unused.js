@@ -5,9 +5,10 @@ const { writeFileSync } = require('fs');
 const { join } = require('path');
 
 // Check dependencies using depcheck
-// repo   : https://github.com/dimaslanjaka/hexo-seo/blob/master/unused.js
-// raw    : https://raw.githubusercontent.com/dimaslanjaka/hexo-seo/master/unused.js
-// update : curl -L https://raw.githubusercontent.com/dimaslanjaka/hexo-seo/master/unused.js > unused.js
+// required : npm i -D depcheck
+// repo     : https://github.com/dimaslanjaka/hexo-seo/blob/master/unused.js
+// raw      : https://raw.githubusercontent.com/dimaslanjaka/hexo-seo/master/unused.js
+// update   : curl -L https://raw.githubusercontent.com/dimaslanjaka/hexo-seo/master/unused.js > unused.js
 
 const options = {
   ignoreBinPackage: false, // ignore the packages with bin entry
