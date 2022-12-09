@@ -10,12 +10,12 @@
     "*.js",
     "*.json",
     "typings",
-    "hexo",
-    "skeljs",
-    "through2",
-    "hexo-log",
-    "hexo-bunyan",
-    "hexo-util"
+    "hexo/**/*.{js,ts,json,md}",
+    "skeljs/**/*.{js,ts,json,md}",
+    "through2/**/*.{js,ts,json,md}",
+    "hexo-log/**/*.{js,ts,json,md}",
+    "hexo-bunyan/**/*.{js,ts,json,md}",
+    "hexo-util/**/*.{js,ts,json,md}"
   ],
   "scripts": {
     "update": "npx npm-check-updates -u && npm install",
