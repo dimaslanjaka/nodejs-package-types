@@ -3,9 +3,10 @@ const { spawn } = require('cross-spawn');
 const { readdirSync, createReadStream, readFileSync } = require('fs');
 const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
 const GulpClient = require('gulp');
-const { join, dirname } = require('upath');
+const { join, dirname, toUnix } = require('upath');
 const packagejson = require('./package.json');
 const crypto = require('crypto');
+// const os = require('os');
 
 // auto create tarball (tgz) on release folder
 // raw            : https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js
@@ -42,7 +43,7 @@ child.on('exit', function () {
       const metafile = join(releaseDir, 'metadata.json');
       // read old meta
       if (existsSync(metafile)) {
-        hashes = JSON.parse(readFileSync(metafile, 'utf-8'));
+        hashes = Object.assign(hashes, JSON.parse(readFileSync(metafile, 'utf-8')));
       }
       let pkglock = [join(__dirname, 'package-lock.json'), join(__dirname, 'yarn.lock')].filter((str) =>
         existsSync(str)
@@ -67,7 +68,7 @@ child.on('exit', function () {
         sha1(file)
           .then((hash) => {
             hashes = Object.assign({}, hashes, {
-              [file]: {
+              [toUnix(file).replace(toUnix(__dirname), '')]: {
                 hash
               }
             });
@@ -79,6 +80,7 @@ child.on('exit', function () {
             if (index === all.length - 1) {
               //console.log("Last callback call at index " + index + " with value " + file);
 
+              //hashes = { [os.type()]: { [os.arch()]: hashes } };
               writeFileSync(metafile, JSON.stringify(hashes, null, 2));
               console.log(hashes);
 
