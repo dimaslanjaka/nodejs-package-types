@@ -1,14 +1,14 @@
 {
-  "D:/Repositories/nodejs-package-types/release/nodejs-package-types-1.1.0.tgz": {
+  "/home/runner/work/nodejs-package-types/nodejs-package-types/release/nodejs-package-types-1.1.0.tgz": {
     "hash": "bd80c067927fc5327c14050aee09e78ff168ba40"
   },
-  "D:/Repositories/nodejs-package-types/release/nodejs-package-types-1.1.1.tgz": {
-    "hash": "8cc82383f199a8f1cfcabd92dce3bbcafd0608d7"
+  "/home/runner/work/nodejs-package-types/nodejs-package-types/release/nodejs-package-types-1.1.1.tgz": {
+    "hash": "84201aeaa5747817f18701ffd993889f9d0ac686"
   },
-  "D:/Repositories/nodejs-package-types/release/nodejs-package-types.tgz": {
-    "hash": "8cc82383f199a8f1cfcabd92dce3bbcafd0608d7"
+  "/home/runner/work/nodejs-package-types/nodejs-package-types/release/nodejs-package-types.tgz": {
+    "hash": "84201aeaa5747817f18701ffd993889f9d0ac686"
   },
-  "D:/Repositories/nodejs-package-types/package-lock.json": {
+  "/home/runner/work/nodejs-package-types/nodejs-package-types/package-lock.json": {
     "hash": "779433a3643f951281f36a553a772a14e8d27fe7"
   }
 }
