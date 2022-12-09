@@ -13,6 +13,8 @@ Customized Package Types including:
 
 ## Installation
 
+> Using tarball is useful for git which not installed properly
+
 | description | link |
 | :--- | :--- |
 | short link | https://bit.ly/nodejs-package-types |
