@@ -99,11 +99,11 @@ child.on('exit', function () {
         getPackageHashes().then((hashes) => {
           writeFileSync(join(releaseDir, 'metadata.json'), JSON.stringify(hashes, null, 2));
           console.log(hashes);
-        });
 
-        console.log('='.repeat(20));
-        console.log('= packing finished =');
-        console.log('='.repeat(20));
+          console.log('='.repeat(20));
+          console.log('= packing finished =');
+          console.log('='.repeat(20));
+        });
       });
   }
 });
