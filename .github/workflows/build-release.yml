@@ -1,9 +1,9 @@
 name: Build Release
 
 # automated packer.js
-# repo:
-# raw:
-# update
+# repo    : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
+# raw     :
+# update  :
 
 on:
   push:
