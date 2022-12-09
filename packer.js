@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
-const { readdirSync, createReadStream } = require('fs');
+const { readdirSync, createReadStream, readFileSync } = require('fs');
 const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
@@ -38,7 +38,11 @@ child.on('exit', function () {
 
   const getPackageHashes = function () {
     return new Promise(function (resolve) {
-      let data = {};
+      let hashes = {};
+      const metafile = join(releaseDir, 'metadata.json');
+      if (existsSync(metafile)) {
+        hashes = JSON.parse(readFileSync(metafile, 'utf-8'));
+      }
       let pkglock = [join(__dirname, 'package-lock.json'), join(__dirname, 'yarn.lock')].filter((str) =>
         existsSync(str)
       )[0];
@@ -61,7 +65,7 @@ child.on('exit', function () {
 
         sha1(file)
           .then((hash) => {
-            data = Object.assign({}, data, {
+            hashes = Object.assign({}, hashes, {
               [file]: {
                 hash
               }
@@ -73,7 +77,11 @@ child.on('exit', function () {
           .finally(() => {
             if (index === all.length - 1) {
               //console.log("Last callback call at index " + index + " with value " + file);
-              resolve(data);
+
+              writeFileSync(metafile, JSON.stringify(hashes, null, 2));
+              console.log(hashes);
+
+              resolve(hashes);
             }
           });
       });
@@ -96,10 +104,7 @@ child.on('exit', function () {
         if (existsSync(tgz)) rmSync(tgz);
 
         // write hashes info
-        getPackageHashes().then((hashes) => {
-          writeFileSync(join(releaseDir, 'metadata.json'), JSON.stringify(hashes, null, 2));
-          console.log(hashes);
-
+        getPackageHashes().then(function () {
           console.log('='.repeat(20));
           console.log('= packing finished =');
           console.log('='.repeat(20));
