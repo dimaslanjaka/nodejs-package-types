@@ -56,15 +56,6 @@ child.on('exit', function () {
         readDir.push(pkglock);
       }
       readDir.forEach((file, index, all) => {
-        const sha1 = (path) =>
-          new Promise((resolve, reject) => {
-            const hash = crypto.createHash('sha1');
-            const rs = createReadStream(path);
-            rs.on('error', reject);
-            rs.on('data', (chunk) => hash.update(chunk));
-            rs.on('end', () => resolve(hash.digest('hex')));
-          });
-
         sha1(file)
           .then((hash) => {
             hashes = Object.assign({}, hashes, {
@@ -165,4 +156,14 @@ npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/node
 > https://github.com/github-username/github-repo-name/raw/github-branch-name/path-to-file-with-extension
   `.trim()
   );
+}
+
+function sha1(path) {
+  return new Promise((resolve, reject) => {
+    const hash = crypto.createHash('sha1');
+    const rs = createReadStream(path);
+    rs.on('error', reject);
+    rs.on('data', (chunk) => hash.update(chunk));
+    rs.on('end', () => resolve(hash.digest('hex')));
+  });
 }
