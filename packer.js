@@ -1,15 +1,11 @@
 /* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
-const {
-  existsSync,
-  renameSync,
-  rmSync,
-  mkdirpSync,
-  writeFileSync
-} = require('fs-extra');
+const { readdirSync, createReadStream } = require('fs');
+const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
+const crypto = require('crypto');
 
 // auto create tarball (tgz) on release folder
 // raw: https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
@@ -33,15 +29,55 @@ child.on('exit', function () {
   const tgz = join(__dirname, filename);
 
   if (!existsSync(tgz)) {
-    const filename2 = slugifyPkgName(
-      `${packagejson.name}-${packagejson.version}.tgz`
-    );
+    const filename2 = slugifyPkgName(`${packagejson.name}-${packagejson.version}.tgz`);
     const origintgz = join(__dirname, filename2);
     renameSync(origintgz, tgz);
   }
   const tgzlatest = join(releaseDir, slugifyPkgName(`${packagejson.name}.tgz`));
 
-  console.log({ tgz, tgzlatest });
+  const getPackageHashes = function () {
+    return new Promise(function (resolve) {
+      let data = {};
+      let pkglock = [join(__dirname, 'package-lock.json'), join(__dirname, 'yarn.lock')].filter((str) =>
+        existsSync(str)
+      )[0];
+      const readDir = readdirSync(releaseDir)
+        .filter((path) => path.endsWith('tgz'))
+        .map((path) => join(releaseDir, path));
+
+      if (typeof pkglock === 'string' && existsSync(pkglock)) {
+        readDir.push(pkglock);
+      }
+      readDir.forEach((file, index, all) => {
+        const sha1 = (path) =>
+          new Promise((resolve, reject) => {
+            const hash = crypto.createHash('sha1');
+            const rs = createReadStream(path);
+            rs.on('error', reject);
+            rs.on('data', (chunk) => hash.update(chunk));
+            rs.on('end', () => resolve(hash.digest('hex')));
+          });
+
+        sha1(file)
+          .then((hash) => {
+            data = Object.assign({}, data, {
+              [file]: {
+                hash
+              }
+            });
+          })
+          .catch((err) => {
+            throw new Error(err);
+          })
+          .finally(() => {
+            if (index === all.length - 1) {
+              //console.log("Last callback call at index " + index + " with value " + file);
+              resolve(data);
+            }
+          });
+      });
+    });
+  };
 
   if (!existsSync(dirname(tgzlatest))) {
     mkdirpSync(dirname(tgzlatest));
@@ -57,6 +93,13 @@ child.on('exit', function () {
         renameSync(tgz, tgzlatest);
         addReadMe();
         if (existsSync(tgz)) rmSync(tgz);
+
+        // write hashes info
+        getPackageHashes().then((hashes) => {
+          writeFileSync(join(releaseDir, 'metadata.json'), JSON.stringify(hashes, null, 2));
+          console.log(hashes);
+        });
+
         console.log('='.repeat(20));
         console.log('= packing finished =');
         console.log('='.repeat(20));
