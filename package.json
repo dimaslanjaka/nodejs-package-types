@@ -58,10 +58,5 @@
   "dependencies": {
     "fs-extra": "^11.1.0",
     "upath": "^2.0.1"
-  },
-  "optionalDependencies": {
-    "glob-parent": "^6.0.2",
-    "node.extend": "^2.0.2",
-    "uuid": "^9.0.0"
   }
 }
