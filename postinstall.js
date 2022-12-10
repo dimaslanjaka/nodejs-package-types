@@ -115,10 +115,12 @@ const saveCache = (data) =>
           }
         }
         // yarn cache clean
-        await summon('yarn', ['cache', 'clean'], {
-          cwd: __dirname,
-          stdio: 'inherit'
-        });
+        if (toUpdate.find((str) => str.startsWith('file:'))) {
+          await summon('yarn', ['cache', 'clean'], {
+            cwd: __dirname,
+            stdio: 'inherit'
+          });
+        }
         // yarn upgrade package
         await summon('yarn', ['upgrade'].concat(...toUpdate), {
           cwd: __dirname,
@@ -126,10 +128,12 @@ const saveCache = (data) =>
         });
       } else {
         // npm cache clean package
-        await summon('npm', ['cache', 'clean'].concat(...toUpdate), {
-          cwd: __dirname,
-          stdio: 'inherit'
-        });
+        if (toUpdate.find((str) => str.startsWith('file:'))) {
+          await summon('npm', ['cache', 'clean'].concat(...toUpdate), {
+            cwd: __dirname,
+            stdio: 'inherit'
+          });
+        }
         // npm update package
         await summon('npm', ['update'].concat(...toUpdate), {
           cwd: __dirname,
