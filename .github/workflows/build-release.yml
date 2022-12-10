@@ -3,7 +3,7 @@ name: Build Release
 # automated packer.js
 # repo    : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
 # raw     : https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml
-# update  : curl https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml > .github/workflow/build-release.yml
+# update  : curl -L https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml > .github/workflow/build-release.yml
 
 on:
   push:
