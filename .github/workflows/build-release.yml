@@ -68,7 +68,12 @@ jobs:
             $CACHE_NPM
             $CACHE_YARN
             $CACHE_YARN2
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          # ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ matrix.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: |
+            ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-
+            ${{ runner.os }}-${{ matrix.node-version }}-
+            ${{ runner.os }}-
 
       - name: Build
         run: |
