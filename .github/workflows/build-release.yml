@@ -50,10 +50,6 @@ jobs:
           echo "cache yarn  : $CACHE_YARN"
           echo "cache yarn2 : $CACHE_YARN2"
 
-      - run: mkdir undefined
-        continue-on-error: true
-        name: Create undefined folder for cache variables
-
       - name: Pull & update submodules recursively
         run: |
           git submodule update --init --recursive
