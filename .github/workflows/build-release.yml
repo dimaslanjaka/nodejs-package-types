@@ -63,6 +63,7 @@ jobs:
         run: corepack enable
 
       - uses: actions/cache@v3
+        id: cache
         with:
           path: |
             $CACHE_NPM
@@ -74,6 +75,11 @@ jobs:
             ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-
             ${{ runner.os }}-${{ matrix.node-version }}-
             ${{ runner.os }}-
+
+      - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
 
       - name: Build
         run: |
