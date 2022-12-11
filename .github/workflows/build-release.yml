@@ -70,7 +70,7 @@ jobs:
         id: cache
         with:
           path: |
-            ${{ CACHE_NPM }}
+            ${{ echo $CACHE_NPM }}
           # ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ matrix.os }}-${{ hashFiles('**/package-lock.json') }}
           key: |
             ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
