@@ -27,6 +27,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set env
+        id: set-env
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
           echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
@@ -35,6 +36,9 @@ jobs:
           echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_ENV
           echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
           echo "CACHE_YARN2=$(yarn config get cacheFolder)" >> $GITHUB_ENV
+          echo "cache-npm=$CACHE_NPM" >> $GITHUB_OUTPUT
+          echo "cache-yarn=$CACHE_NPM" >> $GITHUB_OUTPUT
+          echo "cache-yarn2=$CACHE_NPM" >> $GITHUB_OUTPUT
 
       - name: Get env
         run: |
@@ -68,11 +72,9 @@ jobs:
 
       - uses: actions/cache@v3
         id: cache
-        env:
-          npm_cache: $CACHE_NPM
         with:
           path: |
-            ${{ env.npm_cache }}
+            ${{ steps.run_tests.outputs.cache-npm }}
           # ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ matrix.os }}-${{ hashFiles('**/package-lock.json') }}
           key: |
             ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
