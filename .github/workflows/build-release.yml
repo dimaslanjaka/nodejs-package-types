@@ -76,15 +76,16 @@ jobs:
             ${{ runner.os }}-${{ matrix.node-version }}-
             ${{ runner.os }}-
 
+      - name: Install
+        run: npm install --legacy-peer-deps
+
       - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
         name: List the state of node modules
         continue-on-error: true
         run: npm list
 
       - name: Build
-        run: |
-          npm install
-          npm run build
+        run: npm run build
 
       - name: Git setup user email
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
