@@ -68,9 +68,11 @@ jobs:
 
       - uses: actions/cache@v3
         id: cache
+        env:
+          npm_cache: $CACHE_NPM
         with:
           path: |
-            ${{ echo $CACHE_NPM }}
+            ${{ env.npm_cache }}
           # ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ matrix.os }}-${{ hashFiles('**/package-lock.json') }}
           key: |
             ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
