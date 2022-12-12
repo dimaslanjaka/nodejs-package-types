@@ -8,9 +8,15 @@ name: Build Release
 on:
   push:
     branches: [ "master", "main" ]
+    paths-ignore:
+      - '**/*.tgz'
+      - '**/*.gz'
   pull_request:
     types:
       - closed
+    paths-ignore:
+      - '**/*.tgz'
+      - '**/*.gz'
   workflow_dispatch:
 
 jobs:
