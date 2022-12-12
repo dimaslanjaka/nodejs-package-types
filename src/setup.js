@@ -7,6 +7,10 @@ function setup() {
   if (!fs.existsSync(packer)) {
     download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/packer.js', packer);
   }
+  const packerGithubActions = path.join(process.cwd(), '.github/workflows/build-release.yml');
+  if (!fs.existsSync(packerGithubActions)) {
+    download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml', packerGithubActions);
+  }
 }
 
 function download(url, output) {
