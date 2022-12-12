@@ -4,10 +4,11 @@ const axios = require('axios')
 
 const packer = path.join(process.cwd(), 'packer.js');
 
-if (!fs.existsSync(packer)) {
-  download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/packer.js', packer);
+function setup() {
+  if (!fs.existsSync(packer)) {
+    download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/packer.js', packer);
+  }
 }
-
 
 function download(url, output) {
   axios.get(url, {responseType: 'blob'}).then(response => {
@@ -17,3 +18,5 @@ function download(url, output) {
     });
   });
 }
+
+module.exports = { setup }
