@@ -2,13 +2,13 @@ const fs = require('fs');
 const path = require('path')
 const axios = require('axios')
 
-function setup() {
+function setup(force = false) {
   const packer = path.join(process.cwd(), 'packer.js');
-  if (!fs.existsSync(packer)) {
+  if (!fs.existsSync(packer) || force) {
     download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/packer.js', packer);
   }
   const packerGithubActions = path.join(process.cwd(), '.github/workflows/build-release.yml');
-  if (!fs.existsSync(packerGithubActions)) {
+  if (!fs.existsSync(packerGithubActions) || force) {
     download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml', packerGithubActions);
   }
 }
