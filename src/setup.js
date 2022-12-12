@@ -2,9 +2,8 @@ const fs = require('fs');
 const path = require('path')
 const axios = require('axios')
 
-const packer = path.join(process.cwd(), 'packer.js');
-
 function setup() {
+  const packer = path.join(process.cwd(), 'packer.js');
   if (!fs.existsSync(packer)) {
     download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/packer.js', packer);
   }
