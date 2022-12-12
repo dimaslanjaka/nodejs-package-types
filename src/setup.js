@@ -2,15 +2,15 @@ const fs = require('fs');
 const path = require('path')
 const axios = require('axios')
 
-function setup(force = false) {
-  const packer = path.join(process.cwd(), 'packer.js');
-  if (!fs.existsSync(packer) || force) {
-    download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/packer.js', packer);
-  }
-  const packerGithubActions = path.join(process.cwd(), '.github/workflows/build-release.yml');
-  if (!fs.existsSync(packerGithubActions) || force) {
-    download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml', packerGithubActions);
-  }
+function setup(options = { force: false, includes: ['packer', 'postinstall', 'preinstall', '.github/workflows/build-release.yml'] }) {
+  const { includes } = options;
+  includes.forEach(downloadPath => {
+    const dPath = !downloadPath.endsWith('.js') ? downloadPath + '.js' : downloadPath
+    const packer = path.join(process.cwd(), dPath);
+    if (!fs.existsSync(packer) || options.force) {
+      download('https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/'+dPath, path.join(process.cwd(), dPath));
+    }
+  }); 
 }
 
 function download(url, output) {
