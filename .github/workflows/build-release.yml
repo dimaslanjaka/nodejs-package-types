@@ -11,10 +11,12 @@ on:
     paths-ignore:
       - '**/*.tgz'
       - '**/*.gz'
+      - '**/release/**'
   pull_request:
     types:
       - closed
     paths-ignore:
+      - '**/release/**'
       - '**/*.tgz'
       - '**/*.gz'
   workflow_dispatch:
