@@ -73,7 +73,7 @@ add below codes to `tsconfig.json` for included in vscode types
   }
 }
 ```
-**OR** just include the types
+**OR** just include the types to `tsconfig.json`
 ```jsonc
 {
   "compilerOptions": {
