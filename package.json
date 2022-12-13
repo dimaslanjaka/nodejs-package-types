@@ -49,7 +49,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/gulp": "^4.0.10",
     "@types/node": "^18.11.12",
-    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.0",
     "cross-spawn": "^7.0.3",
     "depcheck": "^1.4.3",
