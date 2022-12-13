@@ -64,11 +64,11 @@ jobs:
 
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#improving-cache-restore-performance-on-windows-using-cross-os-caching
       - if: ${{ runner.os == 'Windows' }}
-        name: Use GNU tar
-        shell: cmd
+        name: Use GNU tar 
         run: |
           echo "Adding GNU tar to PATH"
           echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+        shell: cmd
 
       - name: Set env
         id: set-env
@@ -87,6 +87,7 @@ jobs:
       - name: Get env
         run: |
           echo "branch      : $GITHUB_BRANCH"
+          echo "commit msg  : ${{ github.event.head_commit.message }}"
           echo "commit hash : $GITHUB_SHA_SHORT"
           echo "commit url  : $GITHUB_COMMIT_URL"
           echo "runner url  : $GITHUB_RUNNER_URL"
