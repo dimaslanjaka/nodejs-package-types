@@ -73,6 +73,14 @@ add below codes to `tsconfig.json` for included in vscode types
   }
 }
 ```
+**OR** just include the types
+```jsonc
+{
+  "compilerOptions": {
+    "types": ["nodejs-package-types"]
+  }
+}
+```
 
 **OR** add to single file
 ```ts
