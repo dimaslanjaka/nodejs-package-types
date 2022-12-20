@@ -22,12 +22,12 @@
     "build": "node packer.js"
   },
   "dependencies": {
-    "@types/bluebird": "*",
+    "@types/bluebird": "^3.5.38",
     "@types/bunyan": "*",
-    "@types/connect": "*",
+    "@types/connect": "^3.4.35",
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
-    "@types/minimist": "*",
-    "@types/underscore": "*",
+    "@types/minimist": "^1.2.2",
+    "@types/underscore": "^1.11.4",
     "fs-extra": "^11.1.0",
     "minimist": "^1.2.5",
     "moment": "^2.19.4",
