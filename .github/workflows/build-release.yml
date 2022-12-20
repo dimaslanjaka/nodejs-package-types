@@ -90,9 +90,9 @@ jobs:
           echo "commit hash : ${{ env.GITHUB_SHA_SHORT }}"
           echo "commit url  : ${{ env.GITHUB_COMMIT_URL }}"
           echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"
-          echo "cache npm   : $CACHE_NPM"
-          echo "cache yarn  : $CACHE_YARN"
-          echo "cache yarn2 : $CACHE_YARN2"
+          echo "cache npm   : ${{ env.CACHE_NPM }}"
+          echo "cache yarn  : ${{ env.CACHE_YARN }}"
+          echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
  
       - name: Pull & update submodules recursively
         run: |
