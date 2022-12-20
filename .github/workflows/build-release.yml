@@ -31,7 +31,7 @@ jobs:
     
     runs-on: ${{ matrix.os }}
 
-    name: Node ${{ matrix.node-version }} - ${{ join(matrix.*, ' - ') }}-${{ matrix.architecture }}
+    name: Node ${{ matrix.node-version }} - ${{ matrix.os//-latest }}-${{ matrix.architecture }}
     steps:
       - uses: actions/checkout@v3
         with:
