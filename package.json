@@ -41,10 +41,16 @@
         "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
         "directory": "types/through2"
     },
-    "scripts": {},
+    "scripts": {
+        "build": "node packer.js"
+    },
     "dependencies": {
         "@types/node": "^12.x",
-        "@types/vinyl": "^2.0.6"
+        "@types/vinyl": "^2.0.6",
+        "cross-spawn": "^7.0.3",
+        "fs-extra": "^11.1.0",
+        "gulp": "^4.0.2",
+        "upath": "^2.0.1"
     },
     "typesPublisherContentHash": "2a4c35d2e75dcb619fd676b6dde1bd1455dc3654b0da10183b445c19a2cede2b",
     "typeScriptVersion": "3.0"
