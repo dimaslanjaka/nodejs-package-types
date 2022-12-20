@@ -85,11 +85,11 @@ jobs:
 
       - name: Get env
         run: |
-          echo "branch      : $GITHUB_BRANCH"
+          echo "branch      : ${{ env.GITHUB_BRANCH }}"
           echo "commit msg  : ${{ github.event.head_commit.message }}"
-          echo "commit hash : $GITHUB_SHA_SHORT"
-          echo "commit url  : $GITHUB_COMMIT_URL"
-          echo "runner url  : $GITHUB_RUNNER_URL"
+          echo "commit hash : ${{ env.GITHUB_SHA_SHORT }}"
+          echo "commit url  : ${{ env.GITHUB_COMMIT_URL }}"
+          echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"
           echo "cache npm   : $CACHE_NPM"
           echo "cache yarn  : $CACHE_YARN"
           echo "cache yarn2 : $CACHE_YARN2"
