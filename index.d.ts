@@ -47,6 +47,11 @@ export interface Model<T> {
    * https://hexojs.github.io/warehouse/
    */
   map<U>(fn: (v: T, i: number) => U): U[];
+  /**
+   * Warehouse method
+   * https://hexojs.github.io/warehouse/
+   */
+  sort(by:string): Model<T>;
 }
 
 interface Site {
