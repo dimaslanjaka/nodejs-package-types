@@ -6,12 +6,12 @@
     "hash": "84201aeaa5747817f18701ffd993889f9d0ac686"
   },
   "/release/nodejs-package-types-1.1.2.tgz": {
-    "hash": "bc1dde15e2de2ac2f13721ecdbd19ec7e8ae7777"
+    "hash": "b5a8ec9b8393191fad5460beb805cfeeb384074c"
   },
   "/release/nodejs-package-types.tgz": {
-    "hash": "bc1dde15e2de2ac2f13721ecdbd19ec7e8ae7777"
+    "hash": "b5a8ec9b8393191fad5460beb805cfeeb384074c"
   },
   "/package-lock.json": {
-    "hash": "93f1302b7971eac1af93840ffbbeba586cbb5492"
+    "hash": "dab18a00d00446517424d31447e5e065230e0a58"
   }
 }
