@@ -24,34 +24,53 @@ declare global {
 export interface Model<T> {
   /**
    * Warehouse method
-   * https://hexojs.github.io/warehouse/
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
    */
   toArray(): T[];
   /**
    * Warehouse method
-   * https://hexojs.github.io/warehouse/
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
    */
   count(): number;
   /**
    * Warehouse method
-   * https://hexojs.github.io/warehouse/
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
    */
   forEach(fn: (v: T, i: number) => void): void;
   /**
    * Warehouse method
-   * https://hexojs.github.io/warehouse/
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
    */
   filter(fn: (v: T, i: number) => boolean): Model<T>;
   /**
    * Warehouse method
-   * https://hexojs.github.io/warehouse/
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
    */
   map<U>(fn: (v: T, i: number) => U): U[];
   /**
    * Warehouse method
-   * https://hexojs.github.io/warehouse/
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
    */
   sort(by: string): Model<T>;
+  /**
+   * Warehouse method
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
+   */
+  reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T): T;
+  reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue: T): T;
+  /**
+   * Warehouse method
+   * * homepage: https://hexojs.github.io/warehouse/
+   * * model: https://hexojs.github.io/warehouse/classes/model.Model.html
+   */
+  reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
 }
 
 interface Site {
