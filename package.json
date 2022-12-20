@@ -6,9 +6,11 @@
   "main": "index.js",
   "types": "typings/index.d.ts",
   "files": [
+    ".github",
     ".gitmodules",
     "*.js",
     "*.json",
+    "src",
     "typings",
     "hexo/**/*.{js,ts,json,md}",
     "skeljs/**/*.{js,ts,json,md}",
