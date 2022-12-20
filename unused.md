@@ -43,6 +43,9 @@
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
+    ],
+    "axios": [
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ]
   },
   "using": {
@@ -87,6 +90,9 @@
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
+    ],
+    "axios": [
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ]
   },
   "invalidFiles": {},
