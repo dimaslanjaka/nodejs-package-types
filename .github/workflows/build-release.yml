@@ -72,6 +72,7 @@ jobs:
       - name: Set env
         id: set-env
         run: |
+          chcp 65001 #set code page to utf-8
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
           echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
