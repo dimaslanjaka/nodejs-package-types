@@ -19,6 +19,7 @@ on:
       - '**/release/**'
       - '**/*.tgz'
       - '**/*.gz'
+      - '**/test*/**'
   workflow_dispatch:
 
 jobs:
