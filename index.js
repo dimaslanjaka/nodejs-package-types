@@ -9,4 +9,4 @@
 
 const setup = require('./src/setup');
 
-module.exports = { setup };
+module.exports = setup;
