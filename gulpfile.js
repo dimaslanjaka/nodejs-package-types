@@ -1,8 +1,22 @@
 const { writeFile } = require('fs/promises');
+const { spawn } = require('hexo-util');
 const { join } = require('path');
 const pkgjson = require('./package.json');
 
-exports.default = function (done) {
+/**
+ * build project main types
+ */
+const build = async function (done) {
+  try {
+    await spawn('tsc', ['-p', 'tsconfig.project.json'], { cwd: __dirname });
+    return done();
+  } catch {
+    //
+  }
+};
+
+exports.default = async function (done) {
+  await build();
   const tslint = {
     extends: '@definitelytyped/dtslint/dt.json',
     rules: {

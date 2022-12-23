@@ -70,6 +70,9 @@
     "eslint": [
       "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
     ],
+    "hexo-util": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",

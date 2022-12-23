@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "typings/main",
+    "declarationDir": "tmp/typings/main",
     "allowJs": true,
     "emitDeclarationOnly": true,
   },
