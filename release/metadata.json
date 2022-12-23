@@ -4,5 +4,11 @@
   },
   "/package-lock.json": {
     "hash": "739e9cc5b9d0489add82724c954d6fa0cdac7f92"
+  },
+  "/release/types-hexo-3.8.9.tgz": {
+    "hash": "87dd219a66be942d4262023b0001dc4809b33e35"
+  },
+  "/release/types-hexo.tgz": {
+    "hash": "87dd219a66be942d4262023b0001dc4809b33e35"
   }
 }
