@@ -1,5 +1,6 @@
 const { mkdirp } = require('fs-extra');
 const { writeFile } = require('fs/promises');
+const gulp = require('gulp');
 const { spawn } = require('hexo-util');
 const { join } = require('path');
 const pkgjson = require('./package.json');
@@ -10,6 +11,7 @@ const pkgjson = require('./package.json');
 const build = async function (done) {
   try {
     await spawn('tsc', ['-p', 'tsconfig.project.json'], { cwd: __dirname });
+    gulp.src('*.*', { cwd: join(__dirname, 'tmp/typings/main') }).pipe(gulp.dest(join(__dirname, 'typings/main')));
     return done();
   } catch {
     //
