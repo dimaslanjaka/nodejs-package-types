@@ -59,7 +59,7 @@ child.on('exit', function () {
         sha1(file)
           .then((hash) => {
             const stat = statSync(file);
-            const size = parseFloat(stat.size / Math.pow(1024, 1)).toFixed(2) + ' kb';
+            const size = parseFloat(stat.size / Math.pow(1024, 1)).toFixed(2) + ' KB';
             hashes = Object.assign({}, hashes, {
               [toUnix(file).replace(toUnix(__dirname), '')]: {
                 hash,

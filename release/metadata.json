@@ -1,14 +1,14 @@
 {
   "/release/types-through2-2.0.38.tgz": {
-    "hash": "b15c6f6255b06f13a0900aec81f3f46d1dcea7bf",
-    "size": "4.40 kb"
+    "hash": "569a23fcccf2421697cd5fb2d71a8e0627b8aeee",
+    "size": "4.40 KB"
   },
   "/release/types-through2.tgz": {
-    "hash": "b15c6f6255b06f13a0900aec81f3f46d1dcea7bf",
-    "size": "4.40 kb"
+    "hash": "569a23fcccf2421697cd5fb2d71a8e0627b8aeee",
+    "size": "4.40 KB"
   },
   "/package-lock.json": {
     "hash": "6583e4fcfb0ccd73cfb2f76be631ddf6498185ff",
-    "size": "305.24 kb"
+    "size": "305.24 KB"
   }
 }
