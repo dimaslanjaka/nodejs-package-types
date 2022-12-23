@@ -27,9 +27,9 @@ function download(url, output) {
       fs.writeFile(output, response.data, (err) => {
         if (err) {
           console.log(err.message);
-          return;
+        } else {
+          console.log('The file has been saved!');
         }
-        console.log('The file has been saved!');
       });
     })
     .catch((e) => console.log(url, e.message));
