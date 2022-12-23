@@ -20,7 +20,8 @@ const options = {
     'bower_components',
     'node_modules',
     'docs',
-    'exclude'
+    'exclude',
+    'test'
   ],
   ignoreMatches: [
     // ignore dependencies that matches these globs

@@ -19,12 +19,14 @@
     ],
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
+      "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -33,7 +35,18 @@
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.js"
+    ],
+    "typedoc": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+    ],
+    "semver": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+    ],
+    "git-command-helper": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
@@ -53,6 +66,12 @@
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
     ],
     "axios": [
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "true-case-path": [
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "ansi-colors": [
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ]
   },
@@ -74,7 +93,8 @@
     ],
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
+      "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
     "hexo-util": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
@@ -82,7 +102,8 @@
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -91,7 +112,18 @@
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.js"
+    ],
+    "typedoc": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+    ],
+    "semver": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+    ],
+    "git-command-helper": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
@@ -111,6 +143,12 @@
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
     ],
     "axios": [
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "true-case-path": [
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "ansi-colors": [
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ]
   },

@@ -62,17 +62,22 @@
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "git-command-helper": "^1.0.13",
     "gulp": "^4.0.2",
     "npm-check-updates": "^16.6.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "semver": "^7.3.8",
+    "typedoc": "^0.23.23"
   },
   "dependencies": {
+    "ansi-colors": "^4.1.3",
     "axios": "^1.2.1",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
     "fs-extra": "^11.1.0",
     "hexo-util": "^3.0.1",
     "through2": "^4.0.2",
+    "true-case-path": "^2.2.1",
     "upath": "^2.0.1"
   }
 }

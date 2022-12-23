@@ -1,14 +1,18 @@
 const fs = require('fs-extra');
 const path = require('path');
 const axios = require('axios');
+const tcp = require('true-case-path');
+const colors = require('ansi-colors');
 
 function setup(
   options = {
     force: false,
-    includes: ['packer.js', 'postinstall.js', 'preinstall.js', '.github/workflows/build-release.yml']
+    includes: []
   }
 ) {
-  const { includes } = options;
+  const defs = ['packer.js', 'postinstall.js', 'preinstall.js', '.github/workflows/build-release.yml'];
+  let { includes } = options;
+  if (!includes) includes = defs;
   includes.forEach((downloadPath) => {
     const packer = path.join(process.cwd(), downloadPath);
     if (!fs.existsSync(packer) || options.force) {
@@ -29,7 +33,7 @@ function download(url, output) {
         if (err) {
           console.log(err.message);
         } else {
-          console.log('The file has been saved!');
+          console.log('The file (' + colors.greenBright(tcp.trueCasePathSync(output)) + ') has been saved!');
         }
       });
     })

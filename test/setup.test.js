@@ -2,4 +2,4 @@ process.cwd = () => __dirname;
 
 const core = require('../');
 
-core();
+core({ force: true });
