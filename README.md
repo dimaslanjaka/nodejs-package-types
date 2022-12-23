@@ -10,6 +10,7 @@ Customized Package Types including:
 - @types/markdown-it-mark
 - @types/markdown-it-sub
 - @types/markdown-it-sup
+- @types/connect-browser-sync
 
 ## Installation
 
