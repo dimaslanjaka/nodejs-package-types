@@ -14,9 +14,13 @@ const build = async function (done) {
     const dest = join(__dirname, 'tmp/typings/main');
     if (existsSync(dest)) rmSync(dest, { recursive: true, force: true });
     await spawn('tsc', ['-p', 'tsconfig.project.json'], { cwd: __dirname });
-    gulp.src('*.*', { cwd: dest }).pipe(gulp.dest(join(__dirname, 'typings/main')));
-    if (existsSync(dest)) rmSync(dest, { recursive: true, force: true });
-    if (typeof done === 'function') done();
+    gulp
+      .src('*.*', { cwd: dest })
+      .pipe(gulp.dest(join(__dirname, 'typings/main')))
+      .once('end', function () {
+        if (existsSync(dest)) rmSync(dest, { recursive: true, force: true });
+        if (typeof done === 'function') done();
+      });
   } catch {
     //
   }
