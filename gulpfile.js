@@ -1,3 +1,4 @@
+const { rm, existsSync } = require('fs');
 const { mkdirp } = require('fs-extra');
 const { writeFile } = require('fs/promises');
 const gulp = require('gulp');
@@ -10,9 +11,11 @@ const pkgjson = require('./package.json');
  */
 const build = async function (done) {
   try {
+    const dest = join(__dirname, 'tmp/typings/main');
+    if (existsSync(dest)) rm(dest, { recursive: true, force: true });
     await spawn('tsc', ['-p', 'tsconfig.project.json'], { cwd: __dirname });
-    gulp.src('*.*', { cwd: join(__dirname, 'tmp/typings/main') }).pipe(gulp.dest(join(__dirname, 'typings/main')));
-    return done();
+    gulp.src('*.*', { cwd: dest }).pipe(gulp.dest(join(__dirname, 'typings/main')));
+    if (typeof done === 'function') done();
   } catch {
     //
   }
