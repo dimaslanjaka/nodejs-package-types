@@ -26,7 +26,8 @@
     "build:hexo": "cd hexo && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js && npm run build",
     "build:through2": "cd through2 && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js && npm run build",
     "build:types": "gulp",
-    "build:tarball": "node packer.js && node unused.js"
+    "build:tarball": "node packer.js && node unused.js",
+    "test": "cd test && npm run update && node setup.test.js"
   },
   "repository": {
     "type": "git",

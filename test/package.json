@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "update": "npm i file:.."
+    "update": "npm i file:../release/nodejs-package-types.tgz"
   },
   "keywords": [],
   "author": "Dimas lanjaka <dimaslanjaka@gmail.com> (http://webmanajemen.com)",
   "license": "ISC",
   "devDependencies": {
-    "nodejs-package-types": "file:.."
+    "nodejs-package-types": "file:../release/nodejs-package-types.tgz"
   }
 }

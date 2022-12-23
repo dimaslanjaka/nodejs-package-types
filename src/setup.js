@@ -30,4 +30,4 @@ function download(url, output) {
   });
 }
 
-module.exports = { setup };
+module.exports = setup;
