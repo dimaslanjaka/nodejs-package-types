@@ -27,7 +27,8 @@
       "D:\\Repositories\\nodejs-package-types\\preinstall.js"
     ],
     "fs-extra": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
+      "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -84,7 +85,8 @@
       "D:\\Repositories\\nodejs-package-types\\preinstall.js"
     ],
     "fs-extra": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
+      "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",

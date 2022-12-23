@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const axios = require('axios');
 
@@ -21,6 +21,7 @@ function setup(
 }
 
 function download(url, output) {
+  if (!fs.existsSync(path.dirname(output))) fs.mkdirpSync(path.dirname(output));
   axios
     .get(url, { responseType: 'blob' })
     .then((response) => {
