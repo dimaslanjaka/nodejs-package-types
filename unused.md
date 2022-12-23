@@ -21,13 +21,14 @@
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\packer.js"
     ],
+    "gulp": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\packer.js"
+    ],
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js"
-    ],
-    "gulp": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -75,6 +76,10 @@
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\packer.js"
     ],
+    "gulp": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\packer.js"
+    ],
     "hexo-util": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
     ],
@@ -82,9 +87,6 @@
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js"
-    ],
-    "gulp": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
