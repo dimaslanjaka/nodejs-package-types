@@ -17,13 +17,14 @@
     "eslint-config-prettier": [
       "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
     ],
+    "fs-extra": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\packer.js"
+    ],
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js"
-    ],
-    "fs-extra": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
     ],
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\packer.js"
@@ -70,6 +71,10 @@
     "eslint": [
       "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
     ],
+    "fs-extra": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\packer.js"
+    ],
     "hexo-util": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
     ],
@@ -77,9 +82,6 @@
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js"
-    ],
-    "fs-extra": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js"
     ],
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\packer.js"

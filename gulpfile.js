@@ -1,3 +1,4 @@
+const { mkdirp } = require('fs-extra');
 const { writeFile } = require('fs/promises');
 const { spawn } = require('hexo-util');
 const { join } = require('path');
@@ -25,6 +26,7 @@ exports.default = async function (done) {
   };
   pkgjson.private = true;
   pkgjson.files = ['*.js', 'typings', 'hexo', 'skeljs', 'through2', 'hexo-log', 'hexo-bunyan', 'hexo-util'];
+  mkdirp(join(__dirname, 'dist'));
   writeFile(join(__dirname, 'dist/tslint.json'), JSON.stringify(tslint, null, 4));
   writeFile(join(__dirname, 'dist/package.json'), JSON.stringify(pkgjson, null, 4));
   if (typeof done === 'function') done();

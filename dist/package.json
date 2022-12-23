@@ -1,0 +1,74 @@
+{
+    "name": "nodejs-package-types",
+    "version": "1.1.2",
+    "description": "Customized Package Types",
+    "packageManager": "yarn@3.2.0",
+    "main": "index.js",
+    "types": "typings/index.d.ts",
+    "files": [
+        "*.js",
+        "typings",
+        "hexo",
+        "skeljs",
+        "through2",
+        "hexo-log",
+        "hexo-bunyan",
+        "hexo-util"
+    ],
+    "scripts": {
+        "update": "npx npm-check-updates -u && npm install",
+        "prebuild": "git pull -X theirs",
+        "build": "run-s build:**",
+        "build:hexo": "cd hexo && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js && npm run build",
+        "build:through2": "cd through2 && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js && npm run build",
+        "build:types": "gulp",
+        "build:tarball": "node packer.js && node unused.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dimaslanjaka/nodejs-package-types.git"
+    },
+    "keywords": [
+        "types",
+        "typescript",
+        "markdown-it-abbr",
+        "markdown-it-sup",
+        "markdown-it-sub",
+        "through2"
+    ],
+    "author": {
+        "email": "dimaslanjaka@gmail.com",
+        "name": "L3n40x",
+        "url": "https://www.webmanajemen.com/about"
+    },
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dimaslanjaka/nodejs-package-types/issues"
+    },
+    "homepage": "https://github.com/dimaslanjaka/nodejs-package-types#readme",
+    "devDependencies": {
+        "@types/fs-extra": "^9.0.13",
+        "@types/gulp": "^4.0.10",
+        "@types/node": "^18.11.17",
+        "@types/through2": "file:through2",
+        "@typescript-eslint/eslint-plugin": "^5.47.0",
+        "@typescript-eslint/parser": "^5.47.0",
+        "cross-spawn": "^7.0.3",
+        "depcheck": "^1.4.3",
+        "eslint": "^8.30.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "gulp": "^4.0.2",
+        "npm-check-updates": "^16.6.2",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.8.1"
+    },
+    "dependencies": {
+        "axios": "^1.2.1",
+        "fs-extra": "^11.1.0",
+        "hexo-util": "^3.0.1",
+        "through2": "^4.0.2",
+        "upath": "^2.0.1"
+    },
+    "private": true
+}
