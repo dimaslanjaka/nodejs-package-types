@@ -1,5 +1,5 @@
 import './kill-port';
-import '../connect-browser-sync';
+import './connect-browser-sync';
 import './markdown-it-abbr';
 import './markdown-it-footnote';
 import './markdown-it-image-figures';
