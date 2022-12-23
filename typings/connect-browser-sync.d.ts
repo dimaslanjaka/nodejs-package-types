@@ -1,6 +1,6 @@
 declare module 'connect-browser-sync' {
 	import bs from 'browser-sync';
-  import express from 'express';
+  	import express from 'express';
 	export interface ConnectBrowserSyncOptions {
 		injectHead: true;
 	}
