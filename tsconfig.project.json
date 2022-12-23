@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "typings/main",
+    "allowJs": true,
+    "emitDeclarationOnly": true,
+  },
+  "include": [
+    "index.js",
+  ]
+}

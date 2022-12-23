@@ -13,7 +13,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "allowJs": true,
-    "outDir": "dist"
+    "outDir": "tmp/dist"
   },
   "include": [
     "typings",

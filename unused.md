@@ -36,6 +36,12 @@
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
     ],
+    "browser-sync": [
+      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+    ],
+    "express": [
+      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+    ],
     "markdown-it": [
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-footnote.d.ts",
@@ -82,6 +88,12 @@
     ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
+    ],
+    "browser-sync": [
+      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+    ],
+    "express": [
+      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
     "markdown-it": [
       "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
