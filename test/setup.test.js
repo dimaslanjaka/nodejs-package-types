@@ -1,3 +1,5 @@
-const core = require('nodejs-package-types');
+process.cwd = () => __dirname;
+
+const core = require('../');
 
 core();
