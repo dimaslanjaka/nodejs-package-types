@@ -10,10 +10,9 @@
     "editor.formatOnSave": true // enable json formating with default vscode formatter
   },
   "files.exclude": {
-    "**/node_modules": true,
-    "/docs": true
+    "**/node_modules": true
   },
   "search.exclude": {
-    "/docs": true
+    "**/docs": true
   },
 }
