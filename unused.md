@@ -25,8 +25,7 @@
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -102,8 +101,7 @@
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",

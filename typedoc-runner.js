@@ -6,13 +6,12 @@ const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require(
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
-const spawn = require('cross-spawn');
 const { EOL } = require('os');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
-// update   : curl -L https://github.com/dimaslanjaka/static-blog-generator/raw/master/typedoc-runner.js > typedoc-runner.js
-// repo     : https://github.com/dimaslanjaka/static-blog-generator/blob/master/typedoc-runner.js
+// update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-runner.js > typedoc-runner.js
+// repo     : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/typedoc-runner.js
 // usages
 // - git clone https://github.com/dimaslanjaka/docs.git
 // - node typedoc-runner.js
@@ -31,7 +30,7 @@ const compile = async function (options = {}, callback = null) {
   const projectDocsDir = join(outDir, pkgjson.name);
 
   if (!existsSync(outDir)) {
-    spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
+    await spawnAsync('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
   }
 
   if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });

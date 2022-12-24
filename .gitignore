@@ -9,3 +9,4 @@ through2/node_modules/
 tmp
 temp
 .yarn
+/docs
