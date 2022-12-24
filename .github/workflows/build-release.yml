@@ -120,7 +120,7 @@ jobs:
             ${{ steps.set-env.outputs.cache-yarn }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
-          restore-key: |
+          restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-
             ${{ runner.os }}-${{ matrix.node-version }}-
             ${{ runner.os }}-
