@@ -7,5 +7,5 @@ declare module 'connect-browser-sync' {
 	export default function injectBrowserSync(
 		browserSync: bs.BrowserSyncInstance,
 		options?: ConnectBrowserSyncOptions,
-	): any | RequestHandler;
+	): any | express.RequestHandler;
 }
