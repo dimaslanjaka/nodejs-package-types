@@ -188,7 +188,7 @@ if (require.main === module) {
 async function createIndex() {
   let body =
     `
-# Monorepo Documentation Site
+<h1 id="headline">Monorepo Documentation Site</h1>
   `.trim() + EOL;
 
   readdirSync(join(__dirname, 'docs')).forEach((filename) => {
@@ -198,12 +198,12 @@ async function createIndex() {
     if (stat.isDirectory() && filename !== '.git') {
       body +=
         `
-- [${filename}](./${filename})
+<li><a href="./${filename}">${filename}</a></li>
       `.trim() + EOL;
     }
   });
 
-  writeFileSync(join(__dirname, 'docs/readme.md'), body.trim());
+  writeFileSync(join(__dirname, 'docs/index.html'), body.trim());
 }
 
 module.exports = {
