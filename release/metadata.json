@@ -8,15 +8,15 @@
     "size": "103.77 KB"
   },
   "/release/nodejs-package-types-1.1.2.tgz": {
-    "hash": "81a62613648df1644bf5860b5cdd7cabdc45a5b0",
-    "size": "172.67 KB"
+    "hash": "f73929c4b015e6049aef11beb7d204decacb2104",
+    "size": "172.68 KB"
   },
   "/release/nodejs-package-types.tgz": {
-    "hash": "81a62613648df1644bf5860b5cdd7cabdc45a5b0",
-    "size": "172.67 KB"
+    "hash": "f73929c4b015e6049aef11beb7d204decacb2104",
+    "size": "172.68 KB"
   },
   "/package-lock.json": {
-    "hash": "95329e83958adf03207d3abee5935cf73b6f4460",
-    "size": "411.38 KB"
+    "hash": "90847f8f9ed284c21f9754e264258aaa33201066",
+    "size": "414.13 KB"
   }
 }
