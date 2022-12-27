@@ -22,6 +22,43 @@
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
+    "markdown-it": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-footnote.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-image-figures.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
+    ],
+    "markdown-it-abbr": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-anchor": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-attrs": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-footnote": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-mark": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-sub": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-sup": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "slugify": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "git-command-helper": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+    ],
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
@@ -44,9 +81,6 @@
     "semver": [
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
-    "git-command-helper": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
-    ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
     ],
@@ -55,14 +89,6 @@
     ],
     "express": [
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
-    ],
-    "markdown-it": [
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-footnote.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-image-figures.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
     ],
     "axios": [
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
@@ -98,6 +124,43 @@
     "hexo-util": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
     ],
+    "markdown-it": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-footnote.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-image-figures.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
+      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
+    ],
+    "markdown-it-abbr": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-anchor": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-attrs": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-footnote": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-mark": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-sub": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "markdown-it-sup": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "slugify": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+    ],
+    "git-command-helper": [
+      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+    ],
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
@@ -120,9 +183,6 @@
     "semver": [
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
-    "git-command-helper": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
-    ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
     ],
@@ -131,14 +191,6 @@
     ],
     "express": [
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
-    ],
-    "markdown-it": [
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-footnote.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-image-figures.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
     ],
     "axios": [
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
