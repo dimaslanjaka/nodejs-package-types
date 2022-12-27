@@ -8,6 +8,7 @@
   "files": [
     ".github",
     ".gitmodules",
+    ".gitattributes",
     "*.js",
     "*.json",
     "src",
