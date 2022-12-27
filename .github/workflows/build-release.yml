@@ -156,6 +156,10 @@ jobs:
       - run: git add lib
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
         continue-on-error: true
+      - run: git pull -X theirs
+        name: Pull before push
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
+        continue-on-error: true
       - name: Git push
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
         continue-on-error: true
