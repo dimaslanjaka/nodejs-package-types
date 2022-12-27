@@ -20,7 +20,7 @@
     "hexo-util/**/*.{js,ts,json,md}"
   ],
   "scripts": {
-    "update": "npx npm-check-updates -u && npm install",
+    "update": "npm run prebuild && npx npm-check-updates -u && npm install",
     "prebuild": "git pull -X theirs",
     "build": "run-s build:**",
     "build:hexo": "cd hexo && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js && npm run build",
