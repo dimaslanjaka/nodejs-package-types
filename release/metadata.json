@@ -1,18 +1,34 @@
 {
   "/release/types-hexo-3.8.8.tgz": {
-    "hash": "7702f9aecc1632df63d60d324a76a34b23c83228",
+    "integrity": {
+      "sha1": "7702f9aecc1632df63d60d324a76a34b23c83228",
+      "sha256": "rHWcyMGwWtewxC0Lg7d+m3io1vrjp3O23uPSeLdq53Y=",
+      "md5": "2c6c887a71e7f01ddd9f2144fd16a6ea"
+    },
     "size": "31.43 KB"
   },
   "/package-lock.json": {
-    "hash": "739e9cc5b9d0489add82724c954d6fa0cdac7f92",
+    "integrity": {
+      "sha1": "739e9cc5b9d0489add82724c954d6fa0cdac7f92",
+      "sha256": "mKMXz1tCdasR8AbYl3iWrUWb5CZqyr6jHsVQVBFEhR8=",
+      "md5": "5e79f70bd4f73acd85c7afcf40e1039f"
+    },
     "size": "7.32 KB"
   },
   "/release/types-hexo-3.8.9.tgz": {
-    "hash": "974e924b74c1b353fa2af4a2612b778a1dae0037",
-    "size": "9.69 KB"
+    "integrity": {
+      "sha1": "d04e176099a670c6df9a7cb891b0ceefad4ef965",
+      "sha256": "4JetuWXSgU2t+ScD+hMZLoPIorPq/leMeoIPIWnnKKw=",
+      "md5": "3cdcfbb607c9f8b6086e883d90c6df40"
+    },
+    "size": "9.79 KB"
   },
   "/release/types-hexo.tgz": {
-    "hash": "974e924b74c1b353fa2af4a2612b778a1dae0037",
-    "size": "9.69 KB"
+    "integrity": {
+      "sha1": "d04e176099a670c6df9a7cb891b0ceefad4ef965",
+      "sha256": "4JetuWXSgU2t+ScD+hMZLoPIorPq/leMeoIPIWnnKKw=",
+      "md5": "3cdcfbb607c9f8b6086e883d90c6df40"
+    },
+    "size": "9.79 KB"
   }
 }
