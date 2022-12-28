@@ -1,14 +1,26 @@
 {
   "/release/types-through2-2.0.38.tgz": {
-    "hash": "f397e4130f04c7a189e0701769c559116e92feab",
-    "size": "4.43 KB"
+    "integrity": {
+      "sha1": "81e15a7f6ff20b16b5ed6e8b47506e8fce640412",
+      "sha256": "80ezQogM9z53Em1tBmxp5fYszAK9/+/q3dvWzc0ktj4=",
+      "md5": "91f572d358481de97144da3e8cc269a4"
+    },
+    "size": "4.52 KB"
   },
   "/release/types-through2.tgz": {
-    "hash": "f397e4130f04c7a189e0701769c559116e92feab",
-    "size": "4.43 KB"
+    "integrity": {
+      "sha1": "81e15a7f6ff20b16b5ed6e8b47506e8fce640412",
+      "sha256": "80ezQogM9z53Em1tBmxp5fYszAK9/+/q3dvWzc0ktj4=",
+      "md5": "91f572d358481de97144da3e8cc269a4"
+    },
+    "size": "4.52 KB"
   },
   "/package-lock.json": {
-    "hash": "6583e4fcfb0ccd73cfb2f76be631ddf6498185ff",
+    "integrity": {
+      "sha1": "6583e4fcfb0ccd73cfb2f76be631ddf6498185ff",
+      "sha256": "5HvzNacZGmgkopHgqE3O0nEsw07Cv1zPkhcYSIkau1A=",
+      "md5": "51ed9a20434f8608a1616be47681d689"
+    },
     "size": "305.24 KB"
   }
 }
