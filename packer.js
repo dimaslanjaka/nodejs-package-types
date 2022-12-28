@@ -52,7 +52,11 @@ child.on('exit', function () {
     const metafile = join(releaseDir, 'metadata.json');
     // read old meta
     if (existsSync(metafile)) {
-      hashes = Object.assign(hashes, JSON.parse(readFileSync(metafile, 'utf-8')));
+      try {
+        hashes = Object.assign(hashes, JSON.parse(readFileSync(metafile, 'utf-8')));
+      } catch {
+        hashes = {};
+      }
     }
     let pkglock = [join(__dirname, 'package-lock.json'), join(__dirname, 'yarn.lock')].filter((str) =>
       existsSync(str)
@@ -68,6 +72,7 @@ child.on('exit', function () {
       const file = readDir[i];
       const stat = statSync(file);
       const size = parseFloat(stat.size / Math.pow(1024, 1)).toFixed(2) + ' KB';
+      // assign to existing object
       hashes = Object.assign({}, hashes, {
         [toUnix(file).replace(toUnix(__dirname), '')]: {
           integrity: {
