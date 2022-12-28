@@ -71,9 +71,9 @@ child.on('exit', function () {
       hashes = Object.assign({}, hashes, {
         [toUnix(file).replace(toUnix(__dirname), '')]: {
           integrity: {
-            sha1: await file_to_hash('sha1', file, 'base64'),
+            sha1: await file_to_hash('sha1', file),
             sha256: await file_to_hash('sha256', file, 'base64'),
-            md5: await file_to_hash('md5', file, 'base64')
+            md5: await file_to_hash('md5', file)
           },
           size
         }
