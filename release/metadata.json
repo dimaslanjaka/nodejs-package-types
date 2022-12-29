@@ -25,17 +25,17 @@
   },
   "/release/nodejs-package-types-1.1.3.tgz": {
     "integrity": {
-      "sha1": "777180c80cb508558daa61c3d672d4d747983abb",
-      "sha256": "1wrjhwlu5UOpe/fmvclz2dzU1o6Yty0ldnB7+MtlViw=",
-      "md5": "d302c14af2e9b39157e52f05826fb026"
+      "sha1": "915c3abcea129438d6c7c9ee148ada828edb7636",
+      "sha256": "pFHv5dnCRODH8BOW97KEwT6wPbr9jzDoUcLTidmwRWM=",
+      "md5": "d194418f341414caf982354cf1d56fad"
     },
     "size": "175.21 KB"
   },
   "/release/nodejs-package-types.tgz": {
     "integrity": {
-      "sha1": "777180c80cb508558daa61c3d672d4d747983abb",
-      "sha256": "1wrjhwlu5UOpe/fmvclz2dzU1o6Yty0ldnB7+MtlViw=",
-      "md5": "d302c14af2e9b39157e52f05826fb026"
+      "sha1": "915c3abcea129438d6c7c9ee148ada828edb7636",
+      "sha256": "pFHv5dnCRODH8BOW97KEwT6wPbr9jzDoUcLTidmwRWM=",
+      "md5": "d194418f341414caf982354cf1d56fad"
     },
     "size": "175.21 KB"
   },
