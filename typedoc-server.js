@@ -7,7 +7,7 @@ const gulp = require('gulp');
  * Docs serve
  * required:
  * * add docs script for `npm run docs`
- * * npm i -D git-command-helper
+ * * npm i -D git-command-helper gulp cross-spawn browser-sync
  *
  * repo: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/typedoc-server.js
  * raw: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-server.js
