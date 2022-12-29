@@ -25,19 +25,19 @@
   },
   "/release/nodejs-package-types-1.1.3.tgz": {
     "integrity": {
-      "sha1": "56353d4623897de9c6421659eab080243e9aca5b",
-      "sha256": "5kOqCm0DeAl4r93X5aRZyorJE0Co+7gZp1HB6a+aXh8=",
-      "md5": "b0fa182c5c14b5dfe863faecf116d879"
+      "sha1": "a9e2bc3faf4f87a5d2251d3926402cd4fd0656b2",
+      "sha256": "2Kswc2T6v305Y4/tGv0QXO2avVniQb12ytoEB2M4p9o=",
+      "md5": "e25a3344f67978a618ba405a05a1db5c"
     },
-    "size": "174.97 KB"
+    "size": "175.02 KB"
   },
   "/release/nodejs-package-types.tgz": {
     "integrity": {
-      "sha1": "56353d4623897de9c6421659eab080243e9aca5b",
-      "sha256": "5kOqCm0DeAl4r93X5aRZyorJE0Co+7gZp1HB6a+aXh8=",
-      "md5": "b0fa182c5c14b5dfe863faecf116d879"
+      "sha1": "a9e2bc3faf4f87a5d2251d3926402cd4fd0656b2",
+      "sha256": "2Kswc2T6v305Y4/tGv0QXO2avVniQb12ytoEB2M4p9o=",
+      "md5": "e25a3344f67978a618ba405a05a1db5c"
     },
-    "size": "174.97 KB"
+    "size": "175.02 KB"
   },
   "/package-lock.json": {
     "integrity": {
