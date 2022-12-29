@@ -24,7 +24,7 @@ on:
 
 # run single job
 concurrency:
-  group: safelink-${{ github.head_ref }}
+  group: actions-${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
