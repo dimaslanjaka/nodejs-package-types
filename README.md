@@ -1,16 +1,5 @@
 # nodejs-package-types
-Customized Package Types including:
-- @types/skelljs
-- @types/rimraf
-- @types/through2
-- @types/kill-port
-- @types/markdown-it-abbr
-- @types/markdown-it-footnote
-- @types/markdown-it-image-figures
-- @types/markdown-it-mark
-- @types/markdown-it-sub
-- @types/markdown-it-sup
-- @types/connect-browser-sync
+Customized Package Types ([See all modules](https://github.com/dimaslanjaka/nodejs-package-types#modules))
 
 ## Installation
 
