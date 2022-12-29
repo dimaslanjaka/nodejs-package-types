@@ -159,7 +159,7 @@ jobs:
       - name: Clean Install
         id: install-clean
         shell: bash
-        if: steps.install-normal.outcome != 'success'
+        if: steps.install-update.outcome != 'success'
         run: rm -rf node_modules package-lock.json && npm install
 
       - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
