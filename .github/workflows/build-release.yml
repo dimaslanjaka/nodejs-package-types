@@ -130,7 +130,7 @@ jobs:
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
 
-      - name: Install Legacy
+      - name: Install Legacy Peer Dependencies
         run: npm install --legacy-peer-deps
         id: install-legacy
         continue-on-error: true
