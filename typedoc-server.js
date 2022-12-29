@@ -1,5 +1,5 @@
 const browserSync = require('browser-sync');
-const { spawn } = require('git-command-helper/dist/spawn');
+const spawn = require('cross-spawn');
 const bs = browserSync.create();
 
 /**
@@ -21,8 +21,12 @@ let building = false;
 const buildDocs = async (_req, _res, next) => {
   if (building) return next();
   building = true;
-  await spawn('npm', ['run', 'docs'], { cwd: __dirname, stdio: 'inherit' });
-  building = false;
+  console.log('building docs...');
+  const child = spawn('npm', ['run', 'docs'], { cwd: __dirname, stdio: 'inherit' });
+  child.on('close', function (code) {
+    console.log('docs build finished', { code });
+    building = false;
+  });
   next();
 };
 
