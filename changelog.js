@@ -6,6 +6,9 @@ const spawn = require('child_process').spawn;
 
 /*
  * Generate CHANGELOG.md from commits and tags
+ * repo: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/changelog.js
+ * raw: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/changelog.js
+ * update: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/changelog.js > changelog.js
  */
 
 /**
