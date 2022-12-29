@@ -12,11 +12,16 @@ const bs = browserSync.create();
  * update: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-server.js > typedoc-server.js
  */
 
+let building = false;
 /**
+ * build demo and docs (run only 1 instance)
  * @type {browserSync.MiddlewareHandler | browserSync.PerRouteMiddleware}
  */
 const buildDocs = async (_req, _res, next) => {
+  if (building) return next();
+  building = true;
   await spawn('npm', ['run', 'docs'], { cwd: __dirname, stdio: 'inherit' });
+  building = false;
   next();
 };
 
