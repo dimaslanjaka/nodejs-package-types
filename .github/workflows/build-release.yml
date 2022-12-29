@@ -171,6 +171,7 @@ jobs:
       - name: Build
         run: npm run build
         
+      # https://github.com/marketplace/actions/verify-changed-files
       - name: Check if there are changes
         id: changes
         uses: tj-actions/verify-changed-files@v13
@@ -183,7 +184,7 @@ jobs:
             !tmp
       
       - shell: bash
-        name: "steps.changes changed output"
+        name: "What's changed?"
         run: |
           echo "Changed files: ${{ steps.changes.outputs.changed_files }}"
 
