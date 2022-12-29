@@ -1,5 +1,5 @@
 # nodejs-package-types
-Customized Package Types ([See all modules](https://github.com/dimaslanjaka/nodejs-package-types#modules))
+Customized Package Types ([See all modules](https://github.com/dimaslanjaka/nodejs-package-types#modules)). Since it is very difficult to do a pull request to `https://github.com/DefinitelyTyped/DefinitelyTyped`, I made my own typescript file definition. This module can make it easier for you to develop a program or library.
 
 ## Installation
 
