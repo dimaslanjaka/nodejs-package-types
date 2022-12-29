@@ -6,10 +6,8 @@
   "main": "index.js",
   "types": "typings/index.d.ts",
   "files": [
-    ".github",
     ".gitmodules",
     ".gitattributes",
-    "*.js",
     "*.json",
     "src",
     "typings",
