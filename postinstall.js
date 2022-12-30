@@ -7,10 +7,12 @@ const Axios = require('axios');
 const crypto = require('crypto');
 const { setupCache } = require('axios-cache-interceptor');
 const axios = setupCache(Axios);
+const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
+// const persistentCache = require('persistent-cache');
 
 // postinstall scripts
 // run this script after `npm install`
-// required	: npm i -D cross-spawn && npm i upath axios-cache-interceptor axios
+// required	: cross-spawn upath axios-cache-interceptor axios hpagent
 // update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
 // repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
 // raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
@@ -247,11 +249,10 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
  * @returns {Promise<import('axios').AxiosResponse<any, any>|undefined>}
  */
 async function axiosGet(url) {
-  const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
   Array.prototype.sample = function () {
     return this[Math.floor(Math.random() * this.length)];
   };
-  // const persistentCache = require('persistent-cache');
+
   /**
    * @type {import('hpagent').HttpsProxyAgentOptions}
    */
