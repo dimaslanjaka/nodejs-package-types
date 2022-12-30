@@ -5,6 +5,12 @@
   "packageManager": "yarn@3.2.0",
   "main": "index.js",
   "types": "typings/index.d.ts",
+  "exports": {
+    ".": "./index.js",
+    "./hexo": "./hexo",
+    "./through2": "./through2",
+    "./src": "./src"
+  },
   "files": [
     ".gitmodules",
     ".gitattributes",
