@@ -99,7 +99,10 @@ const coloredScriptName = colors.grey(scriptname);
     if (!fs.existsSync(path.dirname(jsonfile))) {
       fs.mkdirSync(path.dirname(jsonfile), { recursive: true });
     }
-    const json = {};
+    let json = {};
+    if (fs.existsSync(jsonfile)) {
+      json = JSON.parse(fs.readFileSync(jsonfile, 'utf-8'));
+    }
 
     for (let i = 0; i < packages.length; i++) {
       const pkgs = packages[i];
@@ -114,17 +117,10 @@ const coloredScriptName = colors.grey(scriptname);
          */
         const coloredPkgname = colors.magenta(pkgname);
 
-        // add all monorepos packages to be updated without checking
+        // add all monorepos and private ssh packages to be updated without checking
         if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
           //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
           toUpdate.add(pkgname);
-          continue;
-        }
-
-        // push update for private ssh package
-        if (/^(ssh+|git+ssh)/i.test(version)) {
-          toUpdate.add(pkgname);
-          continue;
         }
 
         const locks = ['./node_modules/.package-lock.json', './package-lock.json']
@@ -171,7 +167,7 @@ const coloredScriptName = colors.grey(scriptname);
         // fix conflict type package url and git
         if (/^https?:\/\/github.com\//i.test(version)) {
           // is tarball path
-          const isTarball = /\/tarball\//i.test(version);
+          const isTarball = /\/tarball\//i.test(version) || /.(tgz|zip|tar|tar.gz)$/i.test(version);
           isGitPkg = isGitPkg && !isTarball;
           if (isUrlPkg) {
             // is link to github directly
@@ -215,6 +211,9 @@ const coloredScriptName = colors.grey(scriptname);
             // fs.rmSync(node_modules_path, { recursive: true, force: true });
             toUpdate.add(pkgname);
             continue;
+          } else {
+            console.log(coloredScriptName, coloredPkgname, 'already at latest version');
+            toUpdate.delete(pkgname);
           }
         }
 
@@ -230,6 +229,9 @@ const coloredScriptName = colors.grey(scriptname);
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
               toUpdate.add(pkgname);
               continue;
+            } else {
+              console.log(coloredScriptName, coloredPkgname, 'already at latest version');
+              toUpdate.delete(pkgname);
             }
           }
         }
