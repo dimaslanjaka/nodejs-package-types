@@ -174,7 +174,8 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
             const getApiRoot = await axiosGet(apiRoot);
             // skip when get api failure
             if (!getApiRoot) continue;
-            const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + getApiRoot.data.default_branch;
+            const branch = getApiRoot.data.default_branch;
+            const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
             const getApi = await axiosGet(api);
             // skip when get api failure
             if (!getApi) continue;
