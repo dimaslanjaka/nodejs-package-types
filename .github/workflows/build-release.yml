@@ -230,6 +230,9 @@ jobs:
       - run: git add lib
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
+      - run: git add postinstall.js packer.js .github
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
+        continue-on-error: true
       - run: git pull -X theirs
         name: Pull before push
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
