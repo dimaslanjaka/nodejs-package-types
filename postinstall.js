@@ -78,15 +78,11 @@ const packages = [pjson.dependencies, pjson.devDependencies];
 
 /**
  * list packages to update
- * @type {string[]}
+ * @type {Set<string>}
  */
-const toUpdate = [];
+const toUpdate = new Set();
 let hasNotInstalled = false;
 const coloredScriptName = colors.grey(scriptname);
-/**
- * argument value
- */
-const argv = process.argv.slice(2);
 
 (async () => {
   try {
@@ -121,13 +117,13 @@ const argv = process.argv.slice(2);
         // add all monorepos packages to be updated without checking
         if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
           //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
-          toUpdate.push(pkgname);
+          toUpdate.add(pkgname);
           continue;
         }
 
         // push update for private ssh package
         if (/^(ssh+|git+ssh)/i.test(version)) {
-          toUpdate.push(pkgname);
+          toUpdate.add(pkgname);
           continue;
         }
 
@@ -217,7 +213,7 @@ const argv = process.argv.slice(2);
           if (integrity !== hash) {
             console.log(coloredScriptName, 'remote package', pkgname, 'has different integrity');
             // fs.rmSync(node_modules_path, { recursive: true, force: true });
-            toUpdate.push(pkgname);
+            toUpdate.add(pkgname);
             continue;
           }
         }
@@ -232,7 +228,7 @@ const argv = process.argv.slice(2);
             if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
               console.log(coloredScriptName, 'local package', pkgname, 'has different integrity');
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
-              toUpdate.push(pkgname);
+              toUpdate.add(pkgname);
               continue;
             }
           }
@@ -254,6 +250,7 @@ const argv = process.argv.slice(2);
             if (isBranchPkg) {
               const branch = String(version).split('#')[1];
               const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
+              console.log(coloredScriptName, 'accessing', api);
               const getApi = await axiosGet(api);
               // skip when get api failure
               if (!getApi) continue;
@@ -267,10 +264,11 @@ const argv = process.argv.slice(2);
                   'has different commit hash'
                 );
                 // fs.rmSync(node_modules_path, { recursive: true, force: true });
-                toUpdate.push(pkgname);
+                toUpdate.add(pkgname);
                 continue;
               }
             } else {
+              console.log(coloredScriptName, 'accessing', apiRoot);
               const getApiRoot = await axiosGet(apiRoot);
               // skip when get api failure
               if (!getApiRoot) continue;
@@ -290,7 +288,7 @@ const argv = process.argv.slice(2);
                   'has different commit hash'
                 );
                 // fs.rmSync(node_modules_path, { recursive: true, force: true });
-                toUpdate.push(pkgname);
+                toUpdate.add(pkgname);
                 continue;
               }
             }
@@ -330,7 +328,7 @@ const argv = process.argv.slice(2);
 
     if (checkNodeModules()) {
       // filter duplicates package names
-      const filterUpdates = toUpdate.filter((item, index) => toUpdate.indexOf(item) === index);
+      const filterUpdates = Array.from(toUpdate).filter((item, index) => Array.from(toUpdate).indexOf(item) === index);
       if (filterUpdates.length > 0) {
         // do update
         try {
@@ -625,7 +623,7 @@ function isPackageInstalled(packageName) {
  * @returns
  */
 function checkNodeModules() {
-  const exists = toUpdate.map(
+  const exists = Array.from(toUpdate).map(
     (pkgname) =>
       fs.existsSync(path.join(__dirname, 'node_modules', pkgname)) &&
       fs.existsSync(path.join(__dirname, 'node_modules', pkgname, 'package.json'))
