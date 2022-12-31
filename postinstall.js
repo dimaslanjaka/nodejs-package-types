@@ -8,7 +8,8 @@ const isAllPackagesInstalled = [
   'axios-cache-interceptor',
   'axios',
   'hpagent',
-  'persistent-cache'
+  'persistent-cache',
+  'ansi-colors'
 ].map((name) => {
   return {
     name,
@@ -18,6 +19,7 @@ const isAllPackagesInstalled = [
 if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   const names = isAllPackagesInstalled.map((o) => o.name);
   console.log(
+    '[postinstall]',
     'package',
     names.join(', '),
     'is not installed',
@@ -42,6 +44,7 @@ const crypto = require('crypto');
 const { setupCache } = require('axios-cache-interceptor');
 const axios = setupCache(Axios);
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
+const colors = require('ansi-colors');
 // const persistentCache = require('persistent-cache');
 // imports ends
 
@@ -80,6 +83,8 @@ const packages = [pjson.dependencies, pjson.devDependencies];
  * @type {string[]}
  */
 const toUpdate = [];
+let hasNotInstalled = false;
+const scriptname = colors.grey('[postinstall]');
 
 (async () => {
   for (let i = 0; i < packages.length; i++) {
@@ -90,9 +95,21 @@ const toUpdate = [];
        * @type {string}
        */
       const version = pkgs[pkgname];
+      /**
+       * colored package name
+       */
+      const coloredPkgname = colors.magenta(pkgname);
 
       // skip when not exist in node_modules
+      // npm will automate installing these packages
       if (!fs.existsSync(path.join(__dirname, pkgname))) {
+        hasNotInstalled = true;
+        console.log(
+          scriptname,
+          coloredPkgname,
+          colors.red('not installed.'),
+          'skipping...'
+        );
         continue;
       }
 
@@ -144,6 +161,17 @@ const toUpdate = [];
         continue;
       }
 
+      // dump
+      const jsonfile = path.join(__dirname, 'tmp/postinstall/monorepos.json');
+      if (!fs.existsSync(path.dirname(jsonfile))) {
+        fs.mkdirSync(path.dirname(jsonfile), { recursive: true });
+      }
+      const json = fs.existsSync(jsonfile)
+        ? JSON.parse(fs.readFileSync(jsonfile, 'utf-8'))
+        : {};
+      json[pkgname] = { isLocalPkg, isGitPkg, isUrlPkg };
+      fs.writeFileSync(jsonfile, JSON.stringify(json, null, 2));
+
       // existing lock
       const installedLock = lockfile.packages['node_modules/' + pkgname];
       installedLock.name = pkgname;
@@ -163,7 +191,12 @@ const toUpdate = [];
         const hash =
           'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
         if (integrity !== hash) {
-          console.log('remote package', pkgname, 'has different integrity');
+          console.log(
+            scriptname,
+            'remote package',
+            pkgname,
+            'has different integrity'
+          );
           // fs.rmSync(node_modules_path, { recursive: true, force: true });
           toUpdate.push(pkgname);
           continue;
@@ -179,7 +212,12 @@ const toUpdate = [];
         if (/\/tarball\/|.(tgz|zip|tar|tar.gz)$/i.test(version)) {
           // console.log(value);
           if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
-            console.log('local package', pkgname, 'has different integrity');
+            console.log(
+              scriptname,
+              'local package',
+              pkgname,
+              'has different integrity'
+            );
             // fs.rmSync(node_modules_path, { recursive: true, force: true });
             toUpdate.push(pkgname);
             continue;
@@ -215,6 +253,7 @@ const toUpdate = [];
               fs.existsSync(node_modules_path)
             ) {
               console.log(
+                scriptname,
                 'github package',
                 pkgname,
                 'from branch',
@@ -244,6 +283,7 @@ const toUpdate = [];
               fs.existsSync(node_modules_path)
             ) {
               console.log(
+                scriptname,
                 'github package',
                 pkgname,
                 'from branch',
@@ -372,12 +412,24 @@ const toUpdate = [];
         if (e instanceof Error) console.error(e.message);
       }
     } else {
-      console.log(
-        '[postinstall] all monorepo packages already at latest version'
-      );
+      if (hasNotInstalled) {
+        console.log(
+          scriptname,
+          colors.green('some packages not yet installed')
+        );
+      } else {
+        console.log(
+          scriptname,
+          'all monorepo packages already at latest version'
+        );
+      }
     }
   } else {
-    console.log('some packages already deleted from node_modules');
+    if (hasNotInstalled) {
+      console.log(scriptname, 'some packages not yet installed');
+    } else {
+      console.log(scriptname, 'some packages deleted from node_modules');
+    }
   }
 })();
 
