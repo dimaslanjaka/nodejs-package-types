@@ -129,7 +129,7 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 				if (/\/tarball\/|.tgz$/i.test(version)) {
 					// console.log(value);
 					if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
-						console.log('updating local package', pkgname, 'caused by different integrity');
+						console.log('local package', pkgname, 'has different integrity');
 						// fs.rmSync(node_modules_path, { recursive: true, force: true });
 						toUpdate.push(pkgname);
 					}
@@ -156,7 +156,7 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 						// skip when get api failure
 						if (!getApi) continue;
 						if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-							console.log('updating github package', pkgname, 'caused by different hash');
+							console.log('github package', pkgname, 'hash different commit hash');
 							// fs.rmSync(node_modules_path, { recursive: true, force: true });
 							toUpdate.push(pkgname);
 						}
@@ -169,6 +169,11 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 						// skip when get api failure
 						if (!getApi) continue;
 						console.log({ version, githubPathHash, data: getApi.data.sha });
+            if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
+							console.log('github package', pkgname, 'hash different commit hash');
+							// fs.rmSync(node_modules_path, { recursive: true, force: true });
+							toUpdate.push(pkgname);
+						}
 					}
 				} catch (e) {
 					if (e instanceof Error) console.log(e.code, e.message);
