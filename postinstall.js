@@ -160,10 +160,16 @@ const coloredScriptName = colors.grey(scriptname);
           } else {
             // npm cache clean package
             if (filterUpdates.find((str) => str.startsWith('file:'))) {
-              await summon('npm', ['cache', 'clean'].concat(...filterUpdates), {
+              const localPkg = filterUpdates.filter((str) => str.startsWith('file:'));
+              await summon('npm', ['cache', 'clean'].concat(...localPkg), {
                 cwd: __dirname,
                 stdio: 'inherit'
               });
+              console.log(
+                coloredScriptName,
+                'local package cache cleaned',
+                ...localPkg.map((str) => colors.yellow(str))
+              );
             }
             // npm update package
             await summon('npm', ['update'].concat(...filterUpdates), {
