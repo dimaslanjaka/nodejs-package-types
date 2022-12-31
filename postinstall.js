@@ -79,8 +79,23 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 			}
 
 			const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
-			const isGitPkg = /^(git+|github:|https?:\/\/github.com\/)/i.test(version);
-			const isUrlPkg = /^(https?)/i.test(version);
+			/**
+			 * is remote url package
+			 */
+			const isUrlPkg =
+				/^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version) &&
+				// check link to github directly
+				!/.git$/i.test(version);
+			/**
+			 * is github package
+			 */
+			const isGitPkg =
+				/^(git+|github:|https?:\/\/github.com\/)/i.test(version) &&
+				// check tarball path
+				!/\/tarball\//i.test(version);
+			/**
+			 * is local package
+			 */
 			const isLocalPkg = /^(file):/i.test(version);
 			if (!isLocalPkg && !isGitPkg && !isUrlPkg) {
 				delete pkgs[pkgname];
