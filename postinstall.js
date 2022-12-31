@@ -74,8 +74,8 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 			}
       */
 
-      // push update for ssh package
-      if (/^ssh+)/i.test(version)) {
+      // push update for private ssh package
+      if (/^(ssh\+|git\+ssh))/i.test(version)) {
 				toUpdate.push(pkgname);
         continue;
 			}
