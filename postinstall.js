@@ -96,6 +96,12 @@ const coloredScriptName = colors.grey(scriptname);
 const argv = process.argv.slice(2);
 
 (async () => {
+  // skip if project not yet installed
+  if (!fs.existsSync(path.join(__dirname, 'node_modules'))) {
+    console.log(coloredScriptName, 'project not yet installed');
+    return;
+  }
+
   // dump file
   const jsonfile = path.join(__dirname, 'tmp/postinstall/monorepos.json');
   if (!fs.existsSync(path.dirname(jsonfile))) {
@@ -195,7 +201,7 @@ const argv = process.argv.slice(2);
       }
 
       // dump
-      json[pkgname] = Object.assign(json[pkgname] || {}, {
+      json[pkgname] = Object.assign(json[pkgname] ? json[pkgname] : {}, {
         isLocalPkg,
         isGitPkg,
         isUrlPkg,
@@ -205,7 +211,7 @@ const argv = process.argv.slice(2);
 
       // skip checking when not exist in node_modules
       // npm will automate installing these packages
-      if (!fs.existsSync(path.join(__dirname, pkgname))) {
+      if (!fs.existsSync(path.join(__dirname, 'node_modules', pkgname))) {
         hasNotInstalled = true;
         console.log(
           coloredScriptName,
