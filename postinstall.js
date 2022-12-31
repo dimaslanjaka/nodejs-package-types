@@ -118,19 +118,6 @@ const argv = process.argv.slice(2);
        */
       const coloredPkgname = colors.magenta(pkgname);
 
-      // skip when not exist in node_modules
-      // npm will automate installing these packages
-      if (!fs.existsSync(path.join(__dirname, pkgname))) {
-        hasNotInstalled = true;
-        console.log(
-          coloredScriptName,
-          coloredPkgname,
-          colors.red('not installed.'),
-          'skipping...'
-        );
-        continue;
-      }
-
       // node postinstall.js --simple
       // add all monorepos packages to be updated without checking
       if (argv.includes('--simple')) {
@@ -158,34 +145,7 @@ const argv = process.argv.slice(2);
         ? JSON.parse(fs.readFileSync(locks, 'utf-8'))
         : {};
 
-      const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
-      /**
-       * is remote url package
-       */
-      const isUrlPkg =
-        /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version) &&
-        // check link to github directly
-        !/.git$/i.test(version);
-      /**
-       * is github package
-       */
-      const isGitPkg =
-        /^(git+|github:|https?:\/\/github.com\/)/i.test(version) &&
-        // check tarball path
-        !/\/tarball\//i.test(version);
-      /**
-       * is local package
-       */
-      const isLocalPkg = /^(file):/i.test(version);
-      if (!isLocalPkg && !isGitPkg && !isUrlPkg) {
-        delete pkgs[pkgname];
-        continue;
-      }
-
-      // dump
-      json[pkgname] = { isLocalPkg, isGitPkg, isUrlPkg };
-
-      // existing lock
+      // parse existing lock file
       const installedLock = lockfile.packages['node_modules/' + pkgname];
       installedLock.name = pkgname;
       const { integrity, resolved } = installedLock;
@@ -196,6 +156,64 @@ const argv = process.argv.slice(2);
       if (typeof original === 'string') {
         original = String(original).replace(/^file:/, '');
         original = path.resolve(path.join(__dirname, original));
+      }
+
+      const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
+      /**
+       * is remote url package
+       */
+      let isUrlPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(
+        version
+      );
+
+      /**
+       * is github package
+       */
+      let isGitPkg = /^(git+|github:|https?:\/\/github.com\/)/i.test(version);
+
+      // fix conflict type package url and git
+      if (/^https?:\/\/github.com\//i.test(version)) {
+        // is tarball path
+        const isTarball = /\/tarball\//i.test(version);
+        isGitPkg = isGitPkg && !isTarball;
+        if (isUrlPkg) {
+          // is link to github directly
+          const isPkgGit =
+            /.git$/i.test(version) ||
+            /^git\+ssh:\/\/git@github.com\//i.test(resolved);
+          isUrlPkg = isUrlPkg && !isPkgGit;
+        }
+      }
+
+      /**
+       * is local package
+       */
+      const isLocalPkg = /^(file):/i.test(version);
+      if (!isLocalPkg && !isGitPkg && !isUrlPkg) {
+        delete pkgs[pkgname];
+        continue;
+      }
+
+      // dump
+      json[pkgname] = Object.assign(json[pkgname], {
+        isLocalPkg,
+        isGitPkg,
+        isUrlPkg,
+        resolved,
+        version
+      });
+
+      // skip checking when not exist in node_modules
+      // npm will automate installing these packages
+      if (!fs.existsSync(path.join(__dirname, pkgname))) {
+        hasNotInstalled = true;
+        console.log(
+          coloredScriptName,
+          coloredPkgname,
+          colors.red('not installed.'),
+          'skipping...'
+        );
+        continue;
       }
 
       // checksum remote package
