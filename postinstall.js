@@ -2,14 +2,19 @@ const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
 
-const isAllPackagesInstalled = 'cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache'
-  .split(' ')
-  .map((name) => {
-    return {
-      name,
-      installed: isPackageInstalled(name)
-    };
-  });
+const isAllPackagesInstalled = [
+  'cross-spawn',
+  'upath',
+  'axios-cache-interceptor',
+  'axios',
+  'hpagent',
+  'persistent-cache'
+].map((name) => {
+  return {
+    name,
+    installed: isPackageInstalled(name)
+  };
+});
 if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   const names = isAllPackagesInstalled.map((o) => o.name);
   console.log('package', names, 'is not installed', 'skipping postinstall script');
