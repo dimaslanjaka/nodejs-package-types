@@ -91,7 +91,7 @@ const toUpdate = [];
       }
 
       /*
-      // re-installing local and monorepo package
+      // push update local and monorepo package
 			if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
 				//const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
 				toUpdate.push(pkgname);
@@ -250,67 +250,74 @@ const toUpdate = [];
   if (checkNodeModules()) {
     // filter duplicates package names
     const filterUpdates = toUpdate.filter((item, index) => toUpdate.indexOf(item) === index);
-    // do update
-    try {
-      if (isYarn) {
-        const version = await summon('yarn', ['--version']);
-        console.log('yarn version', version);
+    if (filterUpdates.length > 0) {
+      // do update
+      try {
+        if (isYarn) {
+          const version = await summon('yarn', ['--version']);
+          console.log('yarn version', version);
 
-        if (typeof version.stdout === 'string') {
-          if (version.stdout.includes('3.2.4')) {
-            filterUpdates.push('--check-cache');
+          if (typeof version.stdout === 'string') {
+            if (version.stdout.includes('3.2.4')) {
+              filterUpdates.push('--check-cache');
+            }
+          }
+          // yarn cache clean
+          if (filterUpdates.find((str) => str.startsWith('file:'))) {
+            await summon('yarn', ['cache', 'clean'], {
+              cwd: __dirname,
+              stdio: 'inherit'
+            });
+          }
+          // yarn upgrade package
+          await summon('yarn', ['upgrade'].concat(...filterUpdates), {
+            cwd: __dirname,
+            stdio: 'inherit'
+          });
+        } else {
+          // npm cache clean package
+          if (filterUpdates.find((str) => str.startsWith('file:'))) {
+            await summon('npm', ['cache', 'clean'].concat(...filterUpdates), {
+              cwd: __dirname,
+              stdio: 'inherit'
+            });
+          }
+          // npm update package
+          await summon('npm', ['update'].concat(...filterUpdates), {
+            cwd: __dirname,
+            stdio: 'inherit'
+          });
+        }
+
+        // update cache
+        await updateCache();
+
+        const argv = process.argv;
+        // node postinstall.js --commit
+        if (fs.existsSync(path.join(__dirname, '.git')) && argv.includes('--commit')) {
+          await summon('git', ['add', 'package.json'], { cwd: __dirname });
+          await summon('git', ['add', 'package-lock.json'], { cwd: __dirname });
+          const status = await summon('git', ['status', '--porcelain'], {
+            cwd: __dirname
+          });
+
+          if (
+            status.stdout &&
+            (status.stdout.includes('package.json') || status.stdout.includes('package-lock.json'))
+          ) {
+            await summon('git', ['add', 'package.json', 'package-lock.json'], {
+              cwd: __dirname
+            });
+            await summon('git', ['commit', '-m', 'Update dependencies', '-m', 'Date: ' + new Date()], {
+              cwd: __dirname
+            });
           }
         }
-        // yarn cache clean
-        if (filterUpdates.find((str) => str.startsWith('file:'))) {
-          await summon('yarn', ['cache', 'clean'], {
-            cwd: __dirname,
-            stdio: 'inherit'
-          });
-        }
-        // yarn upgrade package
-        await summon('yarn', ['upgrade'].concat(...filterUpdates), {
-          cwd: __dirname,
-          stdio: 'inherit'
-        });
-      } else {
-        // npm cache clean package
-        if (filterUpdates.find((str) => str.startsWith('file:'))) {
-          await summon('npm', ['cache', 'clean'].concat(...filterUpdates), {
-            cwd: __dirname,
-            stdio: 'inherit'
-          });
-        }
-        // npm update package
-        await summon('npm', ['update'].concat(...filterUpdates), {
-          cwd: __dirname,
-          stdio: 'inherit'
-        });
+      } catch (e) {
+        if (e instanceof Error) console.error(e.message);
       }
-
-      // update cache
-      await updateCache();
-
-      const argv = process.argv;
-      // node postinstall.js --commit
-      if (fs.existsSync(path.join(__dirname, '.git')) && argv.includes('--commit')) {
-        await summon('git', ['add', 'package.json'], { cwd: __dirname });
-        await summon('git', ['add', 'package-lock.json'], { cwd: __dirname });
-        const status = await summon('git', ['status', '--porcelain'], {
-          cwd: __dirname
-        });
-
-        if (status.stdout && (status.stdout.includes('package.json') || status.stdout.includes('package-lock.json'))) {
-          await summon('git', ['add', 'package.json', 'package-lock.json'], {
-            cwd: __dirname
-          });
-          await summon('git', ['commit', '-m', 'Update dependencies', '-m', 'Date: ' + new Date()], {
-            cwd: __dirname
-          });
-        }
-      }
-    } catch (e) {
-      if (e instanceof Error) console.error(e.message);
+    } else {
+      console.log('[postinstall] all monorepo packages already at latest version');
     }
   } else {
     console.log('some packages already deleted from node_modules');
