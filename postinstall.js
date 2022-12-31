@@ -9,18 +9,6 @@ const axios = setupCache(Axios);
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
 // const persistentCache = require('persistent-cache');
 
-/**
- * @type {import('./package-lock.json')}
- */
-const lock = JSON.parse(
-	fs.readFileSync(
-		['./node_modules/.package-lock.json', './package-lock.json']
-			.map(str => path.join(__dirname, str))
-			.filter(fs.existsSync)[0],
-		'utf-8',
-	),
-);
-
 // postinstall scripts
 // run this script after `npm install`
 // required	: cross-spawn upath axios-cache-interceptor axios hpagent
@@ -72,11 +60,29 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 			 * @type {string}
 			 */
 			const version = pkgs[pkgname];
+
+			// skip when not exist in node_modules
+			if (!fs.existsSync(path.join(__dirname, pkgname))) {
+				continue;
+			}
+
 			// re-installing local and monorepo package
 			if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
 				//const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
 				toUpdate.push(pkgname);
 			}
+
+			/**
+			 * @type {import('./package-lock.json')}
+			 */
+			const lockfile = JSON.parse(
+				fs.readFileSync(
+					['./node_modules/.package-lock.json', './package-lock.json']
+						.map(str => path.join(__dirname, str))
+						.filter(fs.existsSync)[0],
+					'utf-8',
+				),
+			);
 
 			const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
 			/**
@@ -103,7 +109,7 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 			}
 
 			// existing lock
-			const installedLock = lock.packages['node_modules/' + pkgname];
+			const installedLock = lockfile.packages['node_modules/' + pkgname];
 			installedLock.name = pkgname;
 			const { integrity, resolved } = installedLock;
 			let original = typeof resolved === 'string' && !/^https?/i.test(String(resolved)) ? resolved : null;
