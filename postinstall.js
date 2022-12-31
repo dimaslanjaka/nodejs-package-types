@@ -2,6 +2,7 @@ const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
 
+const scriptname = `[postinstall]`;
 const isAllPackagesInstalled = [
   'cross-spawn',
   'upath',
@@ -19,7 +20,7 @@ const isAllPackagesInstalled = [
 if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   const names = isAllPackagesInstalled.map((o) => o.name);
   console.log(
-    '[postinstall]',
+    scriptname,
     'package',
     names.join(', '),
     'is not installed',
@@ -84,7 +85,7 @@ const packages = [pjson.dependencies, pjson.devDependencies];
  */
 const toUpdate = [];
 let hasNotInstalled = false;
-const scriptname = colors.grey('[postinstall]');
+const coloredScriptName = colors.grey(scriptname);
 
 (async () => {
   for (let i = 0; i < packages.length; i++) {
@@ -105,7 +106,7 @@ const scriptname = colors.grey('[postinstall]');
       if (!fs.existsSync(path.join(__dirname, pkgname))) {
         hasNotInstalled = true;
         console.log(
-          scriptname,
+          coloredScriptName,
           coloredPkgname,
           colors.red('not installed.'),
           'skipping...'
@@ -192,7 +193,7 @@ const scriptname = colors.grey('[postinstall]');
           'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
         if (integrity !== hash) {
           console.log(
-            scriptname,
+            coloredScriptName,
             'remote package',
             pkgname,
             'has different integrity'
@@ -213,7 +214,7 @@ const scriptname = colors.grey('[postinstall]');
           // console.log(value);
           if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
             console.log(
-              scriptname,
+              coloredScriptName,
               'local package',
               pkgname,
               'has different integrity'
@@ -253,7 +254,7 @@ const scriptname = colors.grey('[postinstall]');
               fs.existsSync(node_modules_path)
             ) {
               console.log(
-                scriptname,
+                coloredScriptName,
                 'github package',
                 pkgname,
                 'from branch',
@@ -283,7 +284,7 @@ const scriptname = colors.grey('[postinstall]');
               fs.existsSync(node_modules_path)
             ) {
               console.log(
-                scriptname,
+                coloredScriptName,
                 'github package',
                 pkgname,
                 'from branch',
@@ -414,21 +415,21 @@ const scriptname = colors.grey('[postinstall]');
     } else {
       if (hasNotInstalled) {
         console.log(
-          scriptname,
+          coloredScriptName,
           colors.green('some packages not yet installed')
         );
       } else {
         console.log(
-          scriptname,
+          coloredScriptName,
           'all monorepo packages already at latest version'
         );
       }
     }
   } else {
     if (hasNotInstalled) {
-      console.log(scriptname, 'some packages not yet installed');
+      console.log(coloredScriptName, 'some packages not yet installed');
     } else {
-      console.log(scriptname, 'some packages deleted from node_modules');
+      console.log(coloredScriptName, 'some packages deleted from node_modules');
     }
   }
 })();
