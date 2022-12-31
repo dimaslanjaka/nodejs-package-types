@@ -66,10 +66,18 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 				continue;
 			}
 
-			// re-installing local and monorepo package
+			/*
+      // re-installing local and monorepo package
 			if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
 				//const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
 				toUpdate.push(pkgname);
+			}
+      */
+
+      // push update for ssh package
+      if (/^ssh+)/i.test(version)) {
+				toUpdate.push(pkgname);
+        continue;
 			}
 
 			/**
