@@ -91,15 +91,10 @@ const argv = process.argv.slice(2);
 (async () => {
   try {
     const node_modules_dir = path.join(__dirname, 'node_modules');
+
     // skip if project not yet installed
     if (!fs.existsSync(node_modules_dir)) {
       console.log(coloredScriptName, 'project not yet installed');
-      return;
-    }
-
-    if (!fs.accessSync(path.join(node_modules_dir))) {
-      console.log(coloredScriptName, 'cannot access node_modules');
-      console.log(coloredScriptName, 'probably you still run `npm install`');
       return;
     }
 
@@ -123,15 +118,11 @@ const argv = process.argv.slice(2);
          */
         const coloredPkgname = colors.magenta(pkgname);
 
-        // node postinstall.js --simple
         // add all monorepos packages to be updated without checking
-        if (argv.includes('--simple')) {
-          // push update local and monorepo package
-          if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
-            //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
-            toUpdate.push(pkgname);
-            continue;
-          }
+        if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
+          //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
+          toUpdate.push(pkgname);
+          continue;
         }
 
         // push update for private ssh package
@@ -142,14 +133,26 @@ const argv = process.argv.slice(2);
 
         const locks = ['./node_modules/.package-lock.json', './package-lock.json']
           .map((str) => path.join(__dirname, str))
-          .filter(fs.existsSync)[0];
+          .filter((str) => {
+            try {
+              return fs.existsSync(str);
+            } catch {
+              console.log(coloredScriptName, 'cannot access', str);
+            }
+            return false;
+          })[0];
         /**
          * @type {import('./package-lock.json')}
          */
-        const lockfile = fs.existsSync(locks) ? JSON.parse(fs.readFileSync(locks, 'utf-8')) : {};
+        const lockfile = fs.existsSync(locks)
+          ? JSON.parse(fs.readFileSync(locks, 'utf-8'))
+          : {
+              packages: {}
+            };
 
         // parse existing lock file
         const installedLock = lockfile.packages['node_modules/' + pkgname];
+        if (!installedLock) continue;
         installedLock.name = pkgname;
         const { integrity, resolved } = installedLock;
         let original = typeof resolved === 'string' && !/^https?/i.test(String(resolved)) ? resolved : null;
