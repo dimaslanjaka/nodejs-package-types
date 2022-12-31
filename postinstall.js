@@ -173,6 +173,7 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
               console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
               toUpdate.push(pkgname);
+              continue;
             }
           } else {
             const getApiRoot = await axiosGet(apiRoot);
@@ -188,6 +189,7 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
               console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
               toUpdate.push(pkgname);
+              continue;
             }
           }
         } catch (e) {
