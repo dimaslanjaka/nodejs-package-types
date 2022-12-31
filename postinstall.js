@@ -74,10 +74,10 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 			}
       */
 
-      // push update for private ssh package
-      if (/^(ssh\+|git\+ssh))/i.test(version)) {
+			// push update for private ssh package
+			if (/^(ssh\+|git\+ssh))/i.test(version)) {
 				toUpdate.push(pkgname);
-        continue;
+				continue;
 			}
 
 			/**
@@ -463,7 +463,7 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
 		if (!fs.existsSync(path.dirname(outputLocationPath))) {
 			fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
 		}
-		const writer = fs.createWriteStream(outputLocationPath);
+		const writer = fs.createWriteStream(outputLocationPath, { flags: 'w' });
 		Axios.default(url, { responseType: 'stream' }).then(response => {
 			response.data.pipe(writer);
 			let error = null;
