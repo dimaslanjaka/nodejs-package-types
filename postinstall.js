@@ -1,6 +1,16 @@
+// postinstall scripts
+// run this script after `npm install`
+// required	: cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache
+// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
+// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
+// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
+// usages		: node postinstall.js
+
 const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
+
+//// CHECK REQUIRED PACKAGES
 
 const scriptname = `[postinstall]`;
 const isAllPackagesInstalled = [
@@ -29,13 +39,7 @@ if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   return;
 }
 
-// postinstall scripts
-// run this script after `npm install`
-// required	: cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache
-// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
-// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
-// usages		: node postinstall.js
+//// POSTINSTALL START
 
 // imports start
 const { spawn } = require('cross-spawn');
