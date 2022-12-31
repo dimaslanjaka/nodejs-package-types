@@ -86,7 +86,7 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 			/**
 			 * @type {import('./package-lock.json')}
 			 */
-			const lockfile = JSON.parse(fs.readFileSync(locks, 'utf-8'));
+			const lockfile = fs.existsSync(locks) ? JSON.parse(fs.readFileSync(locks, 'utf-8')) : {}
 
 			const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
 			/**
