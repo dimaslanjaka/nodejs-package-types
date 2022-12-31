@@ -66,15 +66,16 @@ const getCache = () => require('./node_modules/.cache/npm-install.json');
  */
 const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, null, 2));
 
-(async () => {
-  // @todo clear cache local packages
-  const packages = [pjson.dependencies, pjson.devDependencies];
-  /**
-   * list packages to update
-   * @type {string[]}
-   */
-  const toUpdate = [];
+// @todo clear cache local packages
+const packages = [pjson.dependencies, pjson.devDependencies];
 
+/**
+ * list packages to update
+ * @type {string[]}
+ */
+const toUpdate = [];
+
+(async () => {
   for (let i = 0; i < packages.length; i++) {
     const pkgs = packages[i];
     //const isDev = i === 1; // <-- index devDependencies
@@ -246,20 +247,6 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
     });
   };
 
-  /**
-   * check if all packages exists
-   * @returns
-   */
-  const checkNodeModules = () => {
-    const exists = toUpdate.map(
-      (pkgname) =>
-        fs.existsSync(path.join(__dirname, 'node_modules', pkgname)) &&
-        fs.existsSync(path.join(__dirname, 'node_modules', pkgname, 'package.json'))
-    );
-    //console.log({ exists });
-    return exists.every((exist) => exist === true);
-  };
-
   if (checkNodeModules()) {
     // filter duplicates package names
     const filterUpdates = toUpdate.filter((item, index) => toUpdate.indexOf(item) === index);
@@ -312,9 +299,12 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
         const status = await summon('git', ['status', '--porcelain'], {
           cwd: __dirname
         });
-        console.log({ status });
+
         if (status.stdout && (status.stdout.includes('package.json') || status.stdout.includes('package-lock.json'))) {
-          await summon('git', ['commit', '-m', 'Update dependencies\nDate: ' + new Date()], {
+          await summon('git', ['add', 'package.json', 'package-lock.json'], {
+            cwd: __dirname
+          });
+          await summon('git', ['commit', '-m', 'Update dependencies', '-m', 'Date: ' + new Date()], {
             cwd: __dirname
           });
         }
@@ -521,4 +511,18 @@ function isPackageInstalled(x) {
   } catch (e) {
     return false;
   }
+}
+
+/**
+ * check if all packages exists
+ * @returns
+ */
+function checkNodeModules() {
+  const exists = toUpdate.map(
+    (pkgname) =>
+      fs.existsSync(path.join(__dirname, 'node_modules', pkgname)) &&
+      fs.existsSync(path.join(__dirname, 'node_modules', pkgname, 'package.json'))
+  );
+  //console.log({ exists });
+  return exists.every((exist) => exist === true);
 }
