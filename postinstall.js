@@ -88,9 +88,6 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
       if (!fs.existsSync(path.join(__dirname, pkgname))) {
         continue;
       }
-	
-      // skip when version is latest or wildcard
-      if (/^(latest|\*)/i.test(version) continue;
 
       /*
       // re-installing local and monorepo package
