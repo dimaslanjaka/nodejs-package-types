@@ -116,7 +116,7 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 				// console.log({ pkgname, integrity, resolved, original });
 				const hash = 'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
 				if (integrity !== hash) {
-					console.log('updating url remote package', pkgname, 'caused by different integrity');
+					console.log('remote package', pkgname, 'has different integrity');
 					// fs.rmSync(node_modules_path, { recursive: true, force: true });
 					toUpdate.push(pkgname);
 				}
@@ -156,7 +156,7 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 						// skip when get api failure
 						if (!getApi) continue;
 						if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-							console.log('github package', pkgname, 'hash different commit hash');
+							console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
 							// fs.rmSync(node_modules_path, { recursive: true, force: true });
 							toUpdate.push(pkgname);
 						}
@@ -169,8 +169,8 @@ const saveCache = data => fs.writeFileSync(cacheJSON, JSON.stringify(data, null,
 						// skip when get api failure
 						if (!getApi) continue;
 						console.log({ version, githubPathHash, data: getApi.data.sha });
-            if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-							console.log('github package', pkgname, 'hash different commit hash');
+						if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
+							console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
 							// fs.rmSync(node_modules_path, { recursive: true, force: true });
 							toUpdate.push(pkgname);
 						}
