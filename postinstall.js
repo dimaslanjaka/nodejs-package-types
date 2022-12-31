@@ -90,8 +90,21 @@ const packages = [pjson.dependencies, pjson.devDependencies];
 const toUpdate = [];
 let hasNotInstalled = false;
 const coloredScriptName = colors.grey(scriptname);
+/**
+ * argument value
+ */
+const argv = process.argv.slice(2);
 
 (async () => {
+  // dump file
+  const jsonfile = path.join(__dirname, 'tmp/postinstall/monorepos.json');
+  if (!fs.existsSync(path.dirname(jsonfile))) {
+    fs.mkdirSync(path.dirname(jsonfile), { recursive: true });
+  }
+  const json = fs.existsSync(jsonfile)
+    ? JSON.parse(fs.readFileSync(jsonfile, 'utf-8'))
+    : {};
+
   for (let i = 0; i < packages.length; i++) {
     const pkgs = packages[i];
     //const isDev = i === 1; // <-- index devDependencies
@@ -118,13 +131,16 @@ const coloredScriptName = colors.grey(scriptname);
         continue;
       }
 
-      /*
-      // push update local and monorepo package
-			if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
-				//const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
-				toUpdate.push(pkgname);
-			}
-      */
+      // node postinstall.js --simple
+      // add all monorepos packages to be updated without checking
+      if (argv.includes('--simple')) {
+        // push update local and monorepo package
+        if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
+          //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
+          toUpdate.push(pkgname);
+          continue;
+        }
+      }
 
       // push update for private ssh package
       if (/^(ssh+|git+ssh)/i.test(version)) {
@@ -167,15 +183,7 @@ const coloredScriptName = colors.grey(scriptname);
       }
 
       // dump
-      const jsonfile = path.join(__dirname, 'tmp/postinstall/monorepos.json');
-      if (!fs.existsSync(path.dirname(jsonfile))) {
-        fs.mkdirSync(path.dirname(jsonfile), { recursive: true });
-      }
-      const json = fs.existsSync(jsonfile)
-        ? JSON.parse(fs.readFileSync(jsonfile, 'utf-8'))
-        : {};
       json[pkgname] = { isLocalPkg, isGitPkg, isUrlPkg };
-      fs.writeFileSync(jsonfile, JSON.stringify(json, null, 2));
 
       // existing lock
       const installedLock = lockfile.packages['node_modules/' + pkgname];
@@ -306,6 +314,9 @@ const coloredScriptName = colors.grey(scriptname);
       }
     }
   }
+
+  // dump write
+  fs.writeFileSync(jsonfile, JSON.stringify(json, null, 2));
 
   // do update
 
