@@ -151,6 +151,7 @@ function getTypedocOptions() {
  */
 function setTypedocOptions(newOpt) {
   opt = Object.assign(opt, newOpt || {});
+  writefile(join(__dirname, 'tmp/typedocs/options.json'), JSON.stringify(opt));
   return opt;
 }
 
@@ -206,6 +207,37 @@ async function createIndex() {
   });
 
   writeFileSync(join(__dirname, 'docs/index.html'), body.trim());
+}
+
+/**
+ * read file with validation
+ * @param {string} str
+ * @param {import('fs').EncodingOption} encoding
+ * @returns
+ */
+function readfile(str, encoding = 'utf-8') {
+  if (fs.existsSync(str)) {
+    if (fs.statSync(str).isFile()) {
+      return fs.readFileSync(str, encoding);
+    } else {
+      throw str + ' is directory';
+    }
+  } else {
+    throw str + ' not found';
+  }
+}
+
+/**
+ * write to file recursively
+ * @param {string} dest
+ * @param {any} data
+ */
+function writefile(dest, data) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(dest)) {
+    if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
+  }
+  fs.writeFileSync(dest, data);
 }
 
 module.exports = {
