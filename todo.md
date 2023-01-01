@@ -1,3 +1,4 @@
+## `hexo.extend.helper.register`
 alias this in `hexo.extend.helper.register`
 ```jsonc
 [
@@ -34,4 +35,9 @@ alias this in `hexo.extend.helper.register`
   'next_menu',          'next_config',   'next_config_unique',
   'js_vendors'
 ]
+```
+
+`this.site` keys
+```jsonc
+[ 'posts', 'pages', 'categories', 'tags', 'data' ]
 ```
