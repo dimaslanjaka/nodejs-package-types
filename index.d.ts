@@ -759,6 +759,7 @@ declare namespace Hexo {
       layout?: string | undefined;
       path?: string | undefined;
       date?: moment.MomentInput | undefined;
+      permalink?: string | undefined;
     }
     interface RenderData {
       engine?: string | undefined;
