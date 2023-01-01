@@ -41,3 +41,8 @@ alias this in `hexo.extend.helper.register`
 ```jsonc
 [ 'posts', 'pages', 'categories', 'tags', 'data' ]
 ```
+
+`this.site.tags` keys
+```jsonc
+[ 'data', 'length' ]
+```
