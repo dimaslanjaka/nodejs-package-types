@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { join } = require('path');
-const path = require('upath');
+const path = require('path');
 const pkgjson = require('./package.json');
 
 // required: npm i upath
