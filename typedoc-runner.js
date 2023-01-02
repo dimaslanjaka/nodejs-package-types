@@ -81,19 +81,17 @@ const publish = async function (options = {}, callback = null) {
 
   const github = new git(outDir);
 
-  try {
-    if (!existsSync(join(outDir, '.git'))) {
-      mkdirSync(join(outDir, '.git'), { recursive: true });
-      await github.init();
-    }
-    await github.setremote(REPO_URL);
-    await github.setbranch('master');
-    //await github.reset('master');
-    await github.pull(['--recurse-submodule', '-X', 'theirs']);
-    await github.spawn('git', 'config core.eol lf'.split(' '));
-  } catch {
-    //
+  if (!existsSync(join(outDir, '.git'))) {
+    mkdirSync(join(outDir, '.git'), { recursive: true });
+    await github
+      .spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname })
+      .catch(() => console.log('fail clone to /docs'));
   }
+  await github.setremote(REPO_URL).catch(() => console.log('fail set remote', REPO_URL));
+  await github.setbranch('master').catch(() => console.log('fail set branch master'));
+  //await github.reset('master');
+  await github.pull(['--recurse-submodule', '-X', 'theirs']).catch(() => console.log('fail pull'));
+  await github.spawn('git', 'config core.eol lf'.split(' ')).catch(() => console.log('fail set EOL LF'));
 
   for (let i = 0; i < 2; i++) {
     await compile(options, callback);
