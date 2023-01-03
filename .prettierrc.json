@@ -14,6 +14,7 @@
     {
       "excludeFiles": [
         "*.min.js",
+        "*.min.cjs",
         "*.min.css",
         "*.min.html",
         "*.min.scss"
@@ -33,6 +34,7 @@
     {
       "files": [
         "*.ejs",
+        "*.njk",
         "*.html"
       ],
       "options": {
