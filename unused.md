@@ -20,7 +20,7 @@
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
     ],
     "markdown-it": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
@@ -62,7 +62,8 @@
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -70,10 +71,18 @@
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc.js"
+    ],
+    "axios": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "ansi-colors": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "typedoc": [
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
@@ -81,22 +90,17 @@
     "semver": [
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
+    "browser-sync": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
+      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+    ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
-    ],
-    "browser-sync": [
-      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
     "express": [
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
-    "axios": [
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
-    ],
     "true-case-path": [
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
-    ],
-    "ansi-colors": [
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ]
   },
@@ -119,7 +123,7 @@
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
     ],
     "hexo-util": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
@@ -164,7 +168,8 @@
     "cross-spawn": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js"
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -172,10 +177,18 @@
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc.js"
+    ],
+    "axios": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "ansi-colors": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "typedoc": [
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
@@ -183,26 +196,31 @@
     "semver": [
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
+    "browser-sync": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
+      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+    ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
-    ],
-    "browser-sync": [
-      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
     "express": [
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
-    "axios": [
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
-    ],
     "true-case-path": [
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
-    ],
-    "ansi-colors": [
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ]
   },
-  "invalidFiles": {},
+  "invalidFiles": {
+    "D:\\Repositories\\nodejs-package-types\\old-postinstall.js": {
+      "loc": {
+        "line": 33,
+        "column": 2
+      },
+      "pos": 1151,
+      "code": "BABEL_PARSER_SYNTAX_ERROR",
+      "reasonCode": "IllegalReturn"
+    }
+  },
   "invalidDirs": {}
 }
 ```
