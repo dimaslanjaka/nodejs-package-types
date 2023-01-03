@@ -12,6 +12,8 @@ on:
       - '**/*.tgz'
       - '**/*.gz'
       - '**/release/**'
+      - '**garbage-collector**'
+      - '**codeql**'
   pull_request:
     types:
       - closed
