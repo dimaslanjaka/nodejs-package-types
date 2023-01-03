@@ -3,8 +3,7 @@ name: Garbage Collector
 on:
   workflow_dispatch:
   push:
-    branches:
-      - master
+    branches: ['master', 'main']
     paths:
       - '**/*.tgz'
       - '**/*.gz'
