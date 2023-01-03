@@ -37,9 +37,7 @@ jobs:
           timezoneWindows: 'Western Indonesia Time'
       - uses: actions/checkout@v3
         with:
-          ref: master
           token: '${{ secrets.ACCESS_TOKEN }}'
-          # submodules: recursive
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
