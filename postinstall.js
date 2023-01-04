@@ -166,8 +166,8 @@ const coloredScriptName = colors.grey(scriptname);
               : ''
           );
           if (isLocalPkg && !isLocalTarballpkg) {
-            // console.log('uninstalling', pkgname, 'and reinstalling', ...arg);
-            // await summon('npm', ['un', pkgname], { cwd: __dirname });
+            console.log('uninstalling', pkgname, 'and reinstalling', ...arg);
+            await summon('npm', ['un', pkgname], { cwd: __dirname });
             await summon('npm', ['install', ...arg], { cwd: __dirname });
           } else {
             toUpdate.add(pkgname);
