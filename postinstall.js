@@ -178,7 +178,7 @@ const coloredScriptName = colors.grey(scriptname);
                 '**/.cache/**',
                 '**/temp/**'
               ],
-              pattern: '**/{src,dist,lib}/**'
+              pattern: '**/src/**'
             });
             const existingHash = ((getCache().folder || {})[pkgname] || {}).hash;
             if (!existingHash || folderHash.hash !== existingHash) {
