@@ -1,21 +1,27 @@
 {
   "name": "@types/hexo",
-  "version": "3.8.9",
+  "version": "3.9.0",
   "description": "TypeScript definitions for hexo",
-  "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/hexo",
+  "homepage": "https://github.com/dimaslanjaka/nodejs-package-types/tree/hexo",
   "license": "MIT",
   "contributors": [
     {
       "name": "KentarouTakeda",
       "url": "https://github.com/kentarouTakeda",
       "githubUsername": "kentarouTakeda"
+    },
+    {
+      "name": "Dimas Lanjaka",
+      "url": "https://github.com/dimaslanjaka",
+      "githubUsername": "dimaslanjaka",
+      "email": "dimaslanjaka@gmail.com"
     }
   ],
   "main": "",
-  "types": "src/index.d.ts",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "url": "https://github.com/dimaslanjaka/nodejs-package-types.git",
     "directory": "types/hexo"
   },
   "scripts": {
@@ -33,8 +39,6 @@
     "moment": "^2.19.4",
     "upath": "^2.0.1"
   },
-  "typesPublisherContentHash": "c9475285227ee48f579221155907cdb70466e30eba6f1e3455d8fa3c4a7b6033",
-  "typeScriptVersion": "3.6",
   "devDependencies": {
     "cross-spawn": "^7.0.3"
   }
