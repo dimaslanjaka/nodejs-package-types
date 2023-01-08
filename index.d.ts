@@ -16,12 +16,11 @@ import connect = require('connect');
 import Stream = require('stream');
 import util = require('hexo-util');
 import fs = require('fs');
+import HexoConfig from './HexoConfig';
 
 declare global {
   const hexo: Hexo;
 }
-
-export { default as HexoConfig } from './HexoConfig';
 
 export interface Model<T> {
   /**
@@ -270,6 +269,9 @@ declare class Hexo extends EventEmitter {
 }
 
 declare namespace Hexo {
+  interface Config extends HexoConfig {
+    [key: string]: any;
+  }
   interface InstanceOptions {
     debug?: boolean | undefined;
     safe?: boolean | undefined;
