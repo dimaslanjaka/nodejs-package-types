@@ -1,6 +1,6 @@
-import Hexo from './index';
+import Hexo from 'hexo';
 
-interface HexoConfig {
+export default interface HexoConfig {
   [key: string]: any;
   /**
    * The title of your website
@@ -213,4 +213,4 @@ interface HexoConfig {
   readonly ignore: string[];
 }
 
-export = HexoConfig;
+// export = HexoConfig;
