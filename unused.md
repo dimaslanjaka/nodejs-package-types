@@ -71,6 +71,7 @@
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc.js"
@@ -79,6 +80,9 @@
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "glob": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js"
     ],
     "ansi-colors": [
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
@@ -177,6 +181,7 @@
     ],
     "upath": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc.js"
@@ -185,6 +190,9 @@
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+    ],
+    "glob": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js"
     ],
     "ansi-colors": [
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
