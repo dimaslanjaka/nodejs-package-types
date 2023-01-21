@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const depcheck = require('depcheck');
-const { writeFileSync } = require('fs');
-const { join } = require('path');
+const fs = require('fs-extra');
+const path = require('upath');
 
 // Check dependencies using depcheck
 // required : npm i -D depcheck
@@ -10,6 +10,7 @@ const { join } = require('path');
 // raw      : https://raw.githubusercontent.com/dimaslanjaka/hexo-seo/master/unused.js
 // update   : curl -L https://raw.githubusercontent.com/dimaslanjaka/hexo-seo/master/unused.js > unused.js
 
+/** @type {depcheck.Config} */
 const options = {
   ignoreBinPackage: false, // ignore the packages with bin entry
   skipMissing: false, // skip calculation of missing dependencies
@@ -27,7 +28,13 @@ const options = {
     // ignore dependencies that matches these globs
     'grunt-*',
     'hexo-*',
-    '@typescript-eslint*'
+    '@typescript-eslint/*',
+    'eslint-*',
+    'depcheck',
+    'npm-run-all',
+    'nodemon',
+    'lerna',
+    'typescript'
   ],
   parsers: {
     // the target parsers
@@ -59,5 +66,14 @@ const options = {
 };
 
 depcheck(__dirname, options).then((unused) => {
-  writeFileSync(join(__dirname, 'unused.md'), '```json\n' + JSON.stringify(unused, null, 2) + '\n```');
+  let content = '';
+  content += `install missing dependencies ${tripleTicks('bash')}${Object.keys(
+    unused.missing
+  ).join(' ')}${tripleTicks()}\n`;
+  content += '```json\n' + JSON.stringify(unused, null, 2) + '\n```\n\n';
+  fs.writeFileSync(path.join(__dirname, 'unused.md'), content);
 });
+
+function tripleTicks(lang = '') {
+  return '\n```' + lang + '\n';
+}
