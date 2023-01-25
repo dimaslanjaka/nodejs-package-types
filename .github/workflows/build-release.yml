@@ -35,8 +35,8 @@ jobs:
       matrix:
         #os: [ "windows-latest", "macos-11", "ubuntu-latest" ]
         os: [ "ubuntu-latest" ]
-        node-version: [ 14.x, 16.x, 18.x ]
-        architecture: [ x86, x64 ]
+        node-version: [ '14', '16', '18' ]
+        architecture: [ 'x86', 'x64' ]
       fail-fast: true
       max-parallel: 6
 
