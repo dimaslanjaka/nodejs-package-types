@@ -1,3 +1,8 @@
+install missing dependencies 
+```bash
+gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-it-footnote markdown-it-mark markdown-it-sub markdown-it-sup slugify git-command-helper cross-spawn fs-extra upath axios glob ansi-colors typedoc semver browser-sync express true-case-path
+```
+
 ```json
 {
   "dependencies": [
@@ -5,18 +10,6 @@
   ],
   "devDependencies": [],
   "missing": {
-    "@typescript-eslint/parser": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
-    ],
-    "@typescript-eslint/eslint-plugin": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
-    ],
-    "eslint-plugin-prettier": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
-    ],
-    "eslint-config-prettier": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
-    ],
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\packer.js",
@@ -67,6 +60,7 @@
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\unused.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "upath": [
@@ -74,7 +68,8 @@
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc.js"
+      "D:\\Repositories\\nodejs-package-types\\typedoc.js",
+      "D:\\Repositories\\nodejs-package-types\\unused.js"
     ],
     "axios": [
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
@@ -97,9 +92,6 @@
     "browser-sync": [
       "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
-    ],
-    "depcheck": [
-      "D:\\Repositories\\nodejs-package-types\\unused.js"
     ],
     "express": [
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
@@ -177,6 +169,7 @@
     ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\unused.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "upath": [
@@ -184,7 +177,8 @@
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc.js"
+      "D:\\Repositories\\nodejs-package-types\\typedoc.js",
+      "D:\\Repositories\\nodejs-package-types\\unused.js"
     ],
     "axios": [
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
@@ -232,3 +226,4 @@
   "invalidDirs": {}
 }
 ```
+
