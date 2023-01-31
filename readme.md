@@ -14,7 +14,7 @@ Customized Package Types ([See all modules](https://github.com/dimaslanjaka/node
 ### Modules
 | package names | link | description |
 | :--- | :--- | :--- |
-| @types/skelljs, @types/rimraf, @types/kill-port, @types/markdown-it-abbr, @types/markdown-it-footnote, @types/markdown-it-image-figures, @types/markdown-it-mark, @types/markdown-it-sub, @types/markdown-it-sup | https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz | all sub modules automatically detected by VSCode and Typescript |
+| @types/skelljs, ~@types/rimraf,~ @types/kill-port, @types/markdown-it-abbr, @types/markdown-it-footnote, @types/markdown-it-image-figures, @types/markdown-it-mark, @types/markdown-it-sub, @types/markdown-it-sup | https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz | all sub modules automatically detected by VSCode and Typescript |
 | @types/hexo | https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz |
 | @types/hexo-util | https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz |
 | @types/through2 | https://github.com/dimaslanjaka/nodejs-package-types/raw/through2/release/types-through2.tgz |
