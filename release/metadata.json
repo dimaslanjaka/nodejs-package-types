@@ -1,21 +1,21 @@
 {
   "/release/types-through2-2.0.38.tgz": {
     "integrity": {
-      "sha1": "64e2b38f4377fb3b022cec11eeedc1dd1537c0db",
-      "sha256": "xcaaALiE521pysfj8FGeLkwHtLXT660D5MJ0DYb1OA4=",
-      "md5": "4b08764423fb6e333a84df86db821fa8",
-      "sha512": "3dt+cFGRfI+Ig9N02q8TARZ9KSMSSREngJop3Eb1rL9KnMoB9Qva/kDWUzqabti7FAZsicMj1YIKoPwOb2VpHw=="
+      "sha1": "e3ff98ec80eb97954dec251e8de140cde3055c59",
+      "sha256": "VS7wibjaaI+8jKAeD/lFDR71itLudZMPf3QiPeXwYH8=",
+      "md5": "e7fc053943c49ad46b7e479d72ab5bc0",
+      "sha512": "Q6nQ00mqQ6oeJygNFtk1YTvoqnDgK9f2+YpnemG6+Y7PEE3FJqeh98DBPefnSMPayiWivKKtJuzXQNQmDQfZcg=="
     },
-    "size": "4.84 KB"
+    "size": "4.98 KB"
   },
   "/release/types-through2.tgz": {
     "integrity": {
-      "sha1": "64e2b38f4377fb3b022cec11eeedc1dd1537c0db",
-      "sha256": "xcaaALiE521pysfj8FGeLkwHtLXT660D5MJ0DYb1OA4=",
-      "md5": "4b08764423fb6e333a84df86db821fa8",
-      "sha512": "3dt+cFGRfI+Ig9N02q8TARZ9KSMSSREngJop3Eb1rL9KnMoB9Qva/kDWUzqabti7FAZsicMj1YIKoPwOb2VpHw=="
+      "sha1": "e3ff98ec80eb97954dec251e8de140cde3055c59",
+      "sha256": "VS7wibjaaI+8jKAeD/lFDR71itLudZMPf3QiPeXwYH8=",
+      "md5": "e7fc053943c49ad46b7e479d72ab5bc0",
+      "sha512": "Q6nQ00mqQ6oeJygNFtk1YTvoqnDgK9f2+YpnemG6+Y7PEE3FJqeh98DBPefnSMPayiWivKKtJuzXQNQmDQfZcg=="
     },
-    "size": "4.84 KB"
+    "size": "4.98 KB"
   },
   "/package-lock.json": {
     "integrity": {
