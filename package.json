@@ -69,6 +69,7 @@
     "@types/gulp": "^4.0.10",
     "@types/node": "^18.11.18",
     "@types/through2": "file:through2",
+    "@types/markdown-it": "12.2.3",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "browser-sync": "^2.27.11",
