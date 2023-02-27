@@ -32,7 +32,7 @@
     "!**/release/**"
   ],
   "scripts": {
-    "update": "npx npm-check-updates -u && npm install",
+    "update": "npx npm-check-updates -u",
     "pre-build": "git pull -X theirs",
     "build:hexo": "npx fse copy packer.js hexo/packer.js && cd hexo && npm run build",
     "build:through2": "npx fse copy packer.js through2/packer.js && cd through2 && npm run build",
