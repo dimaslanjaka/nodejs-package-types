@@ -11,209 +11,207 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
   "devDependencies": [],
   "missing": {
     "gulp": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-server.js"
     ],
     "markdown-it": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-footnote.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-image-figures.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-abbr.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-footnote.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-image-figures.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-mark.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-sub.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-sup.d.ts"
     ],
     "markdown-it-abbr": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-anchor": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-attrs": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-footnote": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-mark": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-sub": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-sup": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "slugify": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "git-command-helper": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js"
     ],
     "cross-spawn": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/packer.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/preinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-server.js"
     ],
     "fs-extra": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\unused.js",
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/packer.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/unused.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ],
     "upath": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc.js",
-      "D:\\Repositories\\nodejs-package-types\\unused.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/packer.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/preinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/unused.js"
     ],
     "axios": [
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ],
     "glob": [
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js"
     ],
     "ansi-colors": [
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ],
     "typedoc": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js"
     ],
     "semver": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js"
     ],
     "browser-sync": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
-      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-server.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/connect-browser-sync.d.ts"
     ],
     "express": [
-      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/connect-browser-sync.d.ts"
     ],
     "true-case-path": [
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ]
   },
   "using": {
     "@typescript-eslint/parser": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/.eslintrc.js"
     ],
     "@typescript-eslint/eslint-plugin": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/.eslintrc.js"
     ],
     "eslint-plugin-prettier": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/.eslintrc.js"
     ],
     "eslint-config-prettier": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/.eslintrc.js"
     ],
     "eslint": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/.eslintrc.js"
     ],
     "gulp": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-server.js"
     ],
     "hexo-util": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-abbr.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-footnote.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-image-figures.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-mark.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sub.d.ts",
-      "D:\\Repositories\\nodejs-package-types\\typings\\markdown-it-sup.d.ts"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-abbr.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-footnote.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-image-figures.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-mark.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-sub.d.ts",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/markdown-it-sup.d.ts"
     ],
     "markdown-it-abbr": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-anchor": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-attrs": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-footnote": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-mark": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-sub": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "markdown-it-sup": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "slugify": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js"
     ],
     "git-command-helper": [
-      "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/gulpfile.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js"
     ],
     "cross-spawn": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/packer.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/preinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-server.js"
     ],
     "fs-extra": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\unused.js",
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/packer.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/unused.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ],
     "upath": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc.js",
-      "D:\\Repositories\\nodejs-package-types\\unused.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/packer.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/preinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/unused.js"
     ],
     "axios": [
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ],
     "glob": [
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js"
     ],
     "ansi-colors": [
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/postinstall.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ],
     "typedoc": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js"
     ],
     "semver": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-runner.js"
     ],
     "browser-sync": [
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
-      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typedoc-server.js",
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/connect-browser-sync.d.ts"
     ],
     "depcheck": [
-      "D:\\Repositories\\nodejs-package-types\\unused.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/unused.js"
     ],
     "express": [
-      "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/typings/connect-browser-sync.d.ts"
     ],
     "true-case-path": [
-      "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
+      "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/src/setup.js"
     ]
   },
   "invalidFiles": {
-    "D:\\Repositories\\nodejs-package-types\\old-postinstall.js": {
+    "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/packages/nodejs-packages-types/old-postinstall.js": {
       "loc": {
         "line": 33,
         "column": 2
