@@ -138,6 +138,9 @@ declare class Hexo extends EventEmitter {
    */
   readonly locals: Hexo.Locals;
 
+  /**
+   * hexo site root directory
+   */
   readonly base_dir: string;
 
   /**
