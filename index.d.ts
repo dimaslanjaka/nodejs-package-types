@@ -224,6 +224,9 @@ declare class Hexo extends EventEmitter {
 
   readonly scaffold: Hexo.Scaffold;
 
+  readonly execFilter: (type, data, options) => ReturnType<Hexo.extend.Filter['exec']>;
+  readonly execFilterSync: (type, data, options) => ReturnType<Hexo.extend.Filter['execSync']>;
+
   /**
    * Emitted before deployment begins.
    */
@@ -865,7 +868,7 @@ export interface TemplateLocals {
   site: any;
 }
 
-interface IndexPage {
+export interface IndexPage {
   per_page?: number | undefined;
   total?: number | undefined;
   current?: number | undefined;
@@ -878,17 +881,17 @@ interface IndexPage {
   path?: string | undefined;
 }
 
-interface ArchivePage extends IndexPage {
+export interface ArchivePage extends IndexPage {
   archive?: boolean | undefined;
   year?: number | undefined;
   month?: number | undefined;
 }
 
-interface CategoryPage extends IndexPage {
+export interface CategoryPage extends IndexPage {
   category: string;
 }
 
-interface TagPage extends IndexPage {
+export interface TagPage extends IndexPage {
   tag: string;
 }
 
