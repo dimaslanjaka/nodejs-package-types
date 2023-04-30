@@ -21,7 +21,7 @@ const isAllPackagesInstalled = [
 	"cross-spawn",
 	"ansi-colors",
 	"glob",
-	"upath",
+	"upath", "minimist"
 ].map((name) => ({
 	name,
 	installed: isPackageInstalled(name),
