@@ -30,7 +30,7 @@ if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
 	const names = isAllPackagesInstalled
 		.filter((o) => o.installed === false)
 		.map((o) => o.name);
-	console.log(
+	log(
 		scriptname,
 		"package",
 		names.join(", "),
@@ -40,15 +40,33 @@ if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
 	process.exit(0);
 }
 
-console.log("=".repeat(19));
-console.log("= packing started =");
-console.log("=".repeat(19));
-
 const args = process.argv.slice(2);
-const usingYarn = args.includes("-yarn") || args.includes("--yarn");
+const argv = require("minimist")(args);
 
-const releaseDir = join(__dirname, "release");
-const child = !usingYarn
+const verbose = args.includes("-d") || args.includes("--verbose");
+let log = console.log;
+if (!verbose) {
+	log = (...args) => {
+		//
+	};
+}
+
+const withYarn = args.includes("-yarn") || args.includes("--yarn");
+const withFilename = argv["fn"] || argv["filename"] ? true : false;
+const releaseDir1 = join(__dirname, "release");
+const releaseDir2 = join(__dirname, "releases");
+const releaseDir = !fs.existsSync(releaseDir2) ? releaseDir1 : releaseDir2;
+
+// create released directory when not exist
+if (!fs.existsSync(releaseDir)) {
+	fs.mkdirpSync(releaseDir);
+}
+
+log("=".repeat(19));
+log("= packing started =");
+log("=".repeat(19));
+
+const child = !withYarn
 	? spawn("npm", ["pack"], { cwd: __dirname, stdio: "ignore" })
 	: spawn("yarn", ["pack"], { cwd: __dirname, stdio: "ignore" });
 
@@ -57,7 +75,7 @@ const version = (function () {
 	return `${v.major}.${v.minor}.${v.patch}`;
 })();
 
-child.on("exit", usingYarn ? bundleWithYarn : bundleWithNpm);
+child.on("exit", withYarn ? bundleWithYarn : bundleWithNpm);
 
 const getPackageHashes = async function () {
 	let hashes = {};
@@ -101,49 +119,60 @@ const getPackageHashes = async function () {
 				size,
 			},
 		});
-		//console.log("Last callback call at index " + index + " with value " + file);
+		//log("Last callback call at index " + index + " with value " + file);
 
 		//hashes = { [os.type()]: { [os.arch()]: hashes } };
 		fs.writeFileSync(metafile, JSON.stringify(hashes, null, 2));
-		console.log(hashes);
+		log(hashes);
 	}
 };
 
 function bundleWithYarn() {
+	// create readme
+	addReadMe();
+
+	// start bundle
 	let filename = "package.tgz";
 	let tgz = join(__dirname, filename);
-	const versioned_filename = slugifyPkgName(
-		`${packagejson.name}-${packagejson.version}.tgz`
-	);
+	const targetFname =
+		argv["fn"] ||
+		argv["filename"] ||
+		slugifyPkgName(`${packagejson.name}-${packagejson.version}.tgz`);
 	if (!fs.existsSync(tgz)) {
 		filename = slugifyPkgName(
 			`${packagejson.name}-v${packagejson.version}.tgz`
 		);
 		tgz = join(__dirname, filename);
 	}
-	const tgzlatest = join(releaseDir, slugifyPkgName(`${packagejson.name}.tgz`));
-	const tgzversion = join(releaseDir, versioned_filename);
 
-	// create dir when not exist
-	if (!fs.existsSync(dirname(tgzlatest))) {
-		fs.mkdirpSync(dirname(tgzlatest));
+	if (withFilename) {
+		const tgzlatest = join(releaseDir, targetFname + ".tgz");
+		if (fs.existsSync(tgz)) {
+			fs.copySync(tgz, tgzlatest, { overwrite: true });
+		}
+	} else {
+		const tgzlatest = join(
+			releaseDir,
+			slugifyPkgName(`${packagejson.name}.tgz`)
+		);
+		const tgzversion = join(releaseDir, targetFname);
+
+		if (fs.existsSync(tgz)) {
+			fs.copySync(tgz, tgzlatest, { overwrite: true });
+			fs.copySync(tgz, tgzversion, { overwrite: true });
+		}
 	}
 
-	// create readme
-	addReadMe();
-
 	if (fs.existsSync(tgz)) {
-		fs.copySync(tgz, tgzlatest);
-		fs.copySync(tgz, tgzversion);
 		// remove package.tgz
-		fs.rmSync(tgz);
+		fs.rmSync(tgz, { recursive: true, force: true });
 	}
 
 	// write hashes info
 	getPackageHashes().then(() => {
-		console.log("=".repeat(20));
-		console.log("= packing finished =");
-		console.log("=".repeat(20));
+		log("=".repeat(20));
+		log("= packing finished =");
+		log("=".repeat(20));
 	});
 }
 
@@ -176,9 +205,9 @@ function bundleWithNpm() {
 
 		// write hashes info
 		getPackageHashes().then(() => {
-			console.log("=".repeat(20));
-			console.log("= packing finished =");
-			console.log("=".repeat(20));
+			log("=".repeat(20));
+			log("= packing finished =");
+			log("=".repeat(20));
 		});
 	}
 }
