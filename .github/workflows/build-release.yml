@@ -236,6 +236,7 @@ jobs:
         with:
           files: |
             release
+            releases
             dist
             lib
             !node_modules
