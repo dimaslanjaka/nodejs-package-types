@@ -231,8 +231,8 @@ jobs:
           echo "install-clean.outcome ${{ steps.install-clean.outcome }}"
           echo "install-clean.conclusion ${{ steps.install-clean.conclusion }}"
 
-      - if: ${{ false }} # ${{ steps.cache.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
+      - name: List the state of node modules
+        if: ${{ false }} # ${{ steps.cache.outputs.cache-hit != 'true' }}
         shell: bash
         continue-on-error: true
         run: npm list
