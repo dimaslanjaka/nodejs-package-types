@@ -42,7 +42,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-    name: Node ${{ matrix.node-version }} - ${{ matrix.os }} #-${{ matrix.architecture }}
+    name: Node ${{ matrix.node-version }} - ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -128,10 +128,10 @@ jobs:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn }}
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
-            ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-
+            ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-${{ matrix.node-version }}-
             ${{ runner.os }}-${{ matrix.node-version }}-
             ${{ runner.os }}-
 
