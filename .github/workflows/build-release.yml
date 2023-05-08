@@ -186,7 +186,7 @@ jobs:
         continue-on-error: true
         shell: bash
         run: |
-          rm -rf node_modules
+          find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
           if [ "${{ steps.set-env.outputs.PACKAGE-MANAGER }}" == "npm" ]; then
               npm install --verbose
           else
@@ -198,7 +198,7 @@ jobs:
         if: steps.install-verbose.outcome == 'failure'
         shell: bash
         run: |
-          rm -rf node_modules
+          find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
           if [ "${{ steps.set-env.outputs.PACKAGE-MANAGER }}" == "npm" ]; then
               npm install --no-shrinkwrap --update-binary
           else
@@ -211,7 +211,8 @@ jobs:
         shell: bash
         if: steps.install-update.outcome == 'failure'
         run: |
-          rm -rf node_modules package-lock.json yarn.lock
+          find . -name "yarn.lock" -type d -prune -exec rm -rf '{}' +
+          find . -name "package-lock.json" -type d -prune -exec rm -rf '{}' +
           find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
           if [ "${{ steps.set-env.outputs.PACKAGE-MANAGER }}" == "npm" ]; then
               npm install
