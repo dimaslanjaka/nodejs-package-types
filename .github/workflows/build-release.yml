@@ -130,13 +130,11 @@ jobs:
         id: cache
         with:
           path: |
-            ${{ steps.set-env.outputs.cache-npm }}
-            ${{ steps.set-env.outputs.cache-yarn }}
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+            ${{ steps.set-env.outputs.CACHE_NPM }}
+            ${{ steps.set-env.outputs.CACHE_YARN }}
+          key: ${{ runner.os }}-${{ matrix.node-version }}
           restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-            ${{ runner.os }}-${{ matrix.node-version }}-
-            ${{ runner.os }}-${{ matrix.node-version }}-
+            ${{ runner.os }}-${{ matrix.node-version }}
             ${{ runner.os }}-
 
       - name: Check Updates
