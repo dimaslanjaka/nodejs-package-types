@@ -39,6 +39,11 @@ jobs:
         #architecture: ['x86', 'x64']
       fail-fast: true
       max-parallel: 6
+    env:
+      NODE_OPTIONS: '--max_old_space_size=8192' #8192 4096 --expose-gc
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+      node_version: 14.x
 
     runs-on: ${{ matrix.os }}
 
@@ -47,7 +52,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           # repository: dimaslanjaka/nodejs-package-types
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ env.ACCESS_TOKEN }}
 
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#improving-cache-restore-performance-on-windows-using-cross-os-caching
       - if: ${{ runner.os == 'Windows' }}
@@ -121,7 +126,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ env.ACCESS_TOKEN }}
 
       - name: Enable corepack
         run: corepack enable
