@@ -77,16 +77,24 @@ jobs:
             echo "cache-yarn=$(yarn cache dir)" >> $GITHUB_OUTPUT
           fi
           echo "architecture=$(getconf LONG_BIT)" >> $GITHUB_ENV
+          if [ -f "package-lock.json" ]; then
+              echo "PACKAGE-MANAGER=npm" >> $GITHUB_OUTPUT
+              echo "PACKAGE-MANAGER=npm" >> $GITHUB_ENV
+          else
+              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_OUTPUT
+              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_ENV
+          fi
 
       - name: Get env
         run: |
-          echo "branch      : ${{ env.GITHUB_BRANCH }}"
+          echo "branch      : ${{ steps.set-env.outputs.GITHUB_BRANCH }}"
           echo "commit msg  : ${{ github.event.head_commit.message }}"
-          echo "commit hash : ${{ env.GITHUB_SHA_SHORT }}"
-          echo "commit url  : ${{ env.GITHUB_COMMIT_URL }}"
-          echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"
-          echo "cache npm   : ${{ env.CACHE_NPM }}"
-          echo "cache yarn  : ${{ env.CACHE_YARN }}"
+          echo "commit hash : ${{ steps.set-env.outputs.GITHUB_SHA_SHORT }}"
+          echo "commit url  : ${{ steps.set-env.outputs.GITHUB_COMMIT_URL }}"
+          echo "runner url  : ${{ steps.set-env.outputs.GITHUB_RUNNER_URL }}"
+          echo "cache npm   : ${{ steps.set-env.outputs.CACHE_NPM }}"
+          echo "cache yarn  : ${{ steps.set-env.outputs.CACHE_YARN }}"
+          echo "package mgr : "${{ steps.set-env.outputs.PACKAGE-MANAGER }}""
 
       - name: Set EOL git configs
         continue-on-error: true
@@ -132,7 +140,11 @@ jobs:
         continue-on-error: true
         run: |
           curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-          npm run update
+          if [ "${{ steps.set-env.outputs.PACKAGE-MANAGER }}" ]; then
+              node postinstall.js
+          else
+              node postinstall.js --yarn
+          fi
 
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
@@ -140,8 +152,7 @@ jobs:
 
       - name: Install Legacy Peer Dependencies
         run: |
-          FILE=package-lock.json
-          if [ -f "$FILE" ]; then
+          if [ -f "package-lock.json" ]; then
               npm install --legacy-peer-deps
           else
               yarn install
