@@ -265,12 +265,14 @@ async function addReadMe() {
       continue;
     }
     // skip index tarball which ignored by .gitignore
-    let checkIgnore = await spawnAsync('git', ['status', '--porcelain', '--ignored'], { cwd: __dirname }).catch((e) => {
-      console.log(e);
-      return { output: '' };
-    });
+    const checkIgnoreSpawn = await spawnAsync('git', ['status', '--porcelain', '--ignored'], { cwd: __dirname }).catch(
+      (err) => {
+        console.log(err);
+        return { output: '', stdou: '', err };
+      }
+    );
 
-    checkIgnore = checkIgnore.output
+    const checkIgnore = (checkIgnoreSpawn.output || checkIgnoreSpawn.stdout)
       .split(/\r?\n/)
       .map((str) => str.trim())
       .filter((str) => str.startsWith('!!'))
