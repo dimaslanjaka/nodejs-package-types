@@ -276,28 +276,31 @@ async function addReadMe() {
       return { output: '', stdout: '', err };
     });
 
-    const checkIgnore = (checkIgnoreSpawn.output || checkIgnoreSpawn.stdout)
-      .split(/\r?\n/)
-      .map((str) => str.trim())
-      .filter((str) => str.startsWith('!!'))
-      .map((str) => str.replace('!!', '').trim());
-    if (checkIgnore.includes(relativeTarball)) {
-      console.log(relativeTarball, 'ignored by .gitignore');
-      continue;
-    } else {
-      await git.add(relativeTarball);
-      const args = ['status', '-uno', '--porcelain', '--', relativeTarball, '|', 'wc', '-l'];
-      const isChanged =
-        parseInt(
-          (
-            await spawnAsync('git', args, {
-              cwd: __dirname,
-              shell: true
-            })
-          ).output.trim()
-        ) > 0;
-      if (isChanged) {
-        await git.commit('chore(tarball): update ' + gitlatest, '-m', { stdio: 'pipe' });
+    if (argv['commit']) {
+      const checkIgnore = (checkIgnoreSpawn.output || checkIgnoreSpawn.stdout)
+        .split(/\r?\n/)
+        .map((str) => str.trim())
+        .filter((str) => str.startsWith('!!'))
+        .map((str) => str.replace('!!', '').trim());
+      if (checkIgnore.includes(relativeTarball)) {
+        console.log(relativeTarball, 'ignored by .gitignore');
+        continue;
+      } else {
+        await git.add(relativeTarball);
+        const args = ['status', '-uno', '--porcelain', '--', relativeTarball, '|', 'wc', '-l'];
+        const isChanged =
+          parseInt(
+            (
+              await spawnAsync('git', args, {
+                cwd: __dirname,
+                shell: true
+              })
+            ).output.trim()
+          ) > 0;
+        if (isChanged) {
+          //  commit tarball
+          await git.commit('chore(tarball): update ' + gitlatest, '-m', { stdio: 'pipe' });
+        }
       }
     }
 
