@@ -21,7 +21,7 @@ Customized Package Types ([See all modules](https://github.com/dimaslanjaka/node
 
 yarn
 ```bash
-yarn add https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz --dev
+yarn add nodejs-package-types@https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz --dev
 ```
 npm
 ```bash
