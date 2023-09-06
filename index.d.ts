@@ -42,7 +42,7 @@ declare namespace through2 {
    * gulp.src('*.*').pipe(through2.obj((vinyl, encoding, callback) => {
    *  if (vinyl.isNull() || vinyl.isStream()) return callback(); // skip null and stream object
    *  vinyl.contents = Buffer.from(vinyl.contents).toString().replace('old', 'new');
-   *  this.push(vinyl); // emit this file
+   *  if (typeof this.push == 'function') this.push(vinyl); // emit this file
    *  callback(null, vinyl); // emit new data
    * * // `callback()` drop this data
    * * // `callback(null, newData)` emit data into newData
