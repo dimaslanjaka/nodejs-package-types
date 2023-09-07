@@ -8,5 +8,7 @@ through2/node_modules/
 
 tmp
 temp
-.yarn
+.yarn/cache
+.yarn/versions
+.yarn/*-state*
 /docs
