@@ -117,8 +117,9 @@ const publish = async function (options = {}, callback = null) {
   });
 
   try {
-    const commit = await new git(__dirname).latestCommit().catch(noop);
-    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
+    const currentGit = new git(__dirname);
+    const commit = await currentGit.latestCommit().catch(noop);
+    const remote = (await currentGit.getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
     if (remote.length > 0) {
       console.log('current git project', remote);
       await github.add(pkgjson.name).catch(noop);
@@ -131,8 +132,7 @@ const publish = async function (options = {}, callback = null) {
       ]);
       const isCanPush = await github.canPush().catch(noop);
       if (isCanPush) {
-        console.log('docs can push');
-        // await github.push().catch(noop);
+        await github.push().catch(noop);
       }
     }
   } catch {
