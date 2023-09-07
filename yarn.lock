@@ -790,6 +790,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.x":
+  version: 18.17.14
+  resolution: "@types/node@npm:18.17.14"
+  checksum: f96ce1e588426a26cf82440193084f8bbab47bfb3c2e668cf174095f99ce808a20654b2137448c7e88cfd7b6c2b8521ffb6f714f521b3502ac595a0df0bff679
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -855,6 +862,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/through2@file:./through2::locator=nodejs-package-types%40workspace%3A.":
+  version: 2.0.38
+  resolution: "@types/through2@file:./through2#./through2::hash=68d5c0&locator=nodejs-package-types%40workspace%3A."
+  dependencies:
+    "@types/node": ^18.x
+    "@types/vinyl": ^2.0.7
+    cross-spawn: ^7.0.3
+    fs-extra: ^11.1.0
+    gulp: ^4.0.2
+    upath: ^2.0.1
+  checksum: fa694d027c18f35c6e88e7dc43660910c03f5edda86f895e1ed8086d8f0acbc7ec329117e6b598317279707299cae27b249d86753e228c066ebd1dadf49eb763
+  languageName: node
+  linkType: hard
+
 "@types/undertaker-registry@npm:*":
   version: 1.0.2
   resolution: "@types/undertaker-registry@npm:1.0.2"
@@ -884,7 +905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/vinyl@npm:*":
+"@types/vinyl@npm:*, @types/vinyl@npm:^2.0.7":
   version: 2.0.7
   resolution: "@types/vinyl@npm:2.0.7"
   dependencies:
@@ -4412,7 +4433,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^11.1.1":
+"fs-extra@npm:^11.1.0, fs-extra@npm:^11.1.1":
   version: 11.1.1
   resolution: "fs-extra@npm:11.1.1"
   dependencies:
@@ -7220,6 +7241,7 @@ __metadata:
     "@types/gulp": ^4.0.10
     "@types/markdown-it": 12.2.3
     "@types/node": ^20.1.0
+    "@types/through2": ./through2
     "@typescript-eslint/eslint-plugin": ^5.59.2
     "@typescript-eslint/parser": ^5.59.2
     ansi-colors: ^4.1.3
