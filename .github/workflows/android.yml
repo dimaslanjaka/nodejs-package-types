@@ -135,6 +135,11 @@ jobs:
           taskkill /f /im javaw.exe
           taskkill /f /im java.exe
         continue-on-error: true
+      - name: Enforce cache update
+        shell: bash
+        run: |
+          STATE_CACHE_KEY="gradle-build-${{ runner.os }}"
+          echo "STATE_CACHE_KEY=${STATE_CACHE_KEY}" >> $GITHUB_ENV
   deploy:
     needs: build
     name: deploy to github pages
@@ -209,7 +214,7 @@ jobs:
       #       gradle-release-apk
       #       gradle-release-
       #       gradle-
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
       - uses: actions/download-artifact@v3
