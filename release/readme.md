@@ -2,9 +2,9 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
-| 1.1.3 | https://github.com/dimaslanjaka/nodejs-package-types/raw/1718bef/release/nodejs-package-types-1.1.3.tgz |
-| 1.1.4 | https://github.com/dimaslanjaka/nodejs-package-types/raw/1718bef/release/nodejs-package-types-1.1.4.tgz |
-| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw/1718bef/release/nodejs-package-types.tgz |
+| 1.1.3 | https://github.com/dimaslanjaka/nodejs-package-types/raw/48b377e/release/nodejs-package-types-1.1.3.tgz |
+| 1.1.4 | https://github.com/dimaslanjaka/nodejs-package-types/raw/48b377e/release/nodejs-package-types-1.1.4.tgz |
+| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw/48b377e/release/nodejs-package-types.tgz |
 | latest | https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz |
 
 use this tarball with `resolutions`:
