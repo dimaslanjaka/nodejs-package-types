@@ -1,8 +1,8 @@
 {
   "files.autoSave": "onWindowChange",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true, // let ESLint take formating and linting
-    "source.organizeImports": true // auto remove unused imports
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "editor.formatOnPaste": false, // disable default vscode formatter
   "editor.formatOnSave": false, // disable default vscode formatter
