@@ -13,6 +13,7 @@ updates:
       - dependency-name: "chalk"
         versions: ["5.x"]
       - dependency-name: "@types/node"
+      - dependency-name: "jsdom"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
