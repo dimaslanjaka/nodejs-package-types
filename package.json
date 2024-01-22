@@ -75,7 +75,7 @@
     "browser-sync": "^2.29.1",
     "depcheck": "^1.4.3",
     "eslint": "^8.40.0",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "express": "^4.18.2",
     "git-command-helper": "^2.0.2",
