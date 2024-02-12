@@ -61,7 +61,7 @@ gitExec(['log', '--pretty=format:%h !|! %ad !|! %s %d', `--date=format:%Y-%m-%d 
         const m = o.message.match(regex);
         let versionTitle;
         let versionMessage;
-        if (m && m.length > 0) { 
+        if (m && m.length > 0) {
           versionTitle = m[2];
           versionMessage = m[1];
           markdown += `\n**${versionTitle}**\n\n${versionMessage}\n` + EOL;
@@ -79,7 +79,19 @@ gitExec(['log', '--pretty=format:%h !|! %ad !|! %s %d', `--date=format:%Y-%m-%d 
         if (!markdown.trim().startsWith('**')) {
           markdown = '**0.0.1** - _init project_\n' + markdown;
         }
-        writeFileSync(join(__dirname, 'CHANGELOG.md'), markdown);
+
+        import('prettier')
+          .then((prettier) => {
+            // format markdown
+            prettier.format(markdown, { parser: 'markdown' }).then((result) => {
+              // write changelog with prettier
+              writeFileSync(join(__dirname, 'CHANGELOG.md'), result);
+            });
+          })
+          .catch(() => {
+            // write changelog without prettier
+            writeFileSync(join(__dirname, 'CHANGELOG.md'), markdown);
+          });
       }
     });
 });
