@@ -56,6 +56,11 @@ jobs:
           git config core.autocrlf input
           git checkout-index --force --all
 
+      - name: initialize nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node-version }}
+
       - name: Pull & update submodules recursively
         continue-on-error: true
         run: |
@@ -70,14 +75,9 @@ jobs:
           git submodule foreach "git submodule sync"
           echo "update submodules"
           mkdir -p bin >/dev/null 2>&1
-          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
-          rm -rf .git/modules
-          bash ./bin/submodule-install
-
-      - name: initialize nodejs
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.node-version }}
+          npm install -g rimraf binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz
+          npx rimraf .git/modules
+          npx submodule-install
 
       - name: Set env
         id: set-env
