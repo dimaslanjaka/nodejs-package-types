@@ -7,24 +7,23 @@ name: Build Release
 
 on:
   push:
-    branches: ['master', 'main', 'private']
     paths-ignore:
-      - '**/*.tgz'
-      - '**/*.gz'
-      - '**/release*/**'
-      - '**/dist/**'
-      - '**garbage-collector**'
-      - '**codeql**'
-      - '**/.github/workflows/tester.yml'
+      - "**/*.tgz"
+      - "**/*.gz"
+      - "**/release*/**"
+      - "**/dist/**"
+      - "**garbage-collector**"
+      - "**codeql**"
+      - "**/.github/workflows/tester.yml"
   pull_request:
     types:
       - closed
     paths-ignore:
-      - '**/release*/**'
-      - '**/dist/**'
-      - '**/*.tgz'
-      - '**/*.gz'
-      - '**/test*/**'
+      - "**/release*/**"
+      - "**/dist/**"
+      - "**/*.tgz"
+      - "**/*.gz"
+      - "**/test*/**"
   workflow_dispatch:
 
 # run single job
@@ -36,7 +35,7 @@ jobs:
   build-release:
     name: build release
     env:
-      NODE_OPTIONS: '--max_old_space_size=8192' #8192 4096 --expose-gc
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       node-version: 14.x
@@ -251,7 +250,7 @@ jobs:
       # https://github.com/marketplace/actions/verify-changed-files
       - name: Check if there are changes
         id: changes
-        uses: tj-actions/verify-changed-files@v17
+        uses: tj-actions/verify-changed-files@v20
         with:
           files: |
             release*
@@ -269,17 +268,15 @@ jobs:
         if: steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         run: |
-          git config --global user.name 'dimaslanjaka'
-          git config --global user.email 'dimaslanjaka@gmail.com'
-      - run: git add release
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Add files to git
         if: steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
-      - run: git add dist
-        if: steps.changes.outputs.files_changed == 'true'
-        continue-on-error: true
-      - run: git add lib
-        if: steps.changes.outputs.files_changed == 'true'
-        continue-on-error: true
+        run: |
+          git add release || true
+          git add dist || true
+          git add lib || true
       - run: git add postinstall.js packer.js .github
         if: steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
@@ -291,5 +288,7 @@ jobs:
         if: steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         run: |
-          git commit -m "chore: update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git push
+          if [ $(git diff --cached --name-only | wc -l) -gt "0" ]; then
+            git commit -m "chore: update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
+          fi
