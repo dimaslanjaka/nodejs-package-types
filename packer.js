@@ -1,5 +1,4 @@
 /**
-/**
  * packer.js - Automated tarball (tgz) creator for release folder
  *
  * Requirements: npm i -D https://github.com/dimaslanjaka/node-cross-spawn/tarball/private upath fs-extra
