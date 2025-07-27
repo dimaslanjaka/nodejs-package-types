@@ -1,15 +1,13 @@
-const { join } = require("upath");
 const typedocModule = require("typedoc");
 const semver = require("semver");
-const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require("fs");
 const localTypedocOptions = require("./typedoc.config");
 const pkgjson = require("./package.json");
 const { EOL } = require("os");
 const { spawnAsync } = require("cross-spawn");
 const axios = require("axios");
-const { writeFile } = require("fs/promises");
 const fs = require("fs");
-const path = require("path");
+const path = require("upath");
+const { buildReadme } = require("./typedoc.readme");
 const git = pkgjson.name === "git-command-helper" ? require("./dist").default : require("git-command-helper").default;
 
 /**
@@ -41,16 +39,17 @@ let compiled = 0;
  * @param {(...args: any[]) => any} callback
  */
 const compile = async function (options = {}, callback = null) {
-  const outDir = join(__dirname, "docs");
-  const projectDocsDir = join(outDir, pkgjson.name);
+  await buildReadme();
+  const outDir = path.join(__dirname, "docs");
+  const projectDocsDir = path.join(outDir, pkgjson.name);
   if (options) setTypedocOptions(options);
 
-  if (!existsSync(outDir)) {
+  if (!fs.existsSync(outDir)) {
     await spawnAsync("git", ["clone", REPO_URL, "docs"], { cwd: __dirname });
   }
 
   // create directory when not exist
-  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
+  if (!fs.existsSync(projectDocsDir)) fs.mkdirSync(projectDocsDir, { recursive: true });
 
   // disable delete dir while running twice
   if (compiled > 0) setTypedocOptions({ cleanOutputDir: false });
@@ -71,7 +70,7 @@ const compile = async function (options = {}, callback = null) {
   const project = await app.convert();
   if (typeof project !== "undefined") {
     await app.generateDocs(project, projectDocsDir);
-    await app.generateJson(project, join(projectDocsDir, "info.json"));
+    await app.generateJson(project, path.join(projectDocsDir, "info.json"));
   } else {
     console.error("[error]", "project undefined");
   }
@@ -79,8 +78,8 @@ const compile = async function (options = {}, callback = null) {
   // call API callback
   if (typeof callback === "function") await callback.apply(app);
   // call standalone callback
-  const callback_script = join(__dirname, "typedoc-callback.js");
-  if (existsSync(callback_script)) {
+  const callback_script = path.join(__dirname, "typedoc-callback.js");
+  if (fs.existsSync(callback_script)) {
     await spawnAsync("node", [callback_script], { cwd: __dirname, stdio: "inherit" });
   }
   await createIndex();
@@ -93,9 +92,9 @@ const compile = async function (options = {}, callback = null) {
  */
 const publish = async function (options = {}, callback = null) {
   console.log("publishing docs");
-  const outDir = join(__dirname, "docs");
+  const outDir = path.join(__dirname, "docs");
 
-  if (!existsSync(join(outDir))) {
+  if (!fs.existsSync(path.join(outDir))) {
     console.log("cloning", REPO_URL);
     await new git(__dirname)
       .spawn("git", ["clone", REPO_URL, "docs", "-b", "master", "--single-branch"], { cwd: __dirname })
@@ -123,7 +122,7 @@ const publish = async function (options = {}, callback = null) {
       responseType: "blob"
     }
   );
-  writeFile(join(outDir, ".gitattributes"), response.data, (err) => {
+  fs.writeFile(path.join(outDir, ".gitattributes"), response.data, (err) => {
     if (err) throw err;
     console.log(".gitattributes has been saved!");
   });
@@ -174,7 +173,7 @@ function getTypedocOptions() {
 function setTypedocOptions(newOpt) {
   opt = Object.assign(opt, newOpt || {});
   opt["$schema"] = "https://typedoc.org/schema.json";
-  writefile(join(__dirname, "tmp/typedoc/options.json"), JSON.stringify(opt, null, 2));
+  writefile(path.join(__dirname, "tmp/typedoc/options.json"), JSON.stringify(opt, null, 2));
   return opt;
 }
 
@@ -187,9 +186,9 @@ async function createIndex() {
 <h1 id="headline">Monorepo Documentation Site</h1>
   `.trim() + EOL;
 
-  readdirSync(join(__dirname, "docs")).forEach((filename) => {
-    const path = join(__dirname, "docs", filename);
-    const stat = statSync(path);
+  fs.readdirSync(path.join(__dirname, "docs")).forEach((filename) => {
+    const documentationFilePath = path.join(__dirname, "docs", filename);
+    const stat = fs.statSync(documentationFilePath);
 
     if (stat.isDirectory() && filename !== ".git") {
       body +=
@@ -199,7 +198,7 @@ async function createIndex() {
     }
   });
 
-  writeFileSync(join(__dirname, "docs/index.html"), body.trim());
+  fs.writeFileSync(path.join(__dirname, "docs/index.html"), body.trim());
 }
 
 /**
