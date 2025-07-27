@@ -3,6 +3,8 @@ const path = require("upath");
 const pkgjson = require("./package.json");
 const { minimatch } = require("minimatch");
 const { marked } = require("marked");
+const axios = require("axios");
+const { execSync } = require("child_process");
 
 /**
  * TypeDoc configuration script
@@ -125,16 +127,29 @@ const defaultOptions = {
 };
 
 // Extract local link from readme
-const readmeContent = fs.readFileSync(outputReadme, "utf-8");
+let readmeContent = fs.readFileSync(outputReadme, "utf-8");
 const hyperlinks = extractAllLocalLinks(readmeContent);
 for (const link of hyperlinks) {
   // Only process local links (not http/https)
   if (!/^https?:\/\//i.test(link)) {
     const absolutePath = path.resolve(__dirname, link);
     if (fs.existsSync(absolutePath)) {
-      const destinationPath = path.join(tmp, link);
-      console.log(`📄 Copying local link "${link}":\n  Source: "${absolutePath}"\n  Destination: "${destinationPath}"`);
-      fs.copySync(absolutePath, destinationPath);
+      const url = getGitHubFileUrl(link);
+      axios(url, { maxRedirects: 4 }).then((response) => {
+        // The final URL after redirects is in response.request.res.responseUrl (Node.js)
+        const finalUrl = response.request?.res?.responseUrl;
+        if (finalUrl) {
+          console.log(`🔗 ${link} -> ${finalUrl}`);
+          readmeContent = readmeContent.replace(link, finalUrl);
+          fs.writeFileSync(outputReadme, readmeContent);
+        } else {
+          const destinationPath = path.join(tmp, link);
+          console.log(
+            `📄 Copying local link "${link}":\n  Source: "${absolutePath}"\n  Destination: "${destinationPath}"`
+          );
+          fs.copySync(absolutePath, destinationPath);
+        }
+      });
     }
   }
 }
@@ -231,4 +246,46 @@ function extractAllLocalLinks(markdownText) {
   walkTokens(tokens);
   // Remove external links
   return Array.from(links).filter((href) => !/^https?:\/\//i.test(href));
+}
+
+/**
+ * Get the GitHub URL of a given file path in the repo.
+ * @param {string} filePath - The absolute or relative path to the file.
+ * @returns {string} GitHub URL of the file (with current branch).
+ */
+function getGitHubFileUrl(filePath) {
+  try {
+    // Absolute path
+    const absFilePath = path.resolve(filePath);
+
+    // Git root
+    const repoRoot = execSync("git rev-parse --show-toplevel").toString().trim();
+
+    // Relative path (from repo root)
+    const relativePath = path.relative(repoRoot, absFilePath).replace(/\\/g, "/");
+
+    // Remote URL
+    let remoteUrl = execSync("git config --get remote.origin.url").toString().trim();
+
+    // Clean up the remote URL:
+    // 1. Remove .git suffix
+    remoteUrl = remoteUrl.replace(/\.git$/, "");
+
+    // 2. Convert SSH to HTTPS
+    if (remoteUrl.startsWith("git@")) {
+      remoteUrl = remoteUrl.replace(/^git@([^:]+):/, "https://$1/");
+    }
+
+    // 3. Remove embedded credentials like username:password@
+    remoteUrl = remoteUrl.replace(/\/\/.*@/, "//");
+
+    // Branch
+    const branch = execSync("git rev-parse --abbrev-ref HEAD").toString().trim();
+
+    // Final GitHub URL
+    return `${remoteUrl}/blob/${branch}/${relativePath}`;
+  } catch (err) {
+    console.error("Failed to get GitHub URL:", err.message);
+    return null;
+  }
 }
