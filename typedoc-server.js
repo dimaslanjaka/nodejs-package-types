@@ -1,9 +1,9 @@
-const browserSync = require('browser-sync');
-const spawn = require('cross-spawn');
-const { existsSync } = require('fs');
+const browserSync = require("browser-sync");
+const spawn = require("cross-spawn");
+const fs = require("fs-extra");
+const path = require("upath");
 const bs = browserSync.create();
-const gulp = require('gulp');
-const { join } = require('path');
+const gulp = require("gulp");
 
 /**
  * Docs serve
@@ -23,16 +23,16 @@ let building = false;
  */
 const buildDocs = async (_req, _res, next) => {
   if (building) {
-    if (typeof next === 'function') return next();
+    if (typeof next === "function") return next();
   }
   building = true;
-  console.log('building docs...');
-  const child = spawn('npm', ['run', 'docs'], { cwd: __dirname, stdio: 'inherit' });
-  child.on('close', function (code) {
-    console.log('docs build finished', { code });
+  console.log("building docs...");
+  const child = spawn("npm", ["run", "docs"], { cwd: __dirname, stdio: "inherit" });
+  child.on("close", function (code) {
+    console.log("docs build finished", { code });
     building = false;
   });
-  if (typeof next === 'function') next();
+  if (typeof next === "function") next();
 };
 
 // Serve files from 3 directories with serve-static options
@@ -43,41 +43,41 @@ const bsOpt = {
   cors: true,
   open: false,
   port: 4000,
-  serveStatic: ['.', './docs'],
+  serveStatic: [".", "./docs"],
   serveStaticOptions: {
-    extensions: ['html', 'js', 'css'] // pretty urls
+    extensions: ["html", "js", "css"] // pretty urls
   },
   server: {
     routes: {
-      '/': '/docs',
-      '/docs': '/docs',
+      "/": "/docs",
+      "/docs": "/docs",
       // common
-      '/node_modules': './node_modules',
-      '/tmp': './tmp',
-      '/temp': './temp'
+      "/node_modules": "./node_modules",
+      "/tmp": "./tmp",
+      "/temp": "./temp"
     }
   }
 };
-if (existsSync(join(__dirname, 'src-docs'))) {
-  bsOpt.server = Object.assign(bsOpt.server, { '/js': './src-docs/js', '/css': './src-docs/css' });
+if (fs.existsSync(path.join(__dirname, "src-docs"))) {
+  bsOpt.server = Object.assign(bsOpt.server, { "/js": "./src-docs/js", "/css": "./src-docs/css" });
 }
-if (existsSync(join(__dirname, 'test'))) {
-  bsOpt.server = Object.assign(bsOpt.server, { '/js': './test/js', '/css': './test/css' });
+if (fs.existsSync(path.join(__dirname, "test"))) {
+  bsOpt.server = Object.assign(bsOpt.server, { "/js": "./test/js", "/css": "./test/css" });
 }
-if (existsSync(join(__dirname, 'tests'))) {
-  bsOpt.server = Object.assign(bsOpt.server, { '/js': './tests/js', '/css': './tests/css' });
+if (fs.existsSync(path.join(__dirname, "tests"))) {
+  bsOpt.server = Object.assign(bsOpt.server, { "/js": "./tests/js", "/css": "./tests/css" });
 }
 bs.init(bsOpt);
 
 // since `nodemon` file watcher and `browsersync` are annoying let's make `gulp` shine
-[join(__dirname, 'test'), join(__dirname, 'src-docs'), join(__dirname, 'dist')]
-  .filter((path) => existsSync(path))
+[path.join(__dirname, "test"), path.join(__dirname, "src-docs"), path.join(__dirname, "dist")]
+  .filter((p) => fs.existsSync(p))
   .forEach((cwd) => {
-    gulp.watch(['**/*.*'], { cwd }, bs.reload);
+    gulp.watch(["**/*.*"], { cwd }, bs.reload);
   });
 
 gulp.watch(
-  ['src/*.ts', 'webpack.*.js', '{tsconfig,package}*.json', '*.md', '!src-docs', '!tmp', '!dist', '!release', '!docs'],
+  ["src/*.ts", "webpack.*.js", "{tsconfig,package}*.json", "*.md", "!src-docs", "!tmp", "!dist", "!release", "!docs"],
   { cwd: __dirname },
   (done) => {
     buildDocs(null, null, done);
