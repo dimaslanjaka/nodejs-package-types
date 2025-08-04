@@ -352,16 +352,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gerrit0/mini-shiki@npm:^3.7.0":
-  version: 3.8.1
-  resolution: "@gerrit0/mini-shiki@npm:3.8.1"
+"@gerrit0/mini-shiki@npm:^3.9.0":
+  version: 3.9.1
+  resolution: "@gerrit0/mini-shiki@npm:3.9.1"
   dependencies:
-    "@shikijs/engine-oniguruma": ^3.8.1
-    "@shikijs/langs": ^3.8.1
-    "@shikijs/themes": ^3.8.1
-    "@shikijs/types": ^3.8.1
+    "@shikijs/engine-oniguruma": ^3.9.1
+    "@shikijs/langs": ^3.9.1
+    "@shikijs/themes": ^3.9.1
+    "@shikijs/types": ^3.9.1
     "@shikijs/vscode-textmate": ^10.0.2
-  checksum: fbe4059c4b02bc26d54b6bcebe9b1abcf83c5b88ba8b2bc5ed65399b373538a7fb3c52419c7f7339b8138533b298559ff674b9733c41583b6f4229fb18b2ba60
+  checksum: 13727ed55fdeead60ff4e39cf33b69329dfbfd156a7775324efdfd9d98f8e8a0db0a0d6e81c925d8f2a03abb348df908e3f8675410db4fb890a0c1dce7932424
   languageName: node
   linkType: hard
 
@@ -554,41 +554,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/engine-oniguruma@npm:^3.8.1":
-  version: 3.8.1
-  resolution: "@shikijs/engine-oniguruma@npm:3.8.1"
+"@shikijs/engine-oniguruma@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "@shikijs/engine-oniguruma@npm:3.9.1"
   dependencies:
-    "@shikijs/types": 3.8.1
+    "@shikijs/types": 3.9.1
     "@shikijs/vscode-textmate": ^10.0.2
-  checksum: e680fd782256418c85551f034baa25ee75fd7da22ccbba5b56db269ee55763e94fbd508e2160b654e15ff092fe818409dcbb11fac39cbcd21493638d5e212ea3
+  checksum: c422d1388f20015de457dac95b944512ef00b785000bda6ba559a48f581a1c6bbcfc945eaa81f7e54fda11576bec5b7c1ab665ee0ee2fc8019b30a4a857eef2e
   languageName: node
   linkType: hard
 
-"@shikijs/langs@npm:^3.8.1":
-  version: 3.8.1
-  resolution: "@shikijs/langs@npm:3.8.1"
+"@shikijs/langs@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "@shikijs/langs@npm:3.9.1"
   dependencies:
-    "@shikijs/types": 3.8.1
-  checksum: 6d02da41da2f7943fd0042e659a8e63652632183fc932f349dda7f7037bf9d364c06c15b5c2d3fac04497d82f254cb9248f61d55961f678f14fbca584fead4a0
+    "@shikijs/types": 3.9.1
+  checksum: d07c1895ee37c2d1904b86235b2680eb19eeed76f1f5b6c8f61b3ab5ead32286de0b8c0a3c2d1d472c81169bc0301539d0dd30d0a6a5216df270e20995d82838
   languageName: node
   linkType: hard
 
-"@shikijs/themes@npm:^3.8.1":
-  version: 3.8.1
-  resolution: "@shikijs/themes@npm:3.8.1"
+"@shikijs/themes@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "@shikijs/themes@npm:3.9.1"
   dependencies:
-    "@shikijs/types": 3.8.1
-  checksum: 8cdb702544f5b4466a79f113c5fda1d02e5de8e569d650f6c000611b72b64b271571dfc1518a1e44ffb1f9f46c752358dfd3a380cc16c330eeedcde103af513d
+    "@shikijs/types": 3.9.1
+  checksum: 856383c6c7958dc468d9215e814227a3ac02f93a160adb61154d420aec830b7ec863efe37ba0d1ace38d56541fb82817422588a7294a3660ccb24cb5ee832100
   languageName: node
   linkType: hard
 
-"@shikijs/types@npm:3.8.1, @shikijs/types@npm:^3.8.1":
-  version: 3.8.1
-  resolution: "@shikijs/types@npm:3.8.1"
+"@shikijs/types@npm:3.9.1, @shikijs/types@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "@shikijs/types@npm:3.9.1"
   dependencies:
     "@shikijs/vscode-textmate": ^10.0.2
     "@types/hast": ^3.0.4
-  checksum: 957ab5aa60db4ce116c7571277cc6b27e80538b212d798d6380d9d546b1bb064b058bfdabaa5a2fd05602aae40ee0865fc3c7cc6550e8a939000db64192796ae
+  checksum: 9ce4b3a210af85528a31822417658a01c5c6cd1a01ea15b29807f46a556b76a5b3cf11d4deb04403c0fa08cf2ba3a91bce274e92588b84c979b76bb21e79de18
   languageName: node
   linkType: hard
 
@@ -10410,19 +10410,19 @@ __metadata:
   linkType: hard
 
 "typedoc@npm:^0.28.7":
-  version: 0.28.7
-  resolution: "typedoc@npm:0.28.7"
+  version: 0.28.9
+  resolution: "typedoc@npm:0.28.9"
   dependencies:
-    "@gerrit0/mini-shiki": ^3.7.0
+    "@gerrit0/mini-shiki": ^3.9.0
     lunr: ^2.3.9
     markdown-it: ^14.1.0
     minimatch: ^9.0.5
     yaml: ^2.8.0
   peerDependencies:
-    typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x
+    typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x
   bin:
     typedoc: bin/typedoc
-  checksum: 520896767a79b5612711a9077d76b1bea018baca4a0dc4d37f9a9f79ab3aaabd3f07fe1d637239a0de1693ac9b20b6b54b7356fab4adc5e531e39306972d0eab
+  checksum: 2faf4db99d0876d94f20362abfab619a7b8c87b69af78481d7f99d49f7546f6b2adcc955c14305cfc165160667753b3c4c54d820a612657b9135a6c3c8eceda4
   languageName: node
   linkType: hard
 
