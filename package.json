@@ -58,22 +58,25 @@
   "homepage": "https://github.com/dimaslanjaka/nodejs-package-types#readme",
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
+    "@eslint/eslintrc": "3.3.5",
+    "@eslint/js": "9",
     "@types/fs-extra": "^11.0.4",
     "@types/gulp": "^4.0.17",
     "@types/markdown-it": "14.1.2",
     "@types/node": "^24.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
-    "@typescript-eslint/parser": "^8.38.0",
-    "binary-collections": "^2.0.9",
+    "@typescript-eslint/eslint-plugin": "8.59.3",
+    "@typescript-eslint/parser": "8.59.3",
+    "binary-collections": "^2.0.11",
     "browser-sync": "^3.0.4",
     "depcheck": "^1.4.7",
-    "eslint": "^9.32.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.3",
+    "eslint": "9",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.5",
     "express": "^5.1.0",
     "git-command-helper": "^2.1.0",
     "glob": "^11.0.3",
     "gulp": "^5.0.1",
+    "jsonc-parser": "3.3.1",
     "markdown-it": "^14.1.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-anchor": "^9.2.0",
@@ -83,11 +86,13 @@
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
     "npm-check-updates": "^18.0.2",
-    "prettier": "^3.6.2",
+    "prettier": "3.8.3",
     "semver": "^7.7.2",
     "slugify": "^1.6.6",
     "typedoc": "^0.28.7",
-    "typedoc-plugin-missing-exports": "^4.0.0"
+    "typedoc-plugin-missing-exports": "^4.0.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "8.59.3"
   },
   "dependencies": {
     "@types/express": "^5.0.3",
@@ -105,6 +110,7 @@
   "resolutions": {
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/f1e85ea423c414cd75ecd5e0f5338a454e2109ff/packages/sbg-utility/release/sbg-utility.tgz",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/cb096c1f021d88679cbfd3cf55a426aed64f1b94/release/git-command-helper.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/4975b3788e43d687b6dfc525ad5e3972e5868872/release/cross-spawn.tgz"
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/4975b3788e43d687b6dfc525ad5e3972e5868872/release/cross-spawn.tgz",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/bf014bd4575004c5d869241b0d7eb092fbe47a06/releases/bin.tgz"
   }
 }
