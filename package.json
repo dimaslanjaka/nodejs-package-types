@@ -31,7 +31,7 @@
     "build:through2": "npx fse copy packer.js through2/packer.js && cd through2 && npm run build",
     "build:types": "gulp",
     "build:tarball": "node packer.js && node unused.js",
-    "build": "run-s build:**",
+    "build": "npm run pre-build && npm run build:through2 && npm run build:types && npm run build:tarball",
     "test": "cd test && npm run update && node setup.test.js"
   },
   "repository": {
