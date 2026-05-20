@@ -7,10 +7,7 @@
   "types": "typings/index.d.ts",
   "exports": {
     ".": "./index.js",
-    "./hexo": "./hexo",
-    "./hexo-log": "./hexo-log",
     "./hexo-bunyan": "./hexo-bunyan",
-    "./hexo-util": "./hexo-util",
     "./through2": "./through2",
     "./typings": "./typings",
     "./src": "./src"
@@ -21,12 +18,9 @@
     "*.json",
     "src",
     "typings",
-    "hexo/**/*.{js,ts,json,md}",
     "skeljs/**/*.{js,ts,json,md}",
     "through2/**/*.{js,ts,json,md}",
-    "hexo-log/**/*.{js,ts,json,md}",
     "hexo-bunyan/**/*.{js,ts,json,md}",
-    "hexo-util/**/*.{js,ts,json,md}",
     "!**/node_modules/**",
     "!**/tmp/**",
     "!**/release/**"
@@ -34,7 +28,6 @@
   "scripts": {
     "update": "npx npm-check-updates -u",
     "pre-build": "git pull -X theirs",
-    "build:hexo": "npx fse copy packer.js hexo/packer.js && cd hexo && npm run build",
     "build:through2": "npx fse copy packer.js through2/packer.js && cd through2 && npm run build",
     "build:types": "gulp",
     "build:tarball": "node packer.js && node unused.js",
@@ -110,8 +103,8 @@
     "upath": "^2.0.1"
   },
   "resolutions": {
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/df939d4cb3e31fded39412534bcef11de9fe0dcc/packages/sbg-utility/release/sbg-utility.tgz",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/40f673205b55bd451a689079b47fde804ce14559/release/git-command-helper.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac7a7031a81e11ddb5fab0f8ba433041c98/release/cross-spawn.tgz"
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-utility/release/sbg-utility.tgz",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/pre-release/release/git-command-helper.tgz",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
   }
 }
