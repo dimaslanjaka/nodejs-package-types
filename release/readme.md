@@ -1,6 +1,24 @@
-# Release `@types/through2` Tarball
+# Release `@types/through2` tarball
+## Releases
+| version | tarball url |
+| :--- | :--- |
+| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw//release/types-through2-2.0.38.tgz |
+| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw//release/types-through2-2.0.38.tgz |
+| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw//release/types-through2.tgz |
+| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw//release/types-through2.tgz |
 
-## Get URL of `@types/through2` Release Tarball
+use this tarball with `resolutions`:
+```json
+{
+  "resolutions": {
+    "@types/through2": "<url of tarball>"
+  }
+}
+```
+
+## Releases
+
+    ## Get URL of `@types/through2` Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
 - copy raw url
