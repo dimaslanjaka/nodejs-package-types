@@ -1,6 +1,6 @@
 install missing dependencies 
 ```bash
-gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-it-footnote markdown-it-mark markdown-it-sub markdown-it-sup slugify git-command-helper cross-spawn fs-extra upath axios glob ansi-colors typedoc semver browser-sync express true-case-path
+@eslint/js typescript-eslint globals gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-it-footnote markdown-it-mark markdown-it-sub markdown-it-sup slugify git-command-helper fs-extra upath minimist cross-spawn axios glob ansi-colors typedoc semver browser-sync minimatch marked express true-case-path
 ```
 
 ```json
@@ -10,6 +10,15 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
   ],
   "devDependencies": [],
   "missing": {
+    "@eslint/js": [
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
+    ],
+    "typescript-eslint": [
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
+    ],
+    "globals": [
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
+    ],
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
@@ -51,14 +60,11 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
-    "cross-spawn": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
-    ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.config.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js",
       "D:\\Repositories\\nodejs-package-types\\unused.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
@@ -67,12 +73,24 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.config.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js",
       "D:\\Repositories\\nodejs-package-types\\unused.js"
+    ],
+    "minimist": [
+      "D:\\Repositories\\nodejs-package-types\\packer.js"
+    ],
+    "cross-spawn": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
     ],
     "axios": [
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "glob": [
@@ -92,6 +110,12 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
       "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
+    "minimatch": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc.config.js"
+    ],
+    "marked": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js"
+    ],
     "express": [
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
@@ -100,20 +124,23 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
     ]
   },
   "using": {
-    "@typescript-eslint/parser": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+    "@eslint/js": [
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
     ],
-    "@typescript-eslint/eslint-plugin": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+    "typescript-eslint": [
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
     ],
     "eslint-plugin-prettier": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
     ],
     "eslint-config-prettier": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
+    ],
+    "globals": [
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
     ],
     "eslint": [
-      "D:\\Repositories\\nodejs-package-types\\.eslintrc.js"
+      "D:\\Repositories\\nodejs-package-types\\eslint.config.js"
     ],
     "gulp": [
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
@@ -159,14 +186,11 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
       "D:\\Repositories\\nodejs-package-types\\gulpfile.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js"
     ],
-    "cross-spawn": [
-      "D:\\Repositories\\nodejs-package-types\\packer.js",
-      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
-    ],
     "fs-extra": [
       "D:\\Repositories\\nodejs-package-types\\packer.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.config.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js",
       "D:\\Repositories\\nodejs-package-types\\unused.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
@@ -175,12 +199,24 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\preinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
-      "D:\\Repositories\\nodejs-package-types\\typedoc.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.config.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js",
       "D:\\Repositories\\nodejs-package-types\\unused.js"
+    ],
+    "minimist": [
+      "D:\\Repositories\\nodejs-package-types\\packer.js"
+    ],
+    "cross-spawn": [
+      "D:\\Repositories\\nodejs-package-types\\postinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\preinstall.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc-server.js"
     ],
     "axios": [
       "D:\\Repositories\\nodejs-package-types\\postinstall.js",
       "D:\\Repositories\\nodejs-package-types\\typedoc-runner.js",
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js",
       "D:\\Repositories\\nodejs-package-types\\src\\setup.js"
     ],
     "glob": [
@@ -200,6 +236,12 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
       "D:\\Repositories\\nodejs-package-types\\typedoc-server.js",
       "D:\\Repositories\\nodejs-package-types\\typings\\connect-browser-sync.d.ts"
     ],
+    "minimatch": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc.config.js"
+    ],
+    "marked": [
+      "D:\\Repositories\\nodejs-package-types\\typedoc.readme.js"
+    ],
     "depcheck": [
       "D:\\Repositories\\nodejs-package-types\\unused.js"
     ],
@@ -211,14 +253,15 @@ gulp markdown-it markdown-it-abbr markdown-it-anchor markdown-it-attrs markdown-
     ]
   },
   "invalidFiles": {
-    "D:\\Repositories\\nodejs-package-types\\old-postinstall.js": {
+    "D:\\Repositories\\nodejs-package-types\\postinstall-old.js": {
+      "code": "BABEL_PARSER_SYNTAX_ERROR",
+      "reasonCode": "IllegalReturn",
       "loc": {
         "line": 33,
-        "column": 2
+        "column": 2,
+        "index": 1151
       },
-      "pos": 1151,
-      "code": "BABEL_PARSER_SYNTAX_ERROR",
-      "reasonCode": "IllegalReturn"
+      "pos": 1151
     }
   },
   "invalidDirs": {}
