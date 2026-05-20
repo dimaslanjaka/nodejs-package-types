@@ -21,7 +21,7 @@ Customized Package Types ([See all modules](:contentReference[oaicite:0]{index=0
 yarn
 
 ```bash
-yarn add @types/through2@https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz --dev
+yarn add @types/through2@https://github.com/dimaslanjaka/nodejs-package-types/raw/through2/release/types-through2.tgz --dev
 ```
 
 npm
