@@ -9,7 +9,6 @@ Customized Package Types ([See all modules](https://github.com/dimaslanjaka/node
 | :--- | :--- |
 | short link | https://bit.ly/nodejs-package-types |
 | full link tarball (recommended) | https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz |
-| repository tarball | https://github.com/dimaslanjaka/nodejs-package-types/tarball/main |
 
 ### Modules
 | package names | link | description |
@@ -54,7 +53,7 @@ npm install https://github.com/dimaslanjaka/nodejs-package-types.git#main --lega
 
 if `git` not installed properly, try installing from repository tarball (source: https://stackoverflow.com/a/32436218)
 ```bash
-npm i https://github.com/dimaslanjaka/nodejs-package-types/tarball/main
+npm i nodejs-package-types@https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
 ```
 
 ## Usages
