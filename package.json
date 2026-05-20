@@ -32,7 +32,8 @@
     "build:types": "gulp",
     "build:tarball": "node packer.js && node unused.js",
     "build": "npm run pre-build && npm run build:through2 && npm run build:types && npm run build:tarball",
-    "test": "cd test && npm run update && node setup.test.js"
+    "test": "cd test && npm run update && node setup.test.js",
+    "clean": "npx -y rimraf tmp"
   },
   "repository": {
     "type": "git",
