@@ -37,38 +37,20 @@
   },
   "/release/nodejs-package-types.tgz": {
     "integrity": {
-      "sha1": "1a00b48ed77cc7e589654ac7648eae3907c99bbe",
-      "sha256": "mgoyyrPCW3rIK9nVae/LDCdnNhUNb8VTUugkENtA6NQ=",
-      "md5": "449505742d2fa17a3a272544b19ca45a",
-      "sha512": "S36BlfL38ZyBqoEAKKqM61w8aVvZap5+GWbH02BUH5xr8Xv/c/M6hfcpDZGCcCjkvx9hwIQ5Sj3i/lcmJ+ounw=="
+      "sha1": "5d9c3c5cba7c5511661fb2b2b9fe20370eb8129a",
+      "sha256": "XLqiGYTYlxc4g8m2t8mgnG3IHyqm6IaWXUUh6fB+nDs=",
+      "md5": "abb82e9682463303ce43f27b05e9ffd2",
+      "sha512": "J/llzjBZ3TikRX7jSHyNuV20/EkmOhnWzlJFXfO6HnlMkrAQ1upnwp5+ntSFChtuocBrNf6NsfvSQ9UBeDZTNA=="
     },
-    "size": "48.32 KB"
-  },
-  "/package-lock.json": {
-    "integrity": {
-      "sha1": "1f4873650f1260a7dd919bc6fcfc238ecbcb5c0b",
-      "sha256": "KhWy/K7RUyijhJX1fouyiSpW8A4Kx2UsplDtaFnNE0c=",
-      "md5": "03e245d72ed381553bbb017634b6b2a3",
-      "sha512": "f4rxM+AfFsSQLvwJqlSogWsePtJEGTVI9kjjOTrueA03Ne+pZ/CPDXIdYQv4RU53V2gMUSXiE+CBv+99ITO9gg=="
-    },
-    "size": "542.81 KB"
+    "size": "48.20 KB"
   },
   "/release/nodejs-package-types-1.1.4.tgz": {
     "integrity": {
-      "sha1": "1a00b48ed77cc7e589654ac7648eae3907c99bbe",
-      "sha256": "mgoyyrPCW3rIK9nVae/LDCdnNhUNb8VTUugkENtA6NQ=",
-      "md5": "449505742d2fa17a3a272544b19ca45a",
-      "sha512": "S36BlfL38ZyBqoEAKKqM61w8aVvZap5+GWbH02BUH5xr8Xv/c/M6hfcpDZGCcCjkvx9hwIQ5Sj3i/lcmJ+ounw=="
+      "sha1": "5d9c3c5cba7c5511661fb2b2b9fe20370eb8129a",
+      "sha256": "XLqiGYTYlxc4g8m2t8mgnG3IHyqm6IaWXUUh6fB+nDs=",
+      "md5": "abb82e9682463303ce43f27b05e9ffd2",
+      "sha512": "J/llzjBZ3TikRX7jSHyNuV20/EkmOhnWzlJFXfO6HnlMkrAQ1upnwp5+ntSFChtuocBrNf6NsfvSQ9UBeDZTNA=="
     },
-    "size": "48.32 KB"
-  },
-  "/yarn.lock": {
-    "integrity": {
-      "sha1": "912041fc47bdc8a5117ac789d998d14acc37b5b2",
-      "sha256": "ujCl83+YRjDs3yNyKEiNcitYR21iPV1HJ1hp4UJuX/U=",
-      "md5": "9f80036a255b4dca19959f1ccb8c61c6",
-      "sha512": "+n5/F9mgEpvwEL5ifYgNhWf2UbPIJ/F4OIELx731TP4nDVp0y7IQ6bNlpSBqz+jcuqT1w78/yqPRprjNRrk6GA=="
-    },
-    "size": "446.64 KB"
+    "size": "48.20 KB"
   }
 }
