@@ -2,9 +2,9 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
-| 1.1.3 | https://github.com/dimaslanjaka/nodejs-package-types/raw/516b285/release/nodejs-package-types-1.1.3.tgz |
-| 1.1.4 | https://github.com/dimaslanjaka/nodejs-package-types/raw/516b285/release/nodejs-package-types-1.1.4.tgz |
-| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw/516b285/release/nodejs-package-types.tgz |
+| 1.1.3 | https://github.com/dimaslanjaka/nodejs-package-types/raw/1b016cc/release/nodejs-package-types-1.1.3.tgz |
+| 1.1.4 | https://github.com/dimaslanjaka/nodejs-package-types/raw/1b016cc/release/nodejs-package-types-1.1.4.tgz |
+| latest | https://github.com/dimaslanjaka/nodejs-package-types/raw/1b016cc/release/nodejs-package-types.tgz |
 | latest | https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz |
 
 use this tarball with `resolutions`:
@@ -18,7 +18,9 @@ use this tarball with `resolutions`:
 
 ## Releases
 
-    ## Get URL of `nodejs-package-types` Release Tarball
+    
+
+## Get URL of `nodejs-package-types` Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
 - copy raw url
