@@ -115,7 +115,7 @@ const getPackageHashes = async function () {
     //log("Last callback call at index " + index + " with value " + file);
 
     //hashes = { [os.type()]: { [os.arch()]: hashes } };
-    fs.writeFileSync(metafile, JSON.stringify(hashes, null, 2));
+    fs.writeFileSync(metafile, JSON.stringify(hashes, null, 2) + '\n');
     log(hashes);
   }
 };
@@ -345,7 +345,8 @@ use this tarball with \`resolutions\`:
 
   fs.writeFileSync(
     join(releaseDir, 'readme.md'),
-    md +
+    (
+      md +
       `
 
 ## Get URL of \`${packagejson.name}\` Release Tarball
@@ -366,7 +367,8 @@ npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/node
 
 ## URL Parts Explanations
 > https://github.com/github-username/github-repo-name/raw/github-branch-name/path-to-file-with-extension
-  `.trim()
+  `
+    ).trim() + '\n'
   );
 }
 
