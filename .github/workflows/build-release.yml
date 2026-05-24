@@ -202,7 +202,13 @@ jobs:
           if [ -f "package-lock.json" ]; then
             npm install --legacy-peer-deps || npm install --verbose || npm install --no-shrinkwrap --update-binary
           else
-            yarn install || yarn install --verbose
+            YARN_MAJOR=$(yarn -v | cut -d. -f1)
+
+            if [ "$YARN_MAJOR" -ge 2 ]; then
+              yarn install --inline-builds
+            else
+              yarn install || yarn install --verbose
+            fi
           fi
 
       - name: '📝 Dump environment info'
