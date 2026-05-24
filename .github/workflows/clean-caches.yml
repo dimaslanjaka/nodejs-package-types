@@ -31,7 +31,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
-      - name: Cleanup caches
+      - name: Cleanup caches (gh-actions-cache)
+        if: ${{ false }}
         shell: bash
         run: |
           gh extension install actions/gh-actions-cache
@@ -49,3 +50,5 @@ jobs:
           echo "Done"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Cleanup caches (npx)
+        run: npx -y binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz clear-github-actions-cache --repo ${{ github.repository }} --branch ${{ github.ref }} --token ${{ secrets.GITHUB_TOKEN }}
