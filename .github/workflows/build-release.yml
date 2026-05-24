@@ -17,17 +17,24 @@ on:
   push:
     paths-ignore:
       - '**/*.tgz'
-      - '**/*.{gz,tar.gz}'
-      - '**/{dist,release,releases}/**'
-      - '**/*checksum*'
-      - '**/{garbage-collector,codeql}/**'
+      - '**/*.gz'
+      - '**/*.tar.gz'
+      - '**/dist/**'
+      - '**/release/**'
+      - '**/releases/**'
+      - '**/_auto_gen*'
+      - '**/garbage-collector/**'
+      - '**/codeql/**'
       - '.github/workflows/tester.yml'
+      - '**/*.log'
+      - '**/*.txt'
+      - '**/*.zip'
   workflow_dispatch:
 
 # run single job
 concurrency:
   group: build-release
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-release:
