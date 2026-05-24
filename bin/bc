@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+npx -y binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz "$@"
