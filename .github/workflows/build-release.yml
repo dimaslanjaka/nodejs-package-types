@@ -272,7 +272,7 @@ jobs:
         uses: tj-actions/verify-changed-files@v20
         with:
           files: |
-            release/**/*.tgz
+            release*/**/*.tgz
             dist
             lib
             !node_modules
