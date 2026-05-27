@@ -152,6 +152,9 @@ jobs:
           esac
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
+          if command -v pip >/dev/null 2>&1; then
+            echo "PIP_CACHE_DIR=$(pip cache dir)" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: '💾 Restore cache'
         uses: actions/cache@v4
