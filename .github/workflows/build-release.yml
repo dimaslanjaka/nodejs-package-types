@@ -203,8 +203,8 @@ jobs:
             if [[ "${{ steps.set-env.outputs.CURRENT_YARN_VERSION }}" =~ ^[2-9] ]]; then
               LOG_FILE="$(mktemp)"
 
-              yarn install 2>&1 | tee "$LOG_FILE" \
-                || yarn install --inline-builds 2>&1 | tee -a "$LOG_FILE" \
+              corepack yarn install 2>&1 | tee "$LOG_FILE" \
+                || corepack yarn install --inline-builds 2>&1 | tee -a "$LOG_FILE" \
                 || {
                   echo
                   echo "===== LAST YARN LOGS ====="
@@ -221,7 +221,7 @@ jobs:
                   exit 1
                 }
             else
-              yarn install || yarn install --verbose
+              corepack yarn install || corepack yarn install --verbose
             fi
           fi
 
@@ -246,7 +246,7 @@ jobs:
             npm list
           else
             if [[ "${{ steps.set-env.outputs.CURRENT_YARN_VERSION }}" =~ ^[2-9] ]]; then
-              yarn info --all
+              corepack yarn info --all
             else
               yarn list
             fi
