@@ -10,6 +10,7 @@
  *
  * For ESM projects, download as package.cjs:
  *   curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js -o package.cjs
+ *   Invoke-WebRequest -Uri "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js" -OutFile "package.cjs"
  */
 
 const { spawn } = require('child_process');
