@@ -18,20 +18,20 @@ name: Build Release
 on:
   push:
     paths-ignore:
-      - "**/*.tgz"
-      - "**/*.gz"
-      - "**/*.tar.gz"
-      - "**/dist/**"
-      - "**/release/**"
-      - "**/releases/**"
-      - "**/_auto*/**"
-      - "**/.husky/**"
-      - "**/garbage-collector/**"
-      - "**/codeql/**"
-      - ".github/workflows/tester.yml"
-      - "**/*.log"
-      - "**/*.txt"
-      - "**/*.zip"
+      - '**/*.tgz'
+      - '**/*.gz'
+      - '**/*.tar.gz'
+      - '**/dist/**'
+      - '**/release/**'
+      - '**/releases/**'
+      - '**/_auto*/**'
+      - '**/.husky/**'
+      - '**/garbage-collector/**'
+      - '**/codeql/**'
+      - '.github/workflows/tester.yml'
+      - '**/*.log'
+      - '**/*.txt'
+      - '**/*.zip'
   workflow_dispatch:
 
 # run single job
@@ -43,7 +43,7 @@ jobs:
   build-release:
     name: build release
     env:
-      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
+      NODE_OPTIONS: '--max_old_space_size=8192' #8192 4096 --expose-gc
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
       node-version: 22.x
@@ -52,27 +52,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "🔄 Checkout repository and submodules"
+      - name: '🔄 Checkout repository and submodules'
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
           submodules: recursive
 
-      - name: "⚙️ Set EOL git configs"
+      - name: '⚙️ Set EOL git configs'
         continue-on-error: true
         run: |
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
 
-      - name: "🟢 Initialize Node.js"
+      - name: '🟢 Initialize Node.js'
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node-version }}
-          cache: "yarn"
+          cache: 'yarn'
           cache-dependency-path: ./package.json
 
-      - name: "🧰 Enable Corepack & prepare Yarn"
+      - name: '🧁 Setup Bun'
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 'latest'
+          registries: |
+            https://registry.npmjs.org/
+            @dimaslanjaka:https://npm.pkg.github.com/|$ACCESS_TOKEN
+
+      - name: '🧰 Enable Corepack & prepare Yarn'
         run: |
           corepack enable
           # npm uninstall -g yarn
@@ -80,7 +88,7 @@ jobs:
           # curl -L https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/refs/heads/main/.yarnrc-template.yml -o .yarnrc.yml
           yarn set version 4.9.2
 
-      - name: "🔁 Pull & update submodules recursively"
+      - name: '🔁 Pull & update submodules recursively'
         continue-on-error: true
         shell: bash
         run: |
@@ -102,7 +110,7 @@ jobs:
             exit 0
           fi
 
-      - name: "🌎 Set environment variables"
+      - name: '🌎 Set environment variables'
         id: set-env
         shell: bash
         run: |
@@ -158,7 +166,7 @@ jobs:
             echo "PIP_CACHE_DIR=$(pip cache dir)" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: "💾 Restore cache"
+      - name: '💾 Restore cache'
         uses: actions/cache@v4
         id: cache
         with:
@@ -178,11 +186,11 @@ jobs:
             ${{ runner.os }}-${{ env.node-version }}-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'src/**/*.{js,ts,cjs,mjs}', 'rollup*.*', 'tsconfig*.json') }}
             ${{ runner.os }}-
 
-      - name: "🌐 Install global packages"
+      - name: '🌐 Install global packages'
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
         if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: "📥 Install dependencies"
+      - name: '📥 Install dependencies'
         shell: bash
         run: |
           set -o pipefail
@@ -217,7 +225,7 @@ jobs:
             fi
           fi
 
-      - name: "📝 Dump environment info"
+      - name: '📝 Dump environment info'
         shell: bash
         run: |
           echo "branch      : ${{ steps.set-env.outputs.GITHUB_BRANCH }}"
@@ -229,7 +237,7 @@ jobs:
           echo "cache yarn  : ${{ steps.set-env.outputs.CACHE_YARN }}"
           echo "package mgr : "${{ steps.set-env.outputs.PACKAGE-MANAGER }}""
 
-      - name: "📚 List the state of node modules"
+      - name: '📚 List the state of node modules'
         if: ${{ steps.cache.outputs.cache-hit != 'true' }}
         shell: bash
         continue-on-error: true
@@ -244,16 +252,16 @@ jobs:
             fi
           fi
 
-      - name: "🧹 Clean project"
+      - name: '🧹 Clean project'
         run: npm run clean
 
-      - name: "🔨 Build project"
+      - name: '🔨 Build project'
         run: npm run build
 
-      - name: "📦 Pack project"
+      - name: '📦 Pack project'
         run: npm run pack --if-present
 
-      - name: "🗑️ Remove packageManager from package.json"
+      - name: '🗑️ Remove packageManager from package.json'
         shell: bash
         run: |
           # Remove packageManager from package.json if it exists
@@ -267,7 +275,7 @@ jobs:
           fi
 
       # https://github.com/marketplace/actions/verify-changed-files
-      - name: "🕵️‍♂️ Check for changes in build artifacts"
+      - name: '🕵️‍♂️ Check for changes in build artifacts'
         id: changes
         uses: tj-actions/verify-changed-files@v20
         with:
@@ -279,17 +287,17 @@ jobs:
             !tmp
 
       - shell: bash
-        name: "📋 Show changed files"
+        name: '📋 Show changed files'
         run: |
           echo "Changed files: ${{ steps.changes.outputs.changed_files }}"
 
-      - name: "👤 Configure git user/email"
+      - name: '👤 Configure git user/email'
         if: steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - name: "➕ Add build files to git"
+      - name: '➕ Add build files to git'
         if: steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         run: |
@@ -298,10 +306,10 @@ jobs:
           git add releases || true
           git add dist || true
           git add lib || true
-      - name: "⬇️ Pull latest before push"
+      - name: '⬇️ Pull latest before push'
         run: git pull -X theirs
         if: steps.changes.outputs.files_changed == 'true'
-      - name: "🚀 Push changes to remote"
+      - name: '🚀 Push changes to remote'
         if: steps.changes.outputs.files_changed == 'true'
         shell: bash
         run: |
@@ -324,6 +332,6 @@ jobs:
             git push
           fi
 
-      - name: "🧹 Clean GitHub Actions cache (npx)"
+      - name: '🧹 Clean GitHub Actions cache (npx)'
         run: npx clean-github-actions-cache
         continue-on-error: true
