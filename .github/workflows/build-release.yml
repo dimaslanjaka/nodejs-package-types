@@ -32,7 +32,9 @@ on:
       - '**/*.log'
       - '**/*.txt'
       - '**/*.zip'
-      - '**/test*/**'
+      - '**/test*'
+      - '**/docs/**'
+      - '**/*.{spec,test}.{js,ts,cjs,mjs}'
   workflow_dispatch:
 
 # run single job
