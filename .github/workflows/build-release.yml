@@ -56,7 +56,7 @@ jobs:
       YARN_ENABLE_GLOBAL_CACHE: false
       YARN_CHECKSUM_BEHAVIOR: update
       YARN_CACHE_FOLDER: ${{ github.workspace }}/tmp/yarn-cache
-      NODE_VERSION: '24.16.0'
+      CI_NODE_VERSION: '24.16.0'
 
       # Python
       PIP_LOCAL_CACHE_DIR: ${{ github.workspace }}/tmp/pip
@@ -85,7 +85,7 @@ jobs:
       - name: '🟢 Initialize Node.js'
         uses: actions/setup-node@v4
         with:
-          NODE_VERSION: ${{ env.NODE_VERSION }}
+          node-version: ${{ env.CI_NODE_VERSION }}
           cache: 'yarn'
           cache-dependency-path: ./package.json
 
@@ -206,9 +206,9 @@ jobs:
             ${{ steps.set-env.outputs.CACHE_NPM }}
             ${{ steps.set-env.outputs.CACHE_NPM_USER_GLOBAL }}
             ${{ steps.set-env.outputs.PIP_CACHE_DIR }}
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'src/**/*.{js,ts,cjs,mjs}', 'rollup*.*', 'tsconfig*.json') }}
+          key: ${{ runner.os }}-${{ env.CI_NODE_VERSION }}-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'src/**/*.{js,ts,cjs,mjs}', 'rollup*.*', 'tsconfig*.json') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'src/**/*.{js,ts,cjs,mjs}', 'rollup*.*', 'tsconfig*.json') }}
+            ${{ runner.os }}-${{ env.CI_NODE_VERSION }}-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'src/**/*.{js,ts,cjs,mjs}', 'rollup*.*', 'tsconfig*.json') }}
             ${{ runner.os }}-
 
       - name: '🌐 Install global packages'
